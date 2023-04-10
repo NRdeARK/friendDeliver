@@ -1,10 +1,10 @@
 import React from 'react'
-import axiosTest from '../components/axiosTest'
+import AxiosTest from '../components/AxiosTest.jsx'
 function Testing() {
   return (
     <div>
         Testing
-        {axiosTest("http://localhost:5287/api/StorePostItems")}
+        <AxiosTest/>
     </div>
   )
 }
