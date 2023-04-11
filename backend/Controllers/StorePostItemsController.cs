@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend.Models;
-using Microsoft.AspNetCore.Cors;
 
 namespace backend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/post/[controller]")]
     [ApiController]
     public class StorePostItemsController : ControllerBase
     {
