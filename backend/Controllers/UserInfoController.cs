@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend.Models;
+using System.Net;
 
 namespace backend.Controllers
 {
@@ -88,6 +89,9 @@ namespace backend.Controllers
           if (_context.UserInfoItems == null)
           {
               return Problem("Entity set 'UserInfoContext.UserInfoItems'  is null.");
+          }
+          if (UserInfoItemExists(userInfoItem.username)){
+            return StatusCode((int)HttpStatusCode.Conflict);
           }
             _context.UserInfoItems.Add(userInfoItem);
             await _context.SaveChangesAsync();
