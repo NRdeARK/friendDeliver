@@ -119,9 +119,9 @@ function RegisterForm() {
       console.log(responce.data);
       setSuccess(true);
     } catch (err) {
-      if (!err?.responce) {
+      if (!err?.response) {
         setErrMsg("No Server Responce");
-      } else if (err.responce?.status === 409) {
+      } else if (err.response?.status === 409) {
         setErrMsg("Username Taken");
       } else {
         setErrMsg("Registration Failed");
@@ -144,7 +144,7 @@ function RegisterForm() {
           RegisterForm
           <p
             ref={errRef}
-            className={errMsg ? "visible" : "hidden"}
+            className={errMsg ? "visible bg-red-600" : "hidden"}
             aria-live="assertive"
           >
             {errMsg}
