@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend.Models;
 using System.Net;
+using BCrypt.Net;
+
 
 namespace backend.Controllers
 {
@@ -83,7 +85,7 @@ namespace backend.Controllers
 
         // POST: api/UserInfo
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<ActionResult<UserInfoItem>> PostUserInfoItem(UserInfoItem userInfoItem)
         {
           if (_context.UserInfoItems == null)
@@ -91,11 +93,11 @@ namespace backend.Controllers
               return Problem("Entity set 'UserInfoContext.UserInfoItems'  is null.");
           }
           if (UserInfoItemExists(userInfoItem.username)){
-            return StatusCode((int)HttpStatusCode.Conflict);
+            return Conflict();
           }
+            userInfoItem.password = BCrypt.Net.BCrypt.HashPassword(userInfoItem.password);
             _context.UserInfoItems.Add(userInfoItem);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction("GetUserInfoItem", new { id = userInfoItem.username }, userInfoItem);
         }
 
