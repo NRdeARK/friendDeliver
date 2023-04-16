@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import Ticket from '../components/tickets'
 
 function Index() {
   let content;
   let data;
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
@@ -15,8 +16,9 @@ function Index() {
             `This is an HTTP error: The status is ${response.status}`
           );
         }
-        data = await response.body;
-        console.log(data);
+        data = await response.json();
+        setPosts(data)
+        //console.log(data);
 
       } catch(err) {
 
@@ -26,12 +28,15 @@ function Index() {
     getData()
   }, [])
 
-  if (data === null) {
+  if (data) {
     content = <div>Yeah</div>;
   } else {
-    /*content = data.map(t =>
-      <Ticket name= {t.username} storename={t.storename} amount={t.amount} date= {t.date}></Ticket>
-    );*/
+    console.log(posts);
+    content = posts &&posts.map(t => 
+      <div key={t.timeCreated}>
+        <Ticket name= {t.username} storename={t.storename} amount={t.amount} date= {t.date}></Ticket>
+      </div>
+    );
   }
   return (
     <div>Index
