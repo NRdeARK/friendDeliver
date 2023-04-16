@@ -31,6 +31,25 @@ namespace backend.Controllers
             return await _context.PostItems.ToListAsync();
         }
 
+        [HttpGet("{searchString}")]
+        public async Task<ActionResult<IEnumerable<PostItem>>> Index(string searchString)
+        {
+            if (_context.PostItems == null)
+            {
+                return Problem("Entity set 'PostContext.PostItems'  is null.");
+            }
+
+            var recieves = from m in _context.PostItems
+                           select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                recieves = recieves.Where(s => s.status!.Contains(searchString));
+            }
+
+            return await recieves.ToListAsync();
+        }
+
         [HttpPost]
         public async Task<ActionResult<PostItem>> PostUserInfoItem(PostItem post)
         {
@@ -41,7 +60,7 @@ namespace backend.Controllers
             _context.PostItems.Add(post);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetPostAll), new { id = post.id }, post);
+            return CreatedAtAction(nameof(GetPostAll), new { id = post.username }, post);
         }
 
     }

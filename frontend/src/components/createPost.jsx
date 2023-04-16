@@ -1,6 +1,5 @@
 import React, {useState, useId} from 'react'
-import axios from '../api/axios.js'
-const POST_URL = "/Post"
+
 
 const CreatePostForm = () => {
 
@@ -14,39 +13,43 @@ const CreatePostForm = () => {
   
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    /*const response = await fetch(`http://localhost:5287/api/Post`, {
+    let data = JSON.stringify({
+        "username": user,
+        "storename": store,
+        "amount": amount,
+        "location": location,
+        "time": time,
+        "date": date,
+        "status": "recieving",
+        "orderList": "",
+        "timeCreated": (new Date()).toISOString()
+    });
+
+    console.log(data)
+    
+    var myHeaders = new Headers();
+    myHeaders.append("Origin", "localhost:5173");
+    myHeaders.append("Content-Type", "application/json");
+
+    
+
+    var requestOptions = {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({id : useId(), username:user, storename:store, amount:amount, location: location, time: time, date: date, orderList: "", timeCreated : new Date().toISOString()})
-      })
-    return await response.json();
-    */
-    try {
-        const response = await axios.post(POST_URL,
-            JSON.stringify({id : useId(), username:user, storename:store, amount:amount, location: location, time: time, date: date, orderList: "", timeCreated : new Date().toISOString()}
-            ,{ withCredentials: true }),
-            {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-type': 'application/json'}
-            })
-        console.log(JSON.stringify(response))
-    } catch(err) {
-        if (!err?.response) {
-            setErrMsg("No Server Responce");
-          } else if (err.response?.status === 409) {
-            setErrMsg("Username Taken");
-          } else {
-            setErrMsg("Registration Failed");
-          }
-    }
+        headers: myHeaders,
+        body: data,
+        redirect: 'follow'
+    };
+
+    fetch("http://localhost:5287/api/Post", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
   }
 
     return(
         <div>
                 <h2>Create Post</h2>
-                <form onSubmit={handleSubmit} action="#">
                         <div>
                             <label htmlFor="exampleStoreName">Username : </label>
                             <input type="text" onChange={(e) => setUser(e.target.value)}   name="username" id="username" placeholder="UserName" />
@@ -59,7 +62,7 @@ const CreatePostForm = () => {
 
                         <div>
                             <label htmlFor="exampleAmount">จำนวนที่รับ : </label>
-                            <input type="text" onChange={(e) => setAmt(e.target.value)} name="amount" id="amount" placeholder="amount" />
+                            <input type="number" onChange={(e) => setAmt(e.target.value)} name="amount" id="amount" placeholder="amount" />
                         </div>
 
                         <div>
@@ -77,8 +80,7 @@ const CreatePostForm = () => {
                             <input type="date" onChange={(e) => setDate(e.target.value)}  name="date" id="date" />
                         </div>
                     
-                    <button type='Submit'>Create</button>
-                </form>
+                    <button type = "Submit" onClick={handleSubmit}>Create</button>
                 
         </div>
     )
