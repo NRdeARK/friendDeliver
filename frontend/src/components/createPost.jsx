@@ -7,20 +7,21 @@ const CreatePostForm = () => {
   const [store, setStore] = useState("");
   const [amount, setAmt] = useState("");
   const [location, setLocation] = useState("");
-  const [time, setTime] = useState("");
   const [date, setDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState('ช่วงเช้า');
   const [errMsg, setErrMsg] = useState("");
   
 
   const handleSubmit = async (e) => {
+    console.log(selectedTime);
     let data = JSON.stringify({
         "username": user,
         "storename": store,
         "amount": amount,
         "location": location,
-        "time": time,
+        "reserved": selectedTime,
         "date": date,
-        "status": "recieving",
+        "status": "receiving",
         "orderList": "",
         "timeCreated": (new Date()).toISOString()
     });
@@ -72,7 +73,13 @@ const CreatePostForm = () => {
 
                         <div>
                             <label htmlFor="exampleTime">ช่วงเวลาที่นัดรับ : </label>
-                            <input type="time" onChange={(e) => setTime(e.target.value)}  name="time" id="time"  />
+                            <select value={selectedTime} onChange={e => setSelectedTime(e.target.value)}>
+                                <option value="ช่วงเช้า">ช่วงเช้า</option>
+                                <option value="ช่วงสาย">ช่วงสาย</option>
+                                <option value="ช่วงเที่ยง">ช่วงเที่ยง</option>
+                                <option value="ช่วงบ่าย">ช่วงบ่าย</option>
+                                <option value="ช่วงเย็น">ช่วงเย็น</option>
+                            </select>
                         </div>
 
                         <div>

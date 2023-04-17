@@ -9,8 +9,7 @@ function Index() {
     const getData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5287/api/Post?` + new URLSearchParams({searchString: 'recieving'})
-        );
+          `http://localhost:5287/api/Post/receiving`);
         if (!response.ok) {
           throw new Error(
             `This is an HTTP error: The status is ${response.status}`
@@ -18,7 +17,6 @@ function Index() {
         }
         data = await response.json();
         setPosts(data)
-        //console.log(data);
 
       } catch(err) {
 

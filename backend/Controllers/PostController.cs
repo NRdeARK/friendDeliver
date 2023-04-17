@@ -31,8 +31,8 @@ namespace backend.Controllers
             return await _context.PostItems.ToListAsync();
         }
 
-        [HttpGet("{searchString}")]
-        public async Task<ActionResult<IEnumerable<PostItem>>> Index(string searchString)
+        [HttpGet("{status}")]
+        public async Task<ActionResult<IEnumerable<PostItem>>> Index(string status)
         {
             if (_context.PostItems == null)
             {
@@ -42,9 +42,9 @@ namespace backend.Controllers
             var recieves = from m in _context.PostItems
                            select m;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(status))
             {
-                recieves = recieves.Where(s => s.status!.Contains(searchString));
+                recieves = recieves.Where(x => x.status == status);
             }
 
             return await recieves.ToListAsync();
@@ -59,8 +59,10 @@ namespace backend.Controllers
             }
             _context.PostItems.Add(post);
             await _context.SaveChangesAsync();
+            Guid guid = Guid.NewGuid();
+            string str = guid.ToString();
 
-            return CreatedAtAction(nameof(GetPostAll), new { id = post.username }, post);
+            return CreatedAtAction(nameof(GetPostAll), new { id = str }, post);
         }
 
     }
