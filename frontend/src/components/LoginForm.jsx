@@ -1,11 +1,15 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-import AuthContext from "../context/AuthProvider"
+import React, { useRef, useState, useEffect} from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from '../api/axios.js'
+import useAuth from "../hooks/useAuth";
 const LOGIN_URL = "/auth/login"
 
 function LoginForm() {
-  const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  
   const userRef = useRef();
   const errRef = useRef();
 
@@ -36,7 +40,7 @@ function LoginForm() {
         setAuth({user, pwd, accessToken})
         setUser("")
         setPwd("")
-        setSuccess(true);
+        navigate(from,{ replace:true})
     } catch(err) {
         if (!err?.response) {
             setErrMsg("No Server Response");
@@ -47,27 +51,16 @@ function LoginForm() {
         } else {
             setErrMsg("Login Failed")
         }
-        errRef.current.focus()
+        //errRef.current.focus()
     }
     console.log(user,pwd)
   }
 
   return(
-  <>
-    {success ? (
-        <section>
-            <h1>You are Loged In</h1>
-            <br />
-            <p>
-                <Link to="/">Go to Home</Link>
-            </p>
-
-        </section>
-    ) : (
     <section>
       <p
         ref={errRef}
-        className={errMsg ? "visible" : "hidden"}
+        className={errMsg ? "visible bg-red-600" : "hidden"}
         aria-live="assertive"
       >
         {errMsg}
@@ -109,8 +102,6 @@ function LoginForm() {
         <Link to="/register">Register</Link>
       </p>
     </section>
-     )}
-   </>
   );
 }
 
