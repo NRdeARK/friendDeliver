@@ -10,7 +10,7 @@ const NICKNAME_REGEX = /^[A-z][A-z]{3,23}$/;
 const REALNAME_REGEX = /^[A-z][A-z]{3,23}$/;
 const TEL_REGEX = /^[0-9]{10}$/;
 
-const REGISTER_URL = "UserInfo";
+const REGISTER_URL = "Auth/register";
 //(?<![_.]) - no _ or . at the end
 //(?!.*[_.]{2}) - no __ or _. or ._ or .. inside
 //(?![_.]) - no _ or . at the beginning
@@ -120,13 +120,13 @@ function RegisterForm() {
       setSuccess(true);
     } catch (err) {
       if (!err?.response) {
-        setErrMsg("No Server Responce");
+        setErrMsg("No Server Response");
       } else if (err.response?.status === 409) {
         setErrMsg("Username Taken");
       } else {
         setErrMsg("Registration Failed");
       }
-      errRef.current.focus();
+      errRef.current.focus()
     }
   };
 
@@ -287,7 +287,6 @@ function RegisterForm() {
                 type="password"
                 id="password"
                 className="bg-slate-100"
-                ref={errRef}
                 autoComplete="off"
                 onChange={(e) => setPwd(e.target.value)}
                 required

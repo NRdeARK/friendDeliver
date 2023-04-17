@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Navbar from '../components/Navbar'
 function Index() {
   return (
-    <div>Index</div>
+    <div>
+      Index
+    </div>
   )
 }
 
