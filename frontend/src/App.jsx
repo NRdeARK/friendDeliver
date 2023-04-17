@@ -23,16 +23,17 @@ function App() {
         {/*protected routes*/}
         <Route element={<RequireAuth />}>
           <Route path="protected" element={<Protected />} />
+          <Route path ="/createPost" element = {<CreatePost/>} />
         </Route>
 
         {/*catch all*/}
         <Route path="*" element={<Missing />} />
       </Route>
-      <Route index element={<Index />} />
+      {/* <Route index element={<Index />} />
       <Route path ="/login" index element={<Login />} />
       <Route path ="/testing" index element = {<Testing />} />
       <Route path ="/register" index element = {<Register />} />
-      <Route path ="/createPost" index element = {<CreatePost/>} />
+       */}
     </Routes>
   );
 }

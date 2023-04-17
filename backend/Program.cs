@@ -16,10 +16,10 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<StorePostContext>(opt =>
+builder.Services.AddDbContext<PostContext>(opt =>
     opt.UseInMemoryDatabase("PostList"));
-builder.Services.AddDbContext<UserInfoContext>(opt =>
-    opt.UseInMemoryDatabase("UserDatabase"));
+builder.Services.AddDbContext<UserContext>(opt =>
+    opt.UseInMemoryDatabase("Users"));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
