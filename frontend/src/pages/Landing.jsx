@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import Navbar from '../components/Navbar'
 import Ticket from '../components/tickets'
 
 function Index() {
@@ -37,9 +38,7 @@ function Index() {
     );
   }
   return (
-    <div>Index
-      {content}
-    </div>
+    <div>Index</div>
   )
 }
 
