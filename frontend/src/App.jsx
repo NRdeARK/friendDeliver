@@ -8,6 +8,7 @@ import Missing from "./pages/Missing";
 import Protected from "./pages/Protected";
 import RequireAuth from "./components/RequireAuth";
 import { Route, Routes } from "react-router-dom";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   return (
@@ -27,6 +28,11 @@ function App() {
         {/*catch all*/}
         <Route path="*" element={<Missing />} />
       </Route>
+      <Route index element={<Index />} />
+      <Route path ="/login" index element={<Login />} />
+      <Route path ="/testing" index element = {<Testing />} />
+      <Route path ="/register" index element = {<Register />} />
+      <Route path ="/createPost" index element = {<CreatePost/>} />
     </Routes>
   );
 }
