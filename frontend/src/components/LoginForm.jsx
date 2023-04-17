@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthProvider"
 import axios from '../api/axios.js'
-const LOGIN_URL = "/auth"
+const LOGIN_URL = "/auth/login"
 
 function LoginForm() {
   const { setAuth } = useContext(AuthContext);
@@ -31,9 +31,9 @@ function LoginForm() {
                 headers: {'Content-type': 'application/json'}
             })
         console.log(JSON.stringify(response))
-        const roles = response?.data?.roles;
+        //const roles = response?.data?.roles;
         const accessToken = response?.data?.accessToken;
-        setAuth({user, pwd, roles, accessToken})
+        setAuth({user, pwd, accessToken})
         setUser("")
         setPwd("")
         setSuccess(true);

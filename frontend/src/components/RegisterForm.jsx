@@ -10,7 +10,7 @@ const NICKNAME_REGEX = /^[A-z][A-z]{3,23}$/;
 const REALNAME_REGEX = /^[A-z][A-z]{3,23}$/;
 const TEL_REGEX = /^[0-9]{10}$/;
 
-const REGISTER_URL = "UserInfo/Register";
+const REGISTER_URL = "Auth/register";
 //(?<![_.]) - no _ or . at the end
 //(?!.*[_.]{2}) - no __ or _. or ._ or .. inside
 //(?![_.]) - no _ or . at the beginning
