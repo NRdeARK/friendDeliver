@@ -1,15 +1,14 @@
-import React from 'react'
-import RegisterForm from '../components/RegisterForm'
-import Navbar from '../components/Navbar'
+import React from "react";
+import RegisterForm from "../components/RegisterForm";
+import Navbar from "../components/Navbar";
 function Register() {
   return (
     <div>
-      register
-      <div>
-      <RegisterForm/>
+      <div className="bg-amber-400/80">
+        <RegisterForm />
       </div>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

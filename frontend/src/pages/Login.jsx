@@ -5,10 +5,9 @@ import LoginForm from '../components/LoginForm'
 
 function Login() {
   return (
-    <div>
-      Login
+    <div className="bg-amber-400/80" >
       <LoginForm/>
-      <Link to="/register">Register</Link>
+      {/* <Link to="/register">Register</Link> */}
     </div>
   )
 }

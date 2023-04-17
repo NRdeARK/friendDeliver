@@ -107,13 +107,15 @@ function RegisterForm() {
     try {
       const responce = await axios.post(
         REGISTER_URL,
-        JSON.stringify({ username, nickname, realname, tel, password:pwd }
-        ,{ withCredentials: true }),
+        JSON.stringify(
+          { username, nickname, realname, tel, password: pwd },
+          { withCredentials: true }
+        ),
         {
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
         }
       );
       console.log(responce.data);
@@ -126,7 +128,7 @@ function RegisterForm() {
       } else {
         setErrMsg("Registration Failed");
       }
-      errRef.current.focus()
+      errRef.current.focus();
     }
   };
 
@@ -140,8 +142,8 @@ function RegisterForm() {
           </p>
         </section>
       ) : (
-        <section>
-          RegisterForm
+        <section className="font-mono flex flex-col">
+          <p className="font-bold text-4xl my-1 ml-2 flex">Sign up</p>
           <p
             ref={errRef}
             className={errMsg ? "visible bg-red-600" : "hidden"}
@@ -150,30 +152,160 @@ function RegisterForm() {
             {errMsg}
           </p>
           <form onSubmit={handleSubmit}>
-            <br />
-            <div id="usernameSection">
-              <label htmlFor="usernameInput">Username:</label>
-              <input
-                type="text"
-                id="usernameInput"
-                className="bg-slate-100"
-                ref={usernameRef}
-                autoComplete="off"
-                onChange={(e) => setUsername(e.target.value)}
-                required
-                aria-invalid={validUsername ? "false" : "true"}
-                aria-describedby="uidNote"
-                onFocus={() => setUsernameFocus(true)}
-                onBlur={() => setUsernameFocus(false)}
-              />
-              <span className={validUsername ? "visible" : "hidden"}>
-                <GreenTick />
-              </span>
-              <span
-                className={validUsername || !username ? "hidden" : "visible"}
+            <div className="flex flex-row space-x-10 my-3">
+              <div id="nicknameSection">
+                <label
+                  htmlFor="nicknameInput"
+                  className="font-semibold flex justify-start ml-1.5 text-lg"
+                >
+                  Nickname
+                </label>
+                <div className="flex items-center">
+                  <input
+                    type="text"
+                    id="nicknameInput"
+                    className="bg-gray-200 rounded m-1 p-1 flex"
+                    onChange={(e) => setNickname(e.target.value)}
+                    required
+                    aria-invalid={validNickname ? "false" : "true"}
+                    aria-describedby="nicknameNote"
+                    onFocus={() => setNicknameFocus(true)}
+                    onBlur={() => setNicknameFocus(false)}
+                  />
+                  <span className={validNickname ? "visible" : "hidden"}>
+                    <GreenTick />
+                  </span>
+                  <span
+                    className={
+                      validNickname || !nickname ? "hidden" : "visible"
+                    }
+                  >
+                    <RedCross />
+                  </span>
+                </div>
+                <p
+                  id="nicknameNote"
+                  className={
+                    nicknameFocus && nickname && !validNickname
+                      ? "visible"
+                      : "hidden"
+                  }
+                >
+                  <p className="flex justify-start text-xs ml-1.5">
+                    4 to 24 characters only Alphabet
+                  </p>
+                </p>
+              </div>
+              <div id="realnameSection">
+                <label
+                  htmlFor="realnameInput"
+                  className="font-semibold flex justify-start ml-1.5 text-lg"
+                >
+                  Name
+                </label>
+                <div className="flex items-center">
+                  <input
+                    type="text"
+                    id="realnameInput"
+                    className="bg-gray-200 rounded m-1 p-1"
+                    onChange={(e) => setRealname(e.target.value)}
+                    required
+                    aria-invalid={validRealname ? "false" : "true"}
+                    aria-describedby="realnameNote"
+                    onFocus={() => setRealnameFocus(true)}
+                    onBlur={() => setRealnameFocus(false)}
+                  />
+                  <span className={validRealname ? "visible" : "hidden"}>
+                    <GreenTick />
+                  </span>
+                  <span
+                    className={
+                      validRealname || !realname ? "hidden" : "visible"
+                    }
+                  >
+                    <RedCross />
+                  </span>
+                </div>
+                <p
+                  id="realnameNote"
+                  className={
+                    realnameFocus && realname && !validRealname
+                      ? "visible"
+                      : "hidden"
+                  }
+                >
+                  <p className="flex justify-start text-xs ml-1.5">
+                    4 to 24 characters only Alphabet
+                  </p>
+                </p>
+              </div>
+            </div>
+            <div id="telSection">
+              <label
+                htmlFor="telInput"
+                className="font-semibold flex justify-start ml-1.5 text-lg "
               >
-                <RedCross />
-              </span>
+                Tel Number
+              </label>
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  id="telInput"
+                  className="bg-gray-200 rounded m-1 p-1"
+                  onChange={(e) => setTel(e.target.value)}
+                  required
+                  aria-invalid={validTel ? "false" : "true"}
+                  aria-describedby="telNote"
+                  onFocus={() => setTelFocus(true)}
+                  onBlur={() => setTelFocus(false)}
+                  pattern="[0-9]{10}"
+                />
+                <span className={validTel ? "visible" : "hidden"}>
+                  <GreenTick />
+                </span>
+                <span className={validTel || !tel ? "hidden" : "visible"}>
+                  <RedCross />
+                </span>
+              </div>
+              <p
+                id="realnameNote"
+                className={telFocus && tel && !validTel ? "visible" : "hidden"}
+              >
+                <p className="flex justify-start text-xs ml-1.5">
+                  10 characters only number
+                </p>
+              </p>
+            </div>
+            <div id="usernameSection">
+              <label
+                htmlFor="usernameInput"
+                className="font-semibold flex justify-start ml-1.5 text-lg"
+              >
+                Username
+              </label>
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  id="usernameInput"
+                  className="bg-gray-200 rounded m-1 p-1"
+                  ref={usernameRef}
+                  autoComplete="off"
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                  aria-invalid={validUsername ? "false" : "true"}
+                  aria-describedby="uidNote"
+                  onFocus={() => setUsernameFocus(true)}
+                  onBlur={() => setUsernameFocus(false)}
+                />
+                <span className={validUsername ? "visible" : "hidden"}>
+                  <GreenTick />
+                </span>
+                <span
+                  className={validUsername || !username ? "hidden" : "visible"}
+                >
+                  <RedCross />
+                </span>
+              </div>
               <p
                 id="uidNote"
                 className={
@@ -182,169 +314,95 @@ function RegisterForm() {
                     : "hidden"
                 }
               >
-                8 to 20 characters <br />
-                Must begin with alphabet letter <br />
-                letters, numbers, underscore(_), hyphens(.) allowed.
+                <p className="flex justify-start text-xs ml-1.5 text-left">
+                  4 to 20 characters <br />
+                  Must begin with alphabet letter <br />
+                  letters, numbers, underscore(_), hyphens(.) allowed.
+                </p>
               </p>
             </div>
-
-            <br />
-
-            <div id="nicknameSection">
-              <label htmlFor="nicknameInput">Nickname:</label>
-              <input
-                type="text"
-                id="nicknameInput"
-                className="bg-slate-100"
-                onChange={(e) => setNickname(e.target.value)}
-                required
-                aria-invalid={validNickname ? "false" : "true"}
-                aria-describedby="nicknameNote"
-                onFocus={() => setNicknameFocus(true)}
-                onBlur={() => setNicknameFocus(false)}
-              />
-              <span className={validNickname ? "visible" : "hidden"}>
-                <GreenTick/>
-              </span>
-              <span className={validNickname || !nickname ? "hidden" : "visible"}>
-                <RedCross/>
-              </span>
-              <p
-                id = "nicknameNote"
-                className={nicknameFocus && nickname && !validNickname ? "visible" : "hidden"}
-              >
-                8 to 24 characters <br />
-                only Alphabet
-              </p>
-            </div>
-
-            <br />
-
-            <div id="realnameSection">
-              <label htmlFor="realnameInput">Realname:</label>
-              <input
-                type="text"
-                id="realnameInput"
-                className="bg-slate-100"
-                onChange={(e) => setRealname(e.target.value)}
-                required
-                aria-invalid={validRealname ? "false" : "true"}
-                aria-describedby="realnameNote"
-                onFocus={() => setRealnameFocus(true)}
-                onBlur={() => setRealnameFocus(false)}
-              />
-              <span className={validRealname ? "visible" : "hidden"}>
-                <GreenTick/>
-              </span>
-              <span className={validRealname || !realname ? "hidden" : "visible"}>
-                <RedCross/>
-              </span>
-              <p
-                id = "realnameNote"
-                className={realnameFocus && realname && !validRealname ? "visible" : "hidden"}
-              >
-                8 to 24 characters <br />
-                only Alphabet
-              </p>
-            </div>
-
-            <br />
-
-            <div id="telSection">
-              <label htmlFor="telInput">Tel:</label>
-              <input
-                type="text"
-                id="telInput"
-                className="bg-slate-100"
-                onChange={(e) => setTel(e.target.value)}
-                required
-                aria-invalid={validTel ? "false" : "true"}
-                aria-describedby="telNote"
-                onFocus={() => setTelFocus(true)}
-                onBlur={() => setTelFocus(false)}
-                pattern="[0-9]{10}"
-              />
-              <span className={validTel ? "visible" : "hidden"}>
-                <GreenTick/>
-              </span>
-              <span className={validTel || !tel ? "hidden" : "visible"}>
-                <RedCross/>
-              </span>
-              <p
-                id = "realnameNote"
-                className={telFocus && tel && !validTel ? "visible" : "hidden"}
-              >
-                10 characters <br />
-                only number
-              </p>
-            </div>
-
-            <br />
-
             <div id="passwordSection">
-              <label htmlFor="password">Pasword:</label>
-              <input
-                type="password"
-                id="password"
-                className="bg-slate-100"
-                autoComplete="off"
-                onChange={(e) => setPwd(e.target.value)}
-                required
-                aria-invalid={validPwd ? "false" : "true"}
-                aria-describedby="pwdNote"
-                onFocus={() => setPwdFocus(true)}
-                onBlur={() => setPwdFocus(false)}
-              />
-              <span className={validPwd ? "visible" : "hidden"}>
-                <GreenTick />
-              </span>
-              <span className={validPwd || !pwd ? "hidden" : "visible"}>
-                <RedCross />
-              </span>
+              <label
+                htmlFor="password"
+                className="font-semibold flex justify-start ml-1.5 text-lg "
+              >
+                Password
+              </label>
+              <div className="flex items-center">
+                <input
+                  type="password"
+                  id="password"
+                  className="bg-gray-200 rounded m-1 p-1"
+                  autoComplete="off"
+                  onChange={(e) => setPwd(e.target.value)}
+                  required
+                  aria-invalid={validPwd ? "false" : "true"}
+                  aria-describedby="pwdNote"
+                  onFocus={() => setPwdFocus(true)}
+                  onBlur={() => setPwdFocus(false)}
+                  placeholder="••••••••"
+                />
+                <span className={validPwd ? "visible" : "hidden"}>
+                  <GreenTick />
+                </span>
+                <span className={validPwd || !pwd ? "hidden" : "visible"}>
+                  <RedCross />
+                </span>
+              </div>
               <p
                 id="pwdNote"
                 className={pwdFocus && pwd && !validPwd ? "visible" : "hidden"}
               >
-                8 to 24 characters <br />
-                Must Include uppercase letter, lowercase letter, <br />
-                numbers and special character.
+                <p className="flex justify-start text-xs ml-1.5 text-left">
+                  8 to 24 characters <br />
+                  Must Include uppercase letter, <br />
+                  lowercase letter, numbers and special character.
+                </p>
               </p>
             </div>
-
-            <br />
-
             <div id="matchSection">
-              <label htmlFor="matchPwd">Confirm Password:</label>
-              <input
-                type="password"
-                id="matchPwd"
-                className="bg-slate-100"
-                autoComplete="off"
-                onChange={(e) => setMatch(e.target.value)}
-                required
-                aria-invalid={validMatch ? "false" : "true"}
-                aria-describedby="confirmNote"
-                onFocus={() => setMatchFocus(true)}
-                onBlur={() => setMatchFocus(false)}
-              />
-              <span className={validMatch && matchPwd ? "visible" : "hidden"}>
-                <GreenTick />
-              </span>
-              <span className={validMatch || !matchPwd ? "hidden" : "visible"}>
-                <RedCross />
-              </span>
+              <label
+                htmlFor="matchPwd"
+                className="font-semibold flex justify-start ml-1.5 text-lg"
+              >
+                Confirm Password
+              </label>
+              <div className="flex items-center">
+                <input
+                  type="password"
+                  id="matchPwd"
+                  className="bg-gray-200 rounded m-1 p-1"
+                  autoComplete="off"
+                  onChange={(e) => setMatch(e.target.value)}
+                  required
+                  aria-invalid={validMatch ? "false" : "true"}
+                  aria-describedby="confirmNote"
+                  onFocus={() => setMatchFocus(true)}
+                  onBlur={() => setMatchFocus(false)}
+                  placeholder="••••••••"
+                />
+                <span className={validMatch && matchPwd ? "visible" : "hidden"}>
+                  <GreenTick />
+                </span>
+                <span
+                  className={validMatch || !matchPwd ? "hidden" : "visible"}
+                >
+                  <RedCross />
+                </span>
+              </div>
               <p
                 id="confirmNote"
                 className={matchFocus && !validMatch ? "visible" : "hidden"}
               >
-                Must match the first password input field.
+                <p className="flex justify-start text-xs ml-1.5">
+                  Must match the first password input field.
+                </p>
               </p>
             </div>
-
-            <br />
-
             <button
-              className="bg-blue-500  rounded focus:outline-none disabled:opacity-75 disabled:cursor-not-allowed"
+              className="bg-rose-400 rounded text-white font-semibold px-10 py-1 ml-1 my-3 
+                          flex justify-start text-lg disabled:cursor-not-allowed 
+                          focus:outline-none hover:opacity-80"
               disabled={
                 !validUsername ||
                 !validNickname ||
@@ -356,14 +414,16 @@ function RegisterForm() {
                   : false
               }
             >
-              Sign up
+              Create Account
             </button>
           </form>
-          <br />
-          <p>
+
+          <p className="flex ml-1.5">
             Already Registered? <br />
             <span>
-              <Link to="/login">Sign In</Link>
+              <Link to="/login" className="hover:text-white underline ml-1">
+                Sign In
+              </Link>
             </span>
           </p>
         </section>

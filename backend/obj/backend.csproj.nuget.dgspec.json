@@ -1,25 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pkjin\\Documents\\GitHub\\friendDeliver\\backend\\backend.csproj": {}
+    "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pkjin\\Documents\\GitHub\\friendDeliver\\backend\\backend.csproj": {
+    "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pkjin\\Documents\\GitHub\\friendDeliver\\backend\\backend.csproj",
+        "projectUniqueName": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\Pkjin\\Documents\\GitHub\\friendDeliver\\backend\\backend.csproj",
-        "packagesPath": "C:\\Users\\Pkjin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pkjin\\Documents\\GitHub\\friendDeliver\\backend\\obj\\",
+        "projectPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
+        "packagesPath": "C:\\Users\\AVI003\\.nuget\\packages\\",
+        "outputPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Pkjin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\AVI003\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
