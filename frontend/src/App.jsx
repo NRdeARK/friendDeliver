@@ -7,6 +7,7 @@ import Unauthorized from "./pages/Unauthorized";
 import Missing from "./pages/Missing";
 import Protected from "./pages/Protected";
 import RequireAuth from "./components/RequireAuth";
+import Profile from "./pages/Profile";
 import { Route, Routes } from "react-router-dom";
 import CreatePost from "./pages/CreatePost";
 
@@ -23,7 +24,8 @@ function App() {
         {/*protected routes*/}
         <Route element={<RequireAuth />}>
           <Route path="protected" element={<Protected />} />
-          <Route path ="/createPost" element = {<CreatePost/>} />
+          <Route path ="createPost" element = {<CreatePost/>} />
+          <Route path="profile" element={<Profile />} />
         </Route>
 
         {/*catch all*/}

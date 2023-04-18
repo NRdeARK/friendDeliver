@@ -57,10 +57,6 @@ namespace backend.Controllers
             {
                 return Problem("Entity set 'PostContext.PostModels'  is null.");
             }
-            // if (true)
-            // {
-            //     return BadRequest(post);
-            // }
             var newPost = new Post{
                 postId = post.postId,
                 username = post.username,

@@ -1,13 +1,13 @@
 import React from "react";
 import NavbarList from "./NavbarList";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../context/AuthProvider";
 function Navbar() {
   const { auth } = useContext(AuthContext);
-  console.log(auth)
+  console.log(auth);
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-gray-400 border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center">
           <img
@@ -23,7 +23,7 @@ function Navbar() {
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rmmounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
@@ -49,16 +49,23 @@ function Navbar() {
             {NavbarList("Post Open", "/")}
             {NavbarList("Order Status", "/")}
             {NavbarList("createPost", "/createPost")}
-            <li>
-              <Link
-                to="/login"
-                className={auth.user == null
-                    ?"block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-  : "hidden"}>
-                Login
-              </Link>
+            {auth.user == null ? (
+              <li>
+                <Link
+                  to="/login"
+                  className={
+                    "block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  }
+                >
+                  Login
+                </Link>
+              </li>
+            ) : (
+              <></>
+            )}
+            <li className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              <Link to="/profile">{auth.user}</Link>
             </li>
-            <li className="text-white">{auth.user}</li>
           </ul>
         </div>
       </div>

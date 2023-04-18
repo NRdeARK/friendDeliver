@@ -135,6 +135,7 @@ function RegisterForm() {
       {success ? (
         <section>
           <h1>Success!</h1>
+          <h2>{username} is created</h2>
           <p>
             <Link to="/login">Sign In</Link>
           </p>
