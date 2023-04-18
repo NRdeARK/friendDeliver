@@ -65,7 +65,7 @@ function LoginForm() {
     <section className="font-mono flex flex-col">
       <p
         ref={errRef}
-        className={errMsg ? "visible bg-red-600" : "hidden"}
+        className={errMsg ? "visible bg-rose-400 text-white rounded-md py-1 my-5" : "hidden"}
         aria-live="assertive"
       >
         {errMsg}
