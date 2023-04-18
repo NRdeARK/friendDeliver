@@ -12,6 +12,7 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <Routes>
+      
       <Route path="/" element={<Layout />}>
         {/*public routes*/}
         <Route path="/" element={<Index />} />

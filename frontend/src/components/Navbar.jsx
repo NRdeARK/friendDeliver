@@ -6,7 +6,7 @@ import AuthContext from "../context/AuthProvider";
 function Navbar() {
     const {auth}  = useContext(AuthContext);
   return (
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="bg-white border-gray-200 dark:bg-gray-900 absolute w-screen">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="flex items-center">
             <img

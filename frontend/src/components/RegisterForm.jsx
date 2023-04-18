@@ -135,15 +135,16 @@ function RegisterForm() {
   return (
     <>
       {success ? (
-        <section>
+        <section className="pt-96">
           <h1>Success!</h1>
           <p>
             <Link to="/login">Sign In</Link>
           </p>
         </section>
       ) : (
-        <section className="font-mono flex flex-col">
-          <p className="font-bold text-4xl my-1 ml-2 flex">Sign up</p>
+        <section className="font-mono flex flex-col pt-24 mx-10">
+          <p className="font-bold text-4xl ml-2 flex">Sign up</p>
+          <br />
           <p
             ref={errRef}
             className={errMsg ? "visible bg-red-600" : "hidden"}
@@ -152,7 +153,7 @@ function RegisterForm() {
             {errMsg}
           </p>
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-row space-x-10 my-3">
+            <div className="flex flex-row space-x-10">
               <div id="nicknameSection">
                 <label
                   htmlFor="nicknameInput"
@@ -164,7 +165,7 @@ function RegisterForm() {
                   <input
                     type="text"
                     id="nicknameInput"
-                    className="bg-gray-200 rounded m-1 p-1 flex"
+                    className="bg-gray-200 rounded m-1 p-1 flex w-72 h-10 text-lg"
                     onChange={(e) => setNickname(e.target.value)}
                     required
                     aria-invalid={validNickname ? "false" : "true"}
@@ -207,7 +208,7 @@ function RegisterForm() {
                   <input
                     type="text"
                     id="realnameInput"
-                    className="bg-gray-200 rounded m-1 p-1"
+                    className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
                     onChange={(e) => setRealname(e.target.value)}
                     required
                     aria-invalid={validRealname ? "false" : "true"}
@@ -240,6 +241,7 @@ function RegisterForm() {
                 </p>
               </div>
             </div>
+            <br />
             <div id="telSection">
               <label
                 htmlFor="telInput"
@@ -251,7 +253,7 @@ function RegisterForm() {
                 <input
                   type="text"
                   id="telInput"
-                  className="bg-gray-200 rounded m-1 p-1"
+                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
                   onChange={(e) => setTel(e.target.value)}
                   required
                   aria-invalid={validTel ? "false" : "true"}
@@ -276,6 +278,7 @@ function RegisterForm() {
                 </p>
               </p>
             </div>
+            <br />
             <div id="usernameSection">
               <label
                 htmlFor="usernameInput"
@@ -287,7 +290,7 @@ function RegisterForm() {
                 <input
                   type="text"
                   id="usernameInput"
-                  className="bg-gray-200 rounded m-1 p-1"
+                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
                   ref={usernameRef}
                   autoComplete="off"
                   onChange={(e) => setUsername(e.target.value)}
@@ -321,6 +324,7 @@ function RegisterForm() {
                 </p>
               </p>
             </div>
+            <br />
             <div id="passwordSection">
               <label
                 htmlFor="password"
@@ -332,7 +336,7 @@ function RegisterForm() {
                 <input
                   type="password"
                   id="password"
-                  className="bg-gray-200 rounded m-1 p-1"
+                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
                   autoComplete="off"
                   onChange={(e) => setPwd(e.target.value)}
                   required
@@ -360,6 +364,7 @@ function RegisterForm() {
                 </p>
               </p>
             </div>
+            <br />
             <div id="matchSection">
               <label
                 htmlFor="matchPwd"
@@ -371,7 +376,7 @@ function RegisterForm() {
                 <input
                   type="password"
                   id="matchPwd"
-                  className="bg-gray-200 rounded m-1 p-1"
+                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg" 
                   autoComplete="off"
                   onChange={(e) => setMatch(e.target.value)}
                   required
@@ -399,10 +404,11 @@ function RegisterForm() {
                 </p>
               </p>
             </div>
+            <br />
             <button
-              className="bg-rose-400 rounded text-white font-semibold px-10 py-1 ml-1 my-3 
-                          flex justify-start text-lg disabled:cursor-not-allowed 
-                          focus:outline-none hover:opacity-80"
+              className="bg-rose-400 rounded text-white font-semibold px-10 py-1 ml-1 
+                          flex justify-center text-lg disabled:cursor-not-allowed 
+                          focus:outline-none hover:opacity-80 w-72 h-10"
               disabled={
                 !validUsername ||
                 !validNickname ||
@@ -418,10 +424,10 @@ function RegisterForm() {
             </button>
           </form>
 
-          <p className="flex ml-1.5">
-            Already Registered? <br />
+          <p className="flex ml-1.5 mt-1">
+            Already Registered?
             <span>
-              <Link to="/login" className="hover:text-white underline ml-1">
+              <Link to="/login" className="hover:text-rose-400 underline ml-1">
                 Sign In
               </Link>
             </span>
