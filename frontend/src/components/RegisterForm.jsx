@@ -407,7 +407,7 @@ function RegisterForm() {
             <br />
             <button
               className="bg-rose-400 rounded text-white font-semibold px-10 py-1 ml-1 
-                          flex justify-center text-lg disabled:cursor-not-allowed 
+                          flex justify-center items-center text-lg disabled:cursor-not-allowed 
                           focus:outline-none hover:opacity-80 w-72 h-10"
               disabled={
                 !validUsername ||
@@ -424,10 +424,10 @@ function RegisterForm() {
             </button>
           </form>
 
-          <p className="flex ml-1.5 mt-1">
+          <p className="flex ml-2 mt-2">
             Already Registered?
             <span>
-              <Link to="/login" className="hover:text-rose-400 underline ml-1">
+              <Link to="/login" className="hover:text-rose-400/50 underline ml-1 text-rose-400">
                 Sign In
               </Link>
             </span>

@@ -70,13 +70,13 @@ function LoginForm() {
       >
         {errMsg}
       </p>
-      <p className="font-bold text-4xl my-1 ml-2 flex">Login</p>
+      <p className="font-bold text-4xl ml-2 flex justify-center">Login</p>
       <br />
       <br />
       <form onSubmit={handleSubmit}>
         <label
           htmlFor="usernameInput"
-          className="font-semibold flex justify-start ml-5 text-lg"
+          className="font-semibold flex justify-start ml-3 text-lg"
         >
           Username
         </label>
@@ -87,12 +87,12 @@ function LoginForm() {
           onChange={(e) => setUser(e.target.value)}
           value={user}
           required
-          className="bg-gray-500 rounded m-1 p-1 flex"
+          className=" flex bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
         />
         <br />
         <label
           htmlFor="passwordInput"
-          className="font-semibold flex justify-start ml-5 text-lg"
+          className="font-semibold flex justify-start ml-3 text-lg"
         >
           Password
         </label>
@@ -102,20 +102,27 @@ function LoginForm() {
           onChange={(e) => setPwd(e.target.value)}
           value={pwd}
           required
-          className="bg-gray-500 rounded m-1 p-1 flex"
+          className="flex bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
+          placeholder="••••••••"
         />
+        <br />
         <button
-          className="bg-cyan-700/60 rounded text-black px-10 py-1 ml-1 my-3 
-                          flex justify-start text-lg disabled:cursor-not-allowed 
-                          focus:outline-none hover:opacity-90"
+          className="w-72 h-10 hover:opacity-90 bg-rose-400 rounded text-white font-semibold 
+                      px-10 py-1 ml-1 flex justify-center items-center text-lg 
+                      disabled:cursor-not-allowed focus:outline-none"
         >
           login
         </button>
       </form>
 
-      <p className="flex ml-1.5">
+      <p className="flex ml-1.5 mt-2">
         Doesn't have an account yet?
-        <Link to="/register" className="hover:text-white underline ml-1">Sign up</Link>
+        <Link
+          to="/register"
+          className="hover:text-rose-400/50 underline ml-1 text-rose-400"
+        >
+          Sign up
+        </Link>
       </p>
     </section>
   );
