@@ -5,7 +5,7 @@ const CreatePostForm = () => {
   // const [user, setUser] = useState("");
   const {auth} = useAuth()
   const [store, setStore] = useState("");
-  const [amount, setAmt] = useState("");
+  const [amount, setAmt] = useState(1);
   const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("ช่วงเช้า");
@@ -14,15 +14,13 @@ const CreatePostForm = () => {
   const handleSubmit = async (e) => {
     console.log(selectedTime);
     let data = JSON.stringify({
+      postId : 0,
       username: auth.user,
       storename: store,
       amount: amount,
       location: location,
       reserved: selectedTime,
       date: date,
-      status: "receiving",
-      orderList: "",
-      timeCreated: new Date().toISOString(),
     });
 
     console.log(data);
