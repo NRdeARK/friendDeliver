@@ -160,8 +160,7 @@ function RegisterForm() {
                   <input
                     type="text"
                     id="nicknameInput"
-                    className="bg-gray-200 rounded m-1 p-1 flex w-72 h-10 text-lg 
-                                  focus:outline-none focus:ring-sky-500 focus:ring-2"
+                    className="bg-gray-200 rounded m-1 p-1 flex w-72 h-10 text-lg"
                     onChange={(e) => setNickname(e.target.value)}
                     required
                     aria-invalid={validNickname ? "false" : "true"}
