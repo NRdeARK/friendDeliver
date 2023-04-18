@@ -22,24 +22,24 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PostItem>>> GetPostAll()
+        public async Task<ActionResult<IEnumerable<Post>>> GetPostAll()
         {
-            if (_context.PostItems == null)
+            if (_context.Posts == null)
             {
                 return NotFound();
             }
-            return await _context.PostItems.ToListAsync();
+            return await _context.Posts.ToListAsync();
         }
 
-        [HttpGet("{status}")]
-        public async Task<ActionResult<IEnumerable<PostItem>>> Index(string status)
+        [HttpGet("status/{status}")]
+        public async Task<ActionResult<IEnumerable<Post>>> Index(string status)
         {
-            if (_context.PostItems == null)
+            if (_context.Posts == null)
             {
-                return Problem("Entity set 'PostContext.PostItems'  is null.");
+                return Problem("Entity set 'PostContext.Posts'  is null.");
             }
 
-            var recieves = from m in _context.PostItems
+            var recieves = from m in _context.Posts
                            select m;
 
             if (!String.IsNullOrEmpty(status))
@@ -51,22 +51,32 @@ namespace backend.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<PostItem>> PostUserInfoItem(PostItem post)
+        public async Task<ActionResult<Post>> CreatePost(PostCreateDTO post)
         {
-            if (_context.PostItems == null)
+            if (_context.Posts == null)
             {
                 return Problem("Entity set 'PostContext.PostModels'  is null.");
             }
-            _context.PostItems.Add(post);
+            // if (true)
+            // {
+            //     return BadRequest(post);
+            // }
+            var newPost = new Post{
+                postId = post.postId,
+                username = post.username,
+                storename = post.storename,
+                amount = post.amount,
+                location = post.location,
+                reserved = post.reserved,
+                date = post.date,
+                timeCreated = DateTime.Now,
+                status= "receiving",
+                orderList= ""
+            };
+            _context.Posts.Add(newPost);
             await _context.SaveChangesAsync();
-            Guid guid = Guid.NewGuid();
-            string str = guid.ToString();
-
-            return CreatedAtAction(nameof(GetPostAll), new { id = str }, post);
+            return CreatedAtAction("CreatePost", new { id = post.postId }, post);
         }
 
     }
-
-
-
 }
