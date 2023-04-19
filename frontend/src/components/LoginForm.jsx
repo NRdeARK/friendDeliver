@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "../api/axios.js";
 import useAuth from "../hooks/useAuth";
-const LOGIN_URL = "/auth/login";
+const LOGIN_URL = "/Auth/login"
 
 function LoginForm() {
   const { setAuth } = useAuth();
@@ -29,14 +29,27 @@ function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        LOGIN_URL,
-        JSON.stringify(
-          { username: user, password: pwd },
-          { withCredentials: true }
-        ),
-        {
-          headers: { "Content-type": "application/json" },
+        const response = await axios.post(LOGIN_URL,
+            JSON.stringify({username:user, password:pwd}),
+            {
+                headers: {'Content-type': 'application/json', "withCredentials": true }
+            })
+        console.log(JSON.stringify(response))
+        //const roles = response?.data?.roles;
+        const accessToken = response?.data?.accessToken;
+        setAuth({user, pwd, accessToken})
+        setUser("")
+        setPwd("")
+        navigate(from,{ replace:true})
+    } catch(err) {
+        if (!err?.response) {
+            setErrMsg("No Server Response");
+        } else if (err.response?.status === 400){
+            setErrMsg("Missing Username or Password");
+        } else if (err.response?.status === 401){
+            setErrMsg("Unauthorized");
+        } else {
+            setErrMsg("Login Failed")
         }
       );
       console.log(JSON.stringify(response));
