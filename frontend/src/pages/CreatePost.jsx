@@ -19,9 +19,8 @@ class CreatePost extends Component {
    
     render (){
         return (
-          <div>
-            CreatePost
-            <div>
+          <div class='bg-amber-400 mb-[155px]'>  
+            <div class='ml-[400px] mt-[100px]'>
               <CreatePostForm></CreatePostForm>
             </div>
           </div>
