@@ -5,7 +5,7 @@ function Unauthorized() {
     <div>
       Unauthorized
       <Link to="/login">
-        <button type="button" class="btn btn-primary bg-red-600">
+        <button type="button" className="btn btn-primary bg-red-600">
           login
         </button>
       </Link>

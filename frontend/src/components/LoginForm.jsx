@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect} from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from '../api/axios.js'
 import useAuth from "../hooks/useAuth";
-const LOGIN_URL = "/auth/login"
+const LOGIN_URL = "/Auth/login"
 
 function LoginForm() {
   const { setAuth } = useAuth();
@@ -30,9 +30,9 @@ function LoginForm() {
     e.preventDefault();
     try {
         const response = await axios.post(LOGIN_URL,
-            JSON.stringify({username:user, password:pwd},{ withCredentials: true }),
+            JSON.stringify({username:user, password:pwd}),
             {
-                headers: {'Content-type': 'application/json'}
+                headers: {'Content-type': 'application/json', "withCredentials": true }
             })
         console.log(JSON.stringify(response))
         //const roles = response?.data?.roles;
