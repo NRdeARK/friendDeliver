@@ -107,14 +107,7 @@ function RegisterForm() {
     try {
       const responce = await axios.post(
         REGISTER_URL,
-        JSON.stringify({ username, nickname, realname, tel, password:pwd }
-        ,{ withCredentials: true }),
-        {
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-        }
+        { username, nickname, realname, tel, password:pwd }
       );
       console.log(responce.data);
       setSuccess(true);

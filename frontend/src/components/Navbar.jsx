@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import AuthContext from "../context/AuthProvider";
 function Navbar() {
   const { auth } = useContext(AuthContext);
-  console.log(auth);
+  // console.log(auth);
   return (
     <nav className="bg-gray-400 border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
