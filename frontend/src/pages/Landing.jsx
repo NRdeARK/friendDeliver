@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import Ticket from '../components/tickets'
-import LandingPost from '../components/LandingPost'
+PostTicket
+import LandingPost from '../components/PostTicket'
+import PostTicket from '../components/PostTicket'
 function Index() {
   return (
     <div>
       Index
-      <LandingPost></LandingPost>
+      <PostTicket></PostTicket>
     </div>
   )
 }

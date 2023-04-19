@@ -10,6 +10,6 @@ namespace backend.Models
         public int? amount { get; set; }
         public string? location { get; set; }
         public string? reserved { get; set; }
-        public string date { get; set; }
+        public string? date { get; set; }
     }
 }
