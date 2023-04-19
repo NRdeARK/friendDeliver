@@ -10,22 +10,29 @@ import RequireAuth from "./components/RequireAuth";
 import Profile from "./pages/Profile";
 import { Route, Routes } from "react-router-dom";
 import CreatePost from "./pages/CreatePost";
+import OrderStatus from "./pages/OrderStatus";
+import CreateOrder from "./pages/CreateOrder";
+import OpenPost from "./pages/OpenPost";
 
 function App() {
   return (
     <Routes>
+      
       <Route path="/" element={<Layout />}>
         {/*public routes*/}
         <Route path="/" element={<Index />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="unauthorized" element={<Unauthorized />} />
+        <Route path="openPost" element={<OpenPost/>}/>
 
         {/*protected routes*/}
         <Route element={<RequireAuth />}>
           <Route path="protected" element={<Protected />} />
           <Route path ="createPost" element = {<CreatePost/>} />
+          <Route path ="createOrder" element = {<CreateOrder/>}/>
           <Route path="profile" element={<Profile />} />
+          <Route path="orderStatus" element={<OrderStatus/>}/>
         </Route>
 
         {/*catch all*/}

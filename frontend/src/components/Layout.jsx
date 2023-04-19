@@ -7,7 +7,7 @@ function Layout() {
     <main class='w-screen h-screen bg-amber-400'>
         <Navbar/>
         <Outlet/>
-        <AboutUs/>
+        {/* <AboutUs/> */}
 
     </main>
   )

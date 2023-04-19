@@ -1,17 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-function Tickets(props){
+function Blog(props){
     return(
         <div >
-            <Link to="/createOrder">
-            <p>{props.name} คนโพสต์</p>
+            <Link to="/">
+            <p>นาย{props.name}</p>
+            <p>สถานะ{props.status}</p>
             <p>กำลังไปสั่งร้าน {props.storename} มีใครเอาอะไรไหม</p>
-            <p>จำนวน {props.amount} กล่อง</p>
+            <p>จำนวนที่รับ {props.amount}</p>
+            <p>ช่วงเวลา {props.reserved}</p>
             <p>{props.date}</p>
             </Link>
         </div>
     );
 }
 
-export default Tickets;
+export default Blog;
