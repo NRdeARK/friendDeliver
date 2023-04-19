@@ -140,13 +140,19 @@ function RegisterForm() {
         <section className="font-mono flex flex-col pt-24 mx-10">
           <p className="font-bold text-4xl ml-2 flex">Sign up</p>
           <br />
-          <p
-            ref={errRef}
-            className={errMsg ? "visible bg-rose-400 text-white rounded-md py-1 my-5" : "hidden"}
-            aria-live="assertive"
-          >
-            {errMsg}
-          </p>
+          <div className="flex justify-center">
+            <p
+              ref={errRef}
+              className={
+                errMsg
+                  ? "visible bg-red-500/90 text-white rounded-md py-1 my-5"
+                  : "hidden"
+              }
+              aria-live="assertive"
+            >
+              {errMsg}
+            </p>
+          </div>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-row space-x-10">
               <div id="nicknameSection">
@@ -371,7 +377,7 @@ function RegisterForm() {
                 <input
                   type="password"
                   id="matchPwd"
-                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg" 
+                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
                   autoComplete="off"
                   onChange={(e) => setMatch(e.target.value)}
                   required
@@ -422,7 +428,10 @@ function RegisterForm() {
           <p className="flex ml-2 mt-2">
             Already Registered?
             <span>
-              <Link to="/login" className="hover:text-rose-400/50 underline ml-1 text-rose-400">
+              <Link
+                to="/login"
+                className="hover:text-rose-400/50 underline ml-1 text-rose-400"
+              >
                 Sign In
               </Link>
             </span>

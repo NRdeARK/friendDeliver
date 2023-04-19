@@ -63,13 +63,6 @@ function LoginForm() {
 
   return (
     <section className="font-mono flex flex-col">
-      <p
-        ref={errRef}
-        className={errMsg ? "visible bg-rose-400 text-white rounded-md py-1 my-5" : "hidden"}
-        aria-live="assertive"
-      >
-        {errMsg}
-      </p>
       <p className="font-bold text-4xl ml-2 flex justify-center">Login</p>
       <br />
       <br />
@@ -87,7 +80,7 @@ function LoginForm() {
           onChange={(e) => setUser(e.target.value)}
           value={user}
           required
-          className=" flex bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
+          className=" flex bg-gray-200 rounded m-1 p-1 w-80 h-10 text-lg"
         />
         <br />
         <label
@@ -102,28 +95,42 @@ function LoginForm() {
           onChange={(e) => setPwd(e.target.value)}
           value={pwd}
           required
-          className="flex bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
+          className="flex bg-gray-200 rounded m-1 p-1 w-80 h-10 text-lg"
           placeholder="••••••••"
         />
         <br />
         <button
-          className="w-72 h-10 hover:opacity-90 bg-rose-400 rounded text-white font-semibold 
+          className="w-80 h-10 hover:opacity-90 bg-rose-400 rounded text-white font-semibold 
                       px-10 py-1 ml-1 flex justify-center items-center text-lg 
                       disabled:cursor-not-allowed focus:outline-none"
         >
           login
         </button>
       </form>
-
-      <p className="flex ml-1.5 mt-2">
-        Doesn't have an account yet?
-        <Link
-          to="/register"
-          className="hover:text-rose-400/50 underline ml-1 text-rose-400"
+      <div className="flex justify-center">
+        <p
+          ref={errRef}
+          className={
+            errMsg
+              ? "visible bg-red-500/90 text-white rounded-md py-1 px-2 mb-1 mt-3 w-80 "
+              : "hidden"
+          }
+          aria-live="assertive"
         >
-          Sign up
-        </Link>
-      </p>
+          {errMsg}
+        </p>
+      </div>
+      <div className="flex items-center">
+        <p className="ml-1.5">
+          Doesn't have an account yet?
+          <Link
+            to="/register"
+            className="hover:text-rose-400/50 underline ml-1 text-rose-400"
+          >
+            Sign up
+          </Link>
+        </p>
+      </div>
     </section>
   );
 }
