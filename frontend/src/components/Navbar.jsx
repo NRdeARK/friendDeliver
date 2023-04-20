@@ -7,12 +7,12 @@ function Navbar() {
   const { auth } = useContext(AuthContext);
   // console.log(auth);
   return (
-    <nav className="bg-gray-400 border-gray-200 dark:bg-gray-900">
+    <nav className="bg-gray-400 border-gray-200 dark:bg-gray-900 relative w-screen mr-8">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-start">
           <img
             src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8 mr-3"
+            className="flex items-start"
             alt="Flowbite Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
