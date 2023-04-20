@@ -117,7 +117,7 @@ function LoginForm() {
           ref={errRef}
           className={
             errMsg
-              ? "visible bg-red-500/90 text-white rounded-md py-1 px-2 mb-1 mt-3 w-80 "
+              ? "visible bg-red-500/90 text-white rounded-md py-1 px-2 mb-1 mt-3 w-80 text-center"
               : "hidden"
           }
           aria-live="assertive"
