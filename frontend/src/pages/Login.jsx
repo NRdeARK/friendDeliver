@@ -11,7 +11,7 @@ function Login() {
           <img className="w-5/12" src={loginLogo} alt="" />
           <div className="border border-black w-fit h-fit rounded-3xl p-10">
             <LoginForm />
-        </div>
+          </div>
       </div>
     </div>
   );

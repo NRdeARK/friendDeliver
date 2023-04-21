@@ -8,10 +8,9 @@ function Navbar() {
 
     let Links =[
         {name: "Home", link:"/"},
-        {name: "Post Open", link:"/"},
-        {name: "Order Status", link:"/"},
-        {name: "CreatePost", link:"/createPost"},
-
+        {name: "Post Open", link:"/createOrder"},
+        {name: "Order Status", link:"/orderStatus"},
+        {name: "Create Post", link:"/openPost"},
     ];
 
     let [open,setOpen]= useState(false);
@@ -31,7 +30,7 @@ function Navbar() {
           {
             Links.map((link)=>(
               <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
-                <a href={link.link} className="text-gray-800 hover:text-gray-400 duration-500">{link.name}</a>
+                <Link to={link.link} className="text-gray-800 hover:text-gray-400 duration-500">{link.name}</Link>
               </li>
             ))
           }
@@ -47,11 +46,15 @@ function Navbar() {
                 </Link>
               </li>
             ) : (
-              <></>
+              <Link
+                to="/profile"
+                  className={
+                    "md:ml-8 text-xl md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500"
+                  }
+                >
+                  {auth.user}
+              </Link>
             )}
-            <li className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-              <Link to="/profile">{auth.user}</Link>
-            </li>
         </ul>
         </div>
       </div>

@@ -10,7 +10,6 @@ function PostBlog() {
     console.log(i);
     return (
       <div key={i} className="border-solid border-2 border-indigo-600">
-        {item.username}
         {Blog(item)}
       </div>
     );
