@@ -60,6 +60,8 @@ namespace backend.Controllers
             var newPost = new Post{
                 postId = post.postId,
                 username = post.username,
+                nickname = post.nickname,
+                realname = post.realname,
                 storename = post.storename,
                 amount = post.amount,
                 location = post.location,

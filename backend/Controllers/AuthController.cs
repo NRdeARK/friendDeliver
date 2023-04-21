@@ -83,7 +83,8 @@ namespace backend.Controllers
             }
 
             var token = CreateToken(queryUser);
-            return Ok(new UserTokenDTO { username = request.username , accessToken = token});
+
+            return Ok(new UserTokenDTO { username = request.username , nickname = queryUser.nickname, realname = queryUser.realname, accessToken = token});
             //return Ok("Register success");
         }
 

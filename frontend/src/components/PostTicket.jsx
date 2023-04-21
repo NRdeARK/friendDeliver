@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "../api/axios";
-import Tickets from "./Tickets";
+import Tickets from "./tickets";
 const POST_URL = "/Post";
 
 function PostTicket() {
@@ -10,7 +10,6 @@ function PostTicket() {
     console.log(i);
     return (
       <div key={i} className="border-solid border-2 border-indigo-600">
-        {item.username}
         {Tickets(item)}
       </div>
     );
