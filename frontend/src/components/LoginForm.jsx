@@ -41,8 +41,12 @@ function LoginForm() {
       );
       console.log(JSON.stringify(response));
       //const roles = response?.data?.roles;
+
+      const nickname = response?.data?.nickname;
+      const realname = response?.data?.realname;
       const accessToken = response?.data?.accessToken;
-      setAuth({ user, pwd, accessToken });
+
+      setAuth({ user, nickname, realname, accessToken });
       setUser("");
       setPwd("");
       navigate(from, { replace: true });
@@ -57,13 +61,13 @@ function LoginForm() {
         setErrMsg("Login Failed");
       }
 
-      console.log(JSON.stringify(response));
-      //const roles = response?.data?.roles;
-      const accessToken = response?.data?.accessToken;
-      setAuth({ user, pwd, accessToken });
-      setUser("");
-      setPwd("");
-      navigate(from, { replace: true });
+      // console.log(JSON.stringify(response));
+      // //const roles = response?.data?.roles;
+      // const accessToken = response?.data?.accessToken;
+      // setAuth({user, pwd, accessToken });
+      // setUser("");
+      // setPwd("");
+      // navigate(from, { replace: true });
     }
   };
   return (
@@ -117,7 +121,7 @@ function LoginForm() {
           ref={errRef}
           className={
             errMsg
-              ? "visible bg-red-500/90 text-white rounded-md py-1 px-2 mb-1 mt-3 w-80 "
+              ? "visible bg-red-500/90 text-white rounded-md py-1 px-2 mb-1 mt-3 w-80 text-center"
               : "hidden"
           }
           aria-live="assertive"

@@ -105,10 +105,13 @@ function RegisterForm() {
       return;
     }
     try {
-      const responce = await axios.post(
-        REGISTER_URL,
-        { username, nickname, realname, tel, password:pwd }
-      );
+      const responce = await axios.post(REGISTER_URL, {
+        username,
+        nickname,
+        realname,
+        tel,
+        password: pwd,
+      });
       console.log(responce.data);
       setSuccess(true);
     } catch (err) {
@@ -131,19 +134,6 @@ function RegisterForm() {
         <section className="font-mono flex flex-col pt-24 mx-10">
           <p className="font-bold text-4xl ml-2 flex">Sign up</p>
           <br />
-          <div className="flex justify-center">
-            <p
-              ref={errRef}
-              className={
-                errMsg
-                  ? "visible bg-red-500/90 text-white rounded-md py-1 my-5"
-                  : "hidden"
-              }
-              aria-live="assertive"
-            >
-              {errMsg}
-            </p>
-          </div>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-row space-x-10">
               <div id="nicknameSection">
@@ -415,6 +405,19 @@ function RegisterForm() {
               Create Account
             </button>
           </form>
+          <div className="">
+            <p
+              ref={errRef}
+              className={
+                errMsg
+                  ? "visible bg-red-500/90 text-white rounded-md py-1 mb-1 mt-3 w-72 text-center ml-1"
+                  : "hidden"
+              }
+              aria-live="assertive"
+            >
+              {errMsg}
+            </p>
+          </div>
 
           <p className="flex ml-2 mt-2">
             Already Registered?

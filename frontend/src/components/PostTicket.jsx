@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "../api/axios";
-import Tickets from "./Tickets";
+import Tickets from "./tickets";
 const POST_URL = "/Post";
 
 function PostTicket() {

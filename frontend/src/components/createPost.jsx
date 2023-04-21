@@ -16,6 +16,8 @@ const CreatePostForm = () => {
     let data = JSON.stringify({
       postId : 0,
       username: auth.user,
+      nickname : auth.nickname,
+      realname : auth.realname,
       storename: store,
       amount: amount,
       location: location,
