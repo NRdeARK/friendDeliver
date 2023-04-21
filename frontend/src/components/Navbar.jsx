@@ -8,9 +8,9 @@ function Navbar() {
 
     let Links =[
         {name: "Home", link:"/"},
-        {name: "Post Open", link:"/createOrder"},
+        {name: "Post Open", link:"/openPost"},
         {name: "Order Status", link:"/orderStatus"},
-        {name: "Create Post", link:"/openPost"},
+        {name: "Create Post", link:"/createPost"},
     ];
 
     let [open,setOpen]= useState(false);
