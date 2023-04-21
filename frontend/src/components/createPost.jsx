@@ -45,12 +45,12 @@ const CreatePostForm = () => {
   };
 
   return (
-    <div class="flex flex-col justify-stretch flex-nowrap h-[500px] bg-gray-200 accent-gray-300 rounded-lg w-full">
+    <div class="flex flex-col justify-stretch flex-nowrap h-[500px] w-[900px] bg-gray-200 accent-gray-300 rounded-lg">
       <div class='p-4 ml-[20px] mt-[10px] flex flex-row justify-items-start'>
         <div class="p-5 rounded-full bg-gray-500 justify-start"></div>
         <p class= "ml-5 text-2xl justify-start">{auth.user}</p>
       </div>
-      <div class="ml-[120px] py-5 flex flex-row justify-items-start">
+      <div class="ml-[70px] py-5 flex flex-row ">
         <label htmlFor="exampleStoreName" class="ml-5 text-4xl">ร้าน :   </label>
         <input
           type="text"

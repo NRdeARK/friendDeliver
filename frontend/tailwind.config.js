@@ -8,7 +8,9 @@ module.exports = {
     extend: {
       backgroundImage:{
         'register': "url('assets/register.jpg')",
-        'login' : "url('assets/login.jpg')"
+        'login' : "url('assets/login.jpg')",
+        'amount' : "url('assets/plate.png')",
+        'user' : "url('assets/bowl.png')"
       }
     },
   },
