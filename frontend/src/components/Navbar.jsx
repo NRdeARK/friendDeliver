@@ -11,6 +11,7 @@ function Navbar() {
         {name: "Post Open", link:"/createOrder"},
         {name: "Order Status", link:"/orderStatus"},
         {name: "Create Post", link:"/openPost"},
+        {name: "Create Order", link:"/createOrder"},
     ];
 
     let [open,setOpen]= useState(false);

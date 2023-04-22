@@ -22,7 +22,7 @@ namespace backend.Controllers
         }
 
 
-        [HttpGet("GetAll")]
+        [HttpGet()]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrder()
         {
           if (_context.Orders == null)
