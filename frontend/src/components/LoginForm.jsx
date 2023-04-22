@@ -72,13 +72,18 @@ function LoginForm() {
   };
   return (
     <section className="flex flex-col">
-      <p className="font-bold text-4xl ml-2 flex justify-center">Login</p>
-      <br />
+      <p
+        className="font-semibold text-5xl ml-2 flex justify-center 
+                    xl:text-4xl xl:font-bold"
+      >
+        Login
+      </p>
       <br />
       <form onSubmit={handleSubmit}>
         <label
           htmlFor="usernameInput"
-          className="font-semibold flex justify-start ml-3 text-lg"
+          className="flex justify-start ml-3 font-medium text-2xl 
+                      xl:text-lg xl:font-semibold"
         >
           Username
         </label>
@@ -89,12 +94,14 @@ function LoginForm() {
           onChange={(e) => setUser(e.target.value)}
           value={user}
           required
-          className=" flex bg-gray-200 rounded m-1 p-1 w-80 h-10 text-lg"
+          className=" flex bg-gray-200 rounded m-1 p-1 w-80 h-12 text-2xl
+                      xl:text-lg xl:h-10"
         />
         <br />
         <label
           htmlFor="passwordInput"
-          className="font-semibold flex justify-start ml-3 text-lg"
+          className="flex justify-start ml-3 font-medium 
+                      xl:text-lg xl:font-semibold"
         >
           Password
         </label>
@@ -104,14 +111,16 @@ function LoginForm() {
           onChange={(e) => setPwd(e.target.value)}
           value={pwd}
           required
-          className="flex bg-gray-200 rounded m-1 p-1 w-80 h-10 text-lg"
+          className="flex bg-gray-200 rounded m-1 p-1 w-80 h-12 text-2xl 
+                      xl:text-lg xl:h-10"
           placeholder="••••••••"
         />
         <br />
         <button
-          className="w-80 h-10 hover:opacity-90 bg-rose-400 rounded text-white font-semibold 
-                      px-10 py-1 ml-1 flex justify-center items-center text-lg 
-                      disabled:cursor-not-allowed focus:outline-none"
+          className="w-80 h-12 hover:opacity-90 bg-rose-400 rounded text-white font-medium
+                      px-10 py-1 ml-1 flex justify-center items-center text-2xl 
+                      disabled:cursor-not-allowed focus:outline-none
+                      xl:h-10 xl:text-lg xl:font-semibold"
         >
           login
         </button>
@@ -121,7 +130,7 @@ function LoginForm() {
           ref={errRef}
           className={
             errMsg
-              ? "visible bg-red-500/90 text-white rounded-md py-1 px-2 mb-1 mt-3 w-80 text-center"
+              ? "visible bg-red-500/90 text-white rounded-md py-1 px-2 mt-3 w-80 text-center text-lg xl:text-base"
               : "hidden"
           }
           aria-live="assertive"
@@ -129,8 +138,8 @@ function LoginForm() {
           {errMsg}
         </p>
       </div>
-      <div className="flex items-center">
-        <p className="ml-1.5 mt-3">
+      <div className="flex items-center text-lg">
+        <p className="ml-1.5 mt-1">
           Doesn't have an account yet?
           <Link
             to="/register"

@@ -131,7 +131,7 @@ function RegisterForm() {
       {success ? (
         window.location.replace("http://localhost:5173/login")
       ) : (
-        <section className="flex flex-col pt-24">
+        <section className="flex flex-col pt-24 xl:pt-20">
           <p className="font-bold text-4xl ml-2 flex">Sign up</p>
           <br />
           <form onSubmit={handleSubmit}>
@@ -417,7 +417,7 @@ function RegisterForm() {
               ref={errRef}
               className={
                 errMsg
-                  ? "visible bg-red-500/90 text-white rounded-md py-1 mb-1 mt-3 w-72 text-center ml-1"
+                  ? "visible bg-red-500/90 text-white rounded-md py-1 mb-1 mt-3 w-72 text-center ml-1 xl:w-52 xl:h-9"
                   : "hidden"
               }
               aria-live="assertive"
