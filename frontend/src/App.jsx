@@ -10,9 +10,9 @@ import RequireAuth from "./components/RequireAuth";
 import Profile from "./pages/Profile";
 import { Route, Routes } from "react-router-dom";
 import CreatePost from "./pages/CreatePost";
-import OrderStatus from "./pages/OrderStatus";
 import CreateOrder from "./pages/CreateOrder";
 import OpenPost from "./pages/OpenPost";
+import OpenOrder from "./pages/OpenOrder";
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="unauthorized" element={<Unauthorized />} />
         <Route path="openPost" element={<OpenPost/>}/>
+        <Route path="openOrder" element={<OpenOrder/>}/>
 
         {/*protected routes*/}
         <Route element={<RequireAuth />}>
@@ -32,7 +33,6 @@ function App() {
           <Route path ="createPost" element = {<CreatePost/>} />
           <Route path ="createOrder" element = {<CreateOrder/>}/>
           <Route path="profile" element={<Profile />} />
-          <Route path="orderStatus" element={<OrderStatus/>}/>
         </Route>
 
         {/*catch all*/}
