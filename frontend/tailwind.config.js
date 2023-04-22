@@ -10,6 +10,10 @@ module.exports = {
         'register': "url('assets/register.jpg')",
         'login' : "url('assets/login.jpg')"
       }
+      ,
+      screens: {
+        'xl': {'min': '1280px', 'max': '1919px'},
+      }
     },
   },
   plugins: [],

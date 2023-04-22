@@ -71,7 +71,7 @@ function LoginForm() {
     }
   };
   return (
-    <section className="font-mono flex flex-col">
+    <section className="flex flex-col">
       <p className="font-bold text-4xl ml-2 flex justify-center">Login</p>
       <br />
       <br />
@@ -130,7 +130,7 @@ function LoginForm() {
         </p>
       </div>
       <div className="flex items-center">
-        <p className="ml-1.5">
+        <p className="ml-1.5 mt-3">
           Doesn't have an account yet?
           <Link
             to="/register"

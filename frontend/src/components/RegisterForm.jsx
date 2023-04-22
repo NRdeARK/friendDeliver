@@ -131,7 +131,7 @@ function RegisterForm() {
       {success ? (
         window.location.replace("http://localhost:5173/login")
       ) : (
-        <section className="font-mono flex flex-col pt-24 mx-10">
+        <section className="flex flex-col pt-24">
           <p className="font-bold text-4xl ml-2 flex">Sign up</p>
           <br />
           <form onSubmit={handleSubmit}>
@@ -147,7 +147,8 @@ function RegisterForm() {
                   <input
                     type="text"
                     id="nicknameInput"
-                    className="bg-gray-200 rounded m-1 p-1 flex w-72 h-10 text-lg"
+                    className="bg-gray-200 rounded m-1 p-1 flex w-72 h-10 text-lg 
+                                xl:w-52 xl:h-9"
                     onChange={(e) => setNickname(e.target.value)}
                     required
                     aria-invalid={validNickname ? "false" : "true"}
@@ -190,7 +191,8 @@ function RegisterForm() {
                   <input
                     type="text"
                     id="realnameInput"
-                    className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
+                    className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg 
+                                xl:w-52 xl:h-9"
                     onChange={(e) => setRealname(e.target.value)}
                     required
                     aria-invalid={validRealname ? "false" : "true"}
@@ -235,7 +237,8 @@ function RegisterForm() {
                 <input
                   type="text"
                   id="telInput"
-                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
+                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg 
+                              xl:w-52 xl:h-9"
                   onChange={(e) => setTel(e.target.value)}
                   required
                   aria-invalid={validTel ? "false" : "true"}
@@ -272,7 +275,8 @@ function RegisterForm() {
                 <input
                   type="text"
                   id="usernameInput"
-                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
+                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg 
+                              xl:w-52 xl:h-9"
                   ref={usernameRef}
                   autoComplete="off"
                   onChange={(e) => setUsername(e.target.value)}
@@ -318,7 +322,8 @@ function RegisterForm() {
                 <input
                   type="password"
                   id="password"
-                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
+                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg 
+                              xl:w-52 xl:h-9"
                   autoComplete="off"
                   onChange={(e) => setPwd(e.target.value)}
                   required
@@ -358,7 +363,8 @@ function RegisterForm() {
                 <input
                   type="password"
                   id="matchPwd"
-                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg"
+                  className="bg-gray-200 rounded m-1 p-1 w-72 h-10 text-lg 
+                              xl:w-52 xl:h-9"
                   autoComplete="off"
                   onChange={(e) => setMatch(e.target.value)}
                   required
@@ -390,7 +396,8 @@ function RegisterForm() {
             <button
               className="bg-rose-400 rounded text-white font-semibold px-10 py-1 ml-1 
                           flex justify-center items-center text-lg disabled:cursor-not-allowed 
-                          focus:outline-none hover:opacity-80 w-72 h-10"
+                          focus:outline-none hover:opacity-80 w-72 h-10
+                          xl:w-52 xl:h-9"
               disabled={
                 !validUsername ||
                 !validNickname ||
