@@ -9,7 +9,7 @@ function PostTicket() {
   function getUserName(item, i) {
     console.log(i);
     return (
-      <div key={i} class="flex flex-row justify-around items-center border-t-[1px] border-b-[1px] border-gray-600 p-3">
+      <div key={i} className="flex flex-row justify-around items-center border-t-[1px] border-b-[1px] border-gray-600 p-3">
         {Tickets(item)}
       </div>
     );
@@ -25,7 +25,7 @@ function PostTicket() {
       });
   }, []);
 
-  return <div class='w-[1200px] ml-[300px] p-[40px] bg-gray-200 rounded-md'>{posts}</div>;
+  return <div className='w-[1200px] ml-[300px] p-[40px] bg-gray-200 rounded-md'>{posts}</div>;
 }
 
 export default PostTicket;
