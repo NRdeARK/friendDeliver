@@ -37,7 +37,7 @@ function confirmTicket(props){
 
     const listItems = order.map(
         (d) => {
-            if (d.orderStatus === 'ordering') {
+            if (d.orderStatus === 'confirm') {
                 <div class='bg-green'>
                     <orderTicket name={d.name} time={d.time} amount={d.amount} status={d.orderStatus}></orderTicket>
                 </div>
