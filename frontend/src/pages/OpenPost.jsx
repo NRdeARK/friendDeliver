@@ -4,7 +4,7 @@ function OpenPost() {
   return (
     <div>
       OpenPost
-      <PostBlog></PostBlog>
+    <PostBlog>  </PostBlog>
     </div>
   )
 }
