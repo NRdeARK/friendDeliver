@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 PostTicket
-import LandingPost from '../components/PostTicket'
 import PostTicket from '../components/PostTicket'
 import Destination from '../components/Destination'
 import Card from '../components/Card';
@@ -18,9 +17,9 @@ function Index() {
           }}
       ></div>
       
-      <div class="absolute  inset-0 flex items-center justify-center">
+      <div className="absolute  inset-0 flex items-center justify-center">
         
-        <div class=" bg-slate-100/75 h-3/5 w-2/4  border-gray-300 rounded p-4  flex flex-col items-center    ">
+        <div className=" bg-slate-100/75 h-3/5 w-2/4  border-gray-300 rounded p-4  flex flex-col items-center    ">
           <div className=' bg-cover bg-center z-20 h-1/4  w-1/4 sm:w-4/12 '
             style={{
             backgroundImage:
@@ -35,17 +34,16 @@ function Index() {
       </div>
       
       <div className='bg-slate-100/20 '>
-        <Destination>
-        
-        </Destination>
+        <Destination></Destination>
       </div>
       <div className='p-1 '><Card></Card></div>
-      <div class="  flex items-center justify-center">
+      <div className="  flex items-center justify-center">
       <PostTicket></PostTicket>
       </div>
       
       <br />
       <br />
+      
     </div>
   )
 }
