@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj": {}
+    "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj": {
+    "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj",
+        "projectUniqueName": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj",
-        "packagesPath": "C:\\Users\\Mam23\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\obj\\",
+        "projectPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
+        "packagesPath": "/Users/nonthaphatjitchiranant/.nuget/packages/",
+        "outputPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mam23\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/nonthaphatjitchiranant/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

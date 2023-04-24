@@ -4,26 +4,14 @@ import orderTicket from './orderTicket';
 function confirmTicket(props){
     const [order, setOrder] = useState([]);
 
+    //TODO: request Order for Post
     const handleSubmit = async (e) => {
-        console.log(selectedTime);
-        let data = JSON.stringify({
-          postId : 0,
-          username: auth.user,
-          storename: store,
-          amount: amount,
-          location: location,
-          reserved: selectedTime,
-          date: date,
-        });
-    
-        console.log(data);
-    
         var myHeaders = new Headers();
         myHeaders.append("Origin", "localhost:5173");
         myHeaders.append("Content-Type", "application/json");
     
         var requestOptions = {
-          method: "POST",
+          method: "GET",
           headers: myHeaders,
           body: data,
           redirect: "follow",
@@ -57,3 +45,5 @@ function confirmTicket(props){
         </div>
     )
 }
+
+export default confirmTicket

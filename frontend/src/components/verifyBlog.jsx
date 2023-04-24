@@ -25,3 +25,5 @@ function verifyBlog(props){
         </div>
     )
 }
+
+export default verifyBlog

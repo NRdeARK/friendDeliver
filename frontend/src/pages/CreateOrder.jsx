@@ -1,32 +1,39 @@
-import React, {useId, Component} from 'react'
+import React, {useState, Component, useEffect} from 'react'
 
 import CreateOrderForm from '../components/OrderCreate'
 
-import { getAllPosts, createPost } from '../api/postService'
+import verifyTicket from '../components/verifyTicket'
+
+const POST_URL = "/Post/status/recieving";
 
 
-class CreateOrder extends Component {
+function CreateOrder() {
+  const [posts, setPosts] = useState(<></>);
 
-
-    getAllUsers = () => {
-        getAllPosts()
-          .then(users => {
-            console.log(users)
-            this.setState({users: users, numberOfUsers: users.length})
-          });
-    }
+  useEffect(() => {
+    Promise.all([axios.get(POST_URL)])
+      .then((response) => {
+        console.log(response[0].data);
+        setPosts(response[0].data.map(
+          (d) => 
+          <div>
+            <verifyTicket name={d.name} storename={d.storename} locate={d.location} time={d.time} date={d.date}></verifyTicket>
+            <CreateOrderForm className='invisible'></CreateOrderForm>
+          </div>));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
     
    
-    render (){
-        return (
-          <div class='bg-amber-400 mb-[155px]'>  
-            <div class='ml-[400px] mt-[100px]'>
-              <CreateOrderForm></CreateOrderForm>
-            </div>
-          </div>
-      
-        )
-    }
+    
+    return (
+      <div>
+        {posts}
+      </div>
+    )
+    
 }
 
 export default CreateOrder
