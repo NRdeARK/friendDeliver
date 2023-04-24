@@ -4,9 +4,7 @@ function orderTicket(props){
     let content;
     if (props.orderStatus) {
         content = <div className='flex flex-row'>
-            <button >
-                confirm
-            </button>
+
 
             <button>
                 cancle
