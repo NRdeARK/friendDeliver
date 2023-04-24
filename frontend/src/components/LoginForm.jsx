@@ -46,7 +46,14 @@ function LoginForm() {
       const realname = response?.data?.realname;
       const accessToken = response?.data?.accessToken;
 
+      // const SetCookie = () => {
+      //   Cookies.set("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", {
+      //     expires: 7,
+      //   });
+      // };
+
       setAuth({ user, nickname, realname, accessToken });
+
       setUser("");
       setPwd("");
       navigate(from, { replace: true });
