@@ -37,23 +37,21 @@ const CreateOrderForm = () => {
   };
 
   return (
-    <div class="flex flex-col justify-stretch flex-nowrap h-[500px] w-[900px] bg-gray-200 accent-gray-300 rounded-lg w-full">
+    <div class="flex flex-col justify-stretch flex-nowrap h-[200px] w-[1000px] bg-gray-200 accent-gray-300 rounded-lg w-full">
       <div class='p-4 ml-[20px] mt-[10px] flex flex-row justify-items-start'>
         <div class="p-5 rounded-full bg-gray-500 justify-start"></div>
         <p class= "ml-5 text-2xl justify-start">{auth.user}</p>
         <label htmlFor="exampleStoreName" class="ml-5 text-4xl">เวลา</label>
       </div>
-      <div class="ml-[120px] py-5 flex flex-row justify-items-start">
+      <div class="ml-[90px] py-3 flex flex-row justify-items-start">
         <input
           type="text"
           onChange={(e) => setStore(e.target.value)}
           name="store"
           id="store"
-          class="bg-gray-400 rounded-lg text-white ml-5 px-[80px] py-2 text-xl"
+          class="bg-gray-400 rounded-lg text-white ml-5 px-[70px] py-2 text-xl"
         />
-      </div>
-
-      <div class="py-3 ms-[180px] flex flex-row">
+        <div class="py-3 ms-[50px] flex flex-row">
         <label htmlFor="exampleAmount" class='text-xl'>จำนวน : </label>
         <input
           type="number"
@@ -65,10 +63,12 @@ const CreateOrderForm = () => {
         <p class='text-xl ml-5'>กล่อง</p>
       </div>
 
-      <div class='grid justify-items-end mr-[40px] mt-[40px]'>
-        <button type="Submit" onClick={handleSubmit} class='bg-teal-500 p-1 text-white text-3xl'>
+      <div class='grid justify-items-center mr-[40px] mt-[30px]'>
+        <button type="Submit" onClick={handleSubmit} class='bg-green-500 p- text-white text-3xl'>
           สั่ง
         </button>
+      </div>
+
       </div>
     </div>
   );

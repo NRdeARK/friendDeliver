@@ -87,6 +87,64 @@ namespace backend.Controllers
             return NoContent();
         }
 
+        // [HttpPut("confirm")]
+        // public async Task<IActionResult> PutOrder(long orderId, OrderConfirmDTO OrderConfirmDTO)
+        // {
+        //     if (orderId != OrderConfirmDTO.orderId)
+        //     {
+        //         return BadRequest();
+        //     }
+
+        //     var ordersave = await _context.OrderConfirms.FindAsync(orderId);
+        //     if (ordersave == null)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     ordersave.orderStatus =  OrderConfirmDTO.orderStatus;
+        //     ordersave.orderStatus = OrderConfirmDTO.orderStatus;
+
+        //     try
+        //     {
+        //         await _context.SaveChangesAsync();
+        //     }
+        //     catch (DbUpdateConcurrencyException) when (!OrderExists(orderId))
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     return NoContent();
+        // }
+
+        // [HttpPut("cancel")]
+        // public async Task<IActionResult> PutOrder(long orderId, OrderConfirmDTO OrderConfirmDTO)
+        // {
+        //     if (orderId != OrderConfirmDTO.orderId)
+        //     {
+        //         return BadRequest();
+        //     }
+
+        //     var ordersave = await _context.OrderConfirms.FindAsync(orderId);
+        //     if (ordersave == null)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     ordersave.orderStatus =  OrderConfirmDTO.orderStatus;
+        //     ordersave.orderStatus = OrderConfirmDTO.orderStatus;
+
+        //     try
+        //     {
+        //         await _context.SaveChangesAsync();
+        //     }
+        //     catch (DbUpdateConcurrencyException) when (!OrderExists(orderId))
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     return NoContent();
+        // }
+
         private bool OrderExists(long? orderId)
         {
             return (_context.OrderConfirms?.Any(e => e.orderId == orderId)).GetValueOrDefault();
