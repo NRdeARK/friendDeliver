@@ -25,7 +25,7 @@ function PostTicket() {
       });
   }, []);
 
-  return <div class='w-[1200px] ml-[300px] p-[40px] bg-gray-200 rounded-md'>{posts}</div>;
+  return <div class='w-3/5 h-20 flex flex-col items-center   bg-gray-200 rounded-md'>{posts}</div>;
 }
 
 export default PostTicket;
