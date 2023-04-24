@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "../api/axios";
-import Tickets from "./Tickets";
+import Tickets from "./tickets";
 const POST_URL = "/Post";
 
 function PostTicket() {
@@ -9,8 +9,7 @@ function PostTicket() {
   function getUserName(item, i) {
     console.log(i);
     return (
-      <div key={i} className="border-solid border-2 border-indigo-600">
-        {item.username}
+      <div key={i} className="flex flex-row justify-around items-center border-t-[1px] border-b-[1px] border-gray-600 p-3">
         {Tickets(item)}
       </div>
     );
@@ -26,7 +25,7 @@ function PostTicket() {
       });
   }, []);
 
-  return <div>{posts}</div>;
+  return <div className='w-3/5 h-20 flex flex-col items-center   bg-gray-200 rounded-md'>{posts}</div>;
 }
 
 export default PostTicket;

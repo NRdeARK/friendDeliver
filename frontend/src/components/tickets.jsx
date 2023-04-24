@@ -3,12 +3,28 @@ import { Link } from 'react-router-dom';
 
 function Tickets(props){
     return(
-        <div >
+        <div className='flex flex-row items-center justify-around'>
+            <div className='text-4xl items-center'>
+                <p className='items-center'>
+                    {props.storename}
+                </p>
+            </div>
+
+            <div className='ml-[50px] mb-[10px] bg-amount w-[100px] h-[90px]'></div>
+            <div className='ml-[80px] text-3xl items-center flex flex-row'>
+                <p className='items-center'>
+                    {props.name}
+                </p>
+            </div>
+
+            <div className='ml-[40px] bg-user w-[140px] h-[150px]'></div>
+            <div className='ml-[80px] text-3xl items-center flex flex-row'>
+                <p className='items-center'>
+                    จำนวน {props.amount} กล่อง
+                </p>
+            </div>
             <Link to="/createOrder">
-            <p>{props.name} คนโพสต์</p>
-            <p>กำลังไปสั่งร้าน {props.storename} มีใครเอาอะไรไหม</p>
-            <p>จำนวน {props.amount} กล่อง</p>
-            <p>{props.date}</p>
+
             </Link>
         </div>
     );

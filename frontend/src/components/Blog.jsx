@@ -5,7 +5,7 @@ function Blog(props){
     return(
         <div >
             <Link to="/">
-            <p>นาย{props.name}</p>
+            <p>{props.nickname}({props.realname}) #{props.username}</p>
             <p>สถานะ{props.status}</p>
             <p>กำลังไปสั่งร้าน {props.storename} มีใครเอาอะไรไหม</p>
             <p>จำนวนที่รับ {props.amount}</p>
