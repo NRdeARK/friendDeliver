@@ -23,8 +23,12 @@ function Navbar() {
       <div className="shadow-md w-full fixed top-0 left-0 saturate-0 z-50	">
         <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
         <div className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] text-gray-800">
-          <span className="text-3xl text-indigo-600 mr-1 pt-2"></span>
-          Designer
+          <span className="text-3xl text-indigo-600 mr-1 pt-2 "></span>
+          <ion-icon name="chevron-back"></ion-icon>
+          <ion-icon name="code"></ion-icon>
+          <ion-icon name="chevron-forward"></ion-icon>
+          <ion-icon name=""></ion-icon>
+          <p>    FriendDeliver</p>
         </div>
         <div onClick={()=>setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden">
         <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
