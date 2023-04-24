@@ -3,7 +3,7 @@ import React from "react";
 function orderTicket(props){
     let content;
     if (props.orderStatus) {
-        content = <div class='flex flex-row'>
+        content = <div className='flex flex-row'>
             <button>
                 confirm
             </button>
