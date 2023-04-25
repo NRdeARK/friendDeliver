@@ -21,6 +21,12 @@ function verifyTicket(props){
             </select>
         </div>
     }
+    else if (props.status === 'recieving'){
+        status = <div>
+            <div>
+            </div>
+        </div>
+    }
     else{
         status = <div>
             <div>
@@ -30,12 +36,14 @@ function verifyTicket(props){
     }
     return(
         <div>
-            <div>name</div>
+            <div>{props.name}</div>
             <div>{status}</div>
-            <div>storename</div>
-            <div>location</div>
-            <div>timeReserved</div>
-            <div>date</div>
+            <div>{props.storename}</div>
+            <div>{props.locate}</div>
+            <div>{props.time}</div>
+            <div>{props.date}</div>
         </div>
     )
 }
+
+export default verifyTicket

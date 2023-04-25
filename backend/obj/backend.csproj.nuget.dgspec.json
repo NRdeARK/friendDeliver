@@ -1,33 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj": {}
+    "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj": {}
   },
   "projects": {
-    "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj": {
+    "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
+        "projectUniqueName": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
         "projectName": "backend",
-        "projectPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
-        "packagesPath": "C:\\Users\\AVI003\\.nuget\\packages\\",
-        "outputPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\obj\\",
+        "projectPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
+        "packagesPath": "/Users/nonthaphatjitchiranant/.nuget/packages/",
+        "outputPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\AVI003\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/nonthaphatjitchiranant/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -96,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

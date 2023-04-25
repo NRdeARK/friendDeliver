@@ -17,6 +17,7 @@ function PostBlog() {
           {Blog(item)}
         </div>
       </div>
+      
     );
   }
   useEffect(() => {
@@ -31,7 +32,7 @@ function PostBlog() {
       });
   }, []);
 
-  return <div>{posts}</div>;
+  return <div  > <br /> <br /> <br />{posts}</div>;
 }
 
 export default PostBlog;
