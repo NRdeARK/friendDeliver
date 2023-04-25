@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import AboutUs from "./AboutUs";
 function Layout() {
   return (
-    <main className="w-screen h-screen bg-amber-400">
+    <main>
       <Navbar />
       <Outlet />
       {/* <AboutUs/> */}

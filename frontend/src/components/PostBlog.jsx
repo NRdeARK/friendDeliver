@@ -9,8 +9,13 @@ function PostBlog() {
   function getBlog(item, i) {
     console.log(i);
     return (
-      <div key={i} className="border-solid border-2 border-indigo-600">
-        {Blog(item)}
+      <div className="flex justify-center">
+        <div
+          key={i}
+          className="bg-gray-200 m-10 p-10 rounded-3xl drop-shadow-md w-7/12"
+        >
+          {Blog(item)}
+        </div>
       </div>
     );
   }
