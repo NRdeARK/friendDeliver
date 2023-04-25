@@ -2,24 +2,36 @@ import React, {useState, Component, useEffect} from 'react'
 
 import CreateOrderForm from '../components/OrderCreate'
 
-import verifyTicket from '../components/verifyTicket'
+import VerifyTicket from '../components/verifyTicket'
 
-const POST_URL = "/Post/status/recieving";
+const POST_URL = "/Post";
+
+import axios from "../api/axios";
 
 
 function CreateOrder() {
   const [posts, setPosts] = useState(<></>);
+  let content;
 
   useEffect(() => {
     Promise.all([axios.get(POST_URL)])
       .then((response) => {
-        console.log(response[0].data);
-        setPosts(response[0].data.map(
-          (d) => 
-          <div>
-            <verifyTicket name={d.name} storename={d.storename} locate={d.location} time={d.time} date={d.date}></verifyTicket>
-            <CreateOrderForm className='invisible'></CreateOrderForm>
-          </div>));
+        //console.log(response[0].data);
+        
+        content = response[0].data.map(
+          (d) => {
+            return(
+              <div>
+                <VerifyTicket username={d.username} name={d.realname} storename={d.storename} amount={d.amount}
+                locate={d.location} time={d.reserved} date={d.date} key={d.postId} timeCreated={d.timeCreated}></VerifyTicket>
+                <div className=''>
+                  <CreateOrderForm></CreateOrderForm>
+                </div>
+              </div>
+            )
+            
+          });
+        setPosts(content);
       })
       .catch((error) => {
         console.log(error);
@@ -29,8 +41,10 @@ function CreateOrder() {
    
     
     return (
-      <div>
-        {posts}
+      <div className='w-screen h-screen'>
+        <div className='mt-[60px] ml-[70px] flex flex-col items-center gap-y-3'>
+          {posts}
+        </div>
       </div>
     )
     
