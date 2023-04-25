@@ -12,7 +12,7 @@ function Navbar() {
         {name: "Order Status", link:"/orderStatus"},
         {name: "Create Post", link:"/createPost"},
         {name: "Create Order", link:"/createOrder"},
-        {name: "Open post", link:"/openPost"},
+        {name: "Open Order", link:"/openOrder"},
 
     ];
 

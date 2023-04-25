@@ -1,8 +1,11 @@
 import React from 'react'
-
+import OrderBlog from '../components/OrderBlog'
 function OpenOrder() {
   return (
-    <div>OpenOrder</div>
+    <div>
+      OpenPost
+    <OrderBlog>  </OrderBlog>
+    </div>
   )
 }
 
