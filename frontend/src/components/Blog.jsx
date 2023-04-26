@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Blog(props){
     return(
-        <div >
+        <div  >
+            
             <Link to="/">
             <p>{props.nickname}({props.realname}) #{props.username}</p>
             <p>สถานะ{props.status}</p>

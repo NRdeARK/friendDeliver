@@ -2,7 +2,7 @@ import React from 'react'
 
 function Destination() {
   return (
-    <div className='my-12 mx-24 font-[Poppins] px-32 py-16 max-xl:my-16 max-xl:mx-8'>
+    <div className='my-12 mx-24 font-[Poppins] px-32 py-16 max-xl:my-16 max-xl:mx-8 '>
         
         <h1 className='text-5xl '>Destination</h1>
         <p>Tailwind lets you conditionally apply utility classes in different 

@@ -6,6 +6,7 @@ function Layout() {
   return (
     <main className='w-screen h-screen bg-amber-400'>
         <Navbar/>
+        
         <Outlet/>
         {/* <AboutUs/> */}
 
