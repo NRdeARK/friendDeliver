@@ -11,7 +11,7 @@ class CreatePost extends Component {
           <div className='bg-amber-400 mb-[155px]'>  
             <div className='ml-[400px] mt-[100px]'>
               <CreatePostForm></CreatePostForm>
-            </div>
+            </div>  
           </div>
       
         )

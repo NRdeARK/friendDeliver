@@ -1,19 +1,21 @@
-import React, { useState, useId } from "react";
+import React, { useState, useId ,useEffect} from "react";
 import useAuth from "../hooks/useAuth";
 
 const CreateOrderForm = () => {
   // const [user, setUser] = useState("");
   const {auth} = useAuth()
-  const [store, setStore] = useState("");
+  const [storeMenu, setMenuname] = useState("");
   const [amount, setAmt] = useState(1);
   const [errMsg, setErrMsg] = useState("");
 
+  useEffect (() => {
+
+  },[])
   const handleSubmit = async (e) => {
-    console.log(selectedTime);
     let data = JSON.stringify({
       orderId : 0,
       username: auth.user,
-      menuname: store,
+      menuname: storeMenu,
       amount: amount,
     });
 
@@ -37,43 +39,40 @@ const CreateOrderForm = () => {
   };
 
   return (
-    <div className="flex flex-row w-[750px] h-[100px] bg-gray-500  rounded-b-lg">
-      <div className="h-[30px] w-[750px] flex flex-row self-center ">
-
-        <div className="ml-[10px] p-4 rounded-full bg-slate-300 "></div>
-        <p className= "ml-[5px] text-xl">ฉัน</p>
-        <div className=" flex flex-row bg-amber-200 rounded-lg h-[40px] ml-[30px]">
-          <div className="flex flex-row self-center">
-            <label htmlFor="exampleStoreName" className="ml-[10px] text-base">ชื่ออาหาร</label>
-            <input
-              type="text"
-              onChange={(e) => setStore(e.target.value)}
-              name="store"
-              id="store"
-              className="bg-gray-400 rounded-lg text-white text-base ml-[50px] h-[30px] w-[150px]"
-            />
-          </div>
-          <div className="ml-[120px] flex flex-row self-center">
-
-            <label htmlFor="exampleAmount" className='text-base mr-[30px]'>จำนวน  </label>
-            <input
-              type="number"
-              onChange={(e) => setAmt(e.target.value)}
-              name="amount"
-              id="amount"
-              className="bg-gray-400 rounded-lg text-white text-base h-[30px] w-[60px]"
-            />
-            <p className='text-base ml-[10px]'>กล่อง</p>
-          </div>
-        </div>
-        <div className="ml-[30px] ">
-          <button type="Submit" onClick={handleSubmit} className='border-solid border-l-slate-300 border-l-[12px] border-y-transparent border-y-[12px] '>
-          </button>
-        </div>
+    <div class="flex flex-col justify-stretch flex-nowrap h-[200px]  bg-gray-200 accent-gray-300 rounded-lg w-full">
+      <div class='p-4 ml-[20px] mt-[10px] flex flex-row justify-items-start'>
+        <div class="p-5 rounded-full bg-gray-500 justify-start"></div>
+        <p class= "ml-5 text-2xl justify-start">{auth.user}</p>
+        <label htmlFor="exampleStoreName" class="ml-5 text-4xl">เวลา</label>
+      </div>
+      <div class="ml-[90px] py-3 flex flex-row justify-items-start">
+        <input
+          type="text"
+          onChange={(e) => setMenuname(e.target.value)}
+          name="storeMenu"
+          id="storeMenu"
+          class="bg-gray-400 rounded-lg text-white ml-5 px-[70px] py-2 text-xl"
+        />
+        <div class="py-3 ms-[50px] flex flex-row">
+        <label htmlFor="exampleAmount" class='text-xl'>จำนวน : </label>
+        <input
+          type="number"
+          onChange={(e) => setAmt(e.target.value)}
+          name="amount"
+          id="amount"
+          class="bg-gray-400 rounded-lg text-white ml-4 p-[1px] text-xl"
+        />
+        <p class='text-xl ml-5'>กล่อง</p>
       </div>
 
+      <div class='grid justify-items-center mr-[40px] mt-[30px]'>
+        <button type="Submit" onClick={handleSubmit} class='bg-green-500 p- text-white text-3xl'>
+          สั่ง
+        </button>
+      </div>
 
-    </div>
+      </div>
+      </div>
   );
 };
 

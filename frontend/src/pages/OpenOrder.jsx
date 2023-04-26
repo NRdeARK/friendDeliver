@@ -1,8 +1,12 @@
 import React from 'react'
-
+// import OrderBlog from '../components/OrderBlog'
+import OrderTicket from '../components/orderTicket'
 function OpenOrder() {
   return (
-    <div>OpenOrder</div>
+    <div>
+      OpenPost
+    <OrderTicket>  </OrderTicket>
+    </div>
   )
 }
 
