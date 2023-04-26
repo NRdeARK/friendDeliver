@@ -32,7 +32,7 @@ namespace backend.Controllers
             return Ok(await _context.Orders.ToListAsync());
         }
 
-        [HttpPost("Order")]
+        [HttpPost()]
         public async Task<ActionResult<OrderCreateDTO>> CreateOrder(OrderCreateDTO request)
         {
             if (_context.Orders == null)
