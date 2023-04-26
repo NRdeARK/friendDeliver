@@ -16,6 +16,10 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<OrderConfirmContext>(opt =>
+    opt.UseInMemoryDatabase("OrderConfirms"));
+builder.Services.AddDbContext<OrderContext>(opt =>
+    opt.UseInMemoryDatabase("Orders"));
 builder.Services.AddDbContext<PostContext>(opt =>
     opt.UseInMemoryDatabase("Posts"));
 builder.Services.AddDbContext<UserContext>(opt =>

@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 
-function verifyTicket(props){
+function VerifyTicket(props){
     let status;
     const [selectedStatus, setStatus] = useState("");
+    let user;
 
     //REMIND: if user == props.username it means this is verifyTicket for Post user
     //TODO: add select status tag for Post user
@@ -21,6 +22,12 @@ function verifyTicket(props){
             </select>
         </div>
     }
+    else if (props.status === 'recieving'){
+        status = <div>
+            <div>
+            </div>
+        </div>
+    }
     else{
         status = <div>
             <div>
@@ -29,13 +36,22 @@ function verifyTicket(props){
         </div>
     }
     return(
-        <div>
-            <div>name</div>
-            <div>{status}</div>
-            <div>storename</div>
-            <div>location</div>
-            <div>timeReserved</div>
-            <div>date</div>
+        <div className="w-[750px] h-[300px] bg-stone-200 rounded-lg flex flex-col p-5">
+            <div className="flex flex-row">
+                <div className="p-5 rounded-full bg-gray-500 justify-start"></div>
+                <div className="ml-[10px] text-4xl"> {props.name} </div>
+                <div className="ml-[50px] self-end">Posted {props.timeCreated.substring(11,16)}</div>
+                <div>{status}</div>
+            </div>
+            <div className="text-3xl ml-[20px] pt-5">ร้าน : {props.storename}</div>
+            
+            <div className="pt-3 ml-[160px] text-lg">จำนวนที่รับ : {props.amount}</div>
+            <div className="pt-1 ml-[160px] text-lg">จุดนัดรับ : {props.locate}</div>
+            <div className="pt-1 ml-[160px] text-lg">ช่วงเวลานัดรับ : {props.time}</div>
+            <div className="pt-1 ml-[160px] text-lg">วัน/เดือน/ปี : {props.date}</div>
+            
         </div>
     )
 }
+
+export default VerifyTicket

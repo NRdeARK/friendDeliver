@@ -9,9 +9,12 @@ function PostBlog() {
   function getBlog(item, i) {
     console.log(i);
     return (
-      <div key={i} className="border-solid border-2 border-indigo-600">
-        {Blog(item)}
+      <div  className="flex items-center justify-center">
+        <div key={i} className="h-1/4 w-1/5 border-solid border-2 ">
+          {Blog(item)}
+        </div>
       </div>
+      
     );
   }
   useEffect(() => {
@@ -26,7 +29,7 @@ function PostBlog() {
       });
   }, []);
 
-  return <div>{posts}</div>;
+  return <div  > <br /> <br /> <br />{posts}</div>;
 }
 
 export default PostBlog;

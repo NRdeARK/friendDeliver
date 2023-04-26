@@ -25,7 +25,13 @@ function PostTicket() {
       });
   }, []);
 
-  return <div className='w-[1200px] ml-[300px] p-[40px] bg-gray-200 rounded-md'>{posts}</div>;
+  return (
+    <div>
+      <div className='bg-stone-200  flex flex-col items-center    rounded-md'><br /><br />{posts}<br /><br /></div>;
+
+    </div>
+  )
 }
+  
 
 export default PostTicket;
