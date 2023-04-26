@@ -12,7 +12,7 @@ function PostBlog() {
       <div className="flex justify-center">
         <div
           key={i}
-          className="bg-gray-200 m-10 p-10 rounded-3xl drop-shadow-md w-7/12"
+          className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
         >
           {Blog(item)}
         </div>
@@ -24,7 +24,7 @@ function PostBlog() {
     Promise.all([axios.get(POST_URL)])
       .then((response) => {
         console.log(response[0].data);
-        console.log(response[0].data[1]["username"]);
+        console.log(response[0].data[0]["username"]);
         setPosts(response[0].data.map(getBlog));
       })
       .catch((error) => {
