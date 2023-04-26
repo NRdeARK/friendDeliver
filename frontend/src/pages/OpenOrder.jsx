@@ -1,10 +1,11 @@
 import React from 'react'
-import OrderBlog from '../components/OrderBlog'
+// import OrderBlog from '../components/OrderBlog'
+import OrderTicket from '../components/orderTicket'
 function OpenOrder() {
   return (
     <div>
       OpenPost
-    <OrderBlog>  </OrderBlog>
+    <OrderTicket>  </OrderTicket>
     </div>
   )
 }

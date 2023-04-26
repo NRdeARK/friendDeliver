@@ -38,6 +38,13 @@ const CreateOrderConfirmForm = () => {
 
     };
 
+    // fetch("http://localhost:5287/api/OrderConfirm/{id}cancel", requestOptions)
+    //   .then((response) => response.text())
+    //   .then((result) => console.log(result))
+    //   .catch((error) => console.log("error", error));
+
+    // };
+
     // let option
 
     // function selectOrder(orderId)
@@ -60,9 +67,6 @@ const CreateOrderConfirmForm = () => {
   </div>
 
     
-
-  
- 
 };
 
 export default CreateOrderConfirmForm;

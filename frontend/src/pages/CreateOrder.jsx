@@ -3,6 +3,7 @@ import React, {useId, Component} from 'react'
 import CreateOrderForm from '../components/OrderCreate'
 
 import { getAllOrder, createOrder } from '../api/OrderService'
+import OrderBlog from '../components/OrderBlog'
 
 
 class CreateOrder extends Component {
@@ -23,7 +24,11 @@ class CreateOrder extends Component {
             <div class='ml-[400px] mt-[100px]'>
               <CreateOrderForm></CreateOrderForm>
             </div>
+            <div class="  flex items-center justify-center">
+            <OrderBlog></OrderBlog>
+            </div>
           </div>
+          
           
       
         )
