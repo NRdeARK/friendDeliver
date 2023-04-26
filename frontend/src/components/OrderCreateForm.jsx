@@ -1,20 +1,20 @@
-import React, { useState, useId ,useEffect} from "react";
+import React, { useState, useId, useEffect, useContext} from "react";
 import useAuth from "../hooks/useAuth";
 
 const CreateOrderForm = () => {
   // const [user, setUser] = useState("");
   const {auth} = useAuth()
+  const {toggleUpdateOrder, setToggleUpdateOrder} = useAuth();
   const [storeMenu, setMenuname] = useState("");
   const [amount, setAmt] = useState(1);
   const [errMsg, setErrMsg] = useState("");
-
-  useEffect (() => {
-
-  },[])
+  
   const handleSubmit = async (e) => {
     let data = JSON.stringify({
       orderId : 0,
       username: auth.user,
+      nickname: auth.nickname,
+      realname: auth.realname,
       menuname: storeMenu,
       amount: amount,
     });
@@ -33,40 +33,44 @@ const CreateOrderForm = () => {
     };
 
     fetch("http://localhost:5287/api/Order", requestOptions)
-      .then((response) => response.text())
+      .then((response) => {
+        response.text()
+        setToggleUpdateOrder(!toggleUpdateOrder)
+      })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+    
   };
 
   return (
-    <div class="flex flex-col justify-stretch flex-nowrap h-[200px]  bg-gray-200 accent-gray-300 rounded-lg w-full">
-      <div class='p-4 ml-[20px] mt-[10px] flex flex-row justify-items-start'>
-        <div class="p-5 rounded-full bg-gray-500 justify-start"></div>
-        <p class= "ml-5 text-2xl justify-start">{auth.user}</p>
-        <label htmlFor="exampleStoreName" class="ml-5 text-4xl">เวลา</label>
+    <div className="flex flex-col justify-stretch flex-nowrap h-[200px]  bg-gray-200 accent-gray-300 rounded-lg w-full">
+      <div className='p-4 ml-[20px] mt-[10px] flex flex-row justify-items-start'>
+        <div className="p-5 rounded-full bg-gray-500 justify-start"></div>
+        <p className= "ml-5 text-2xl justify-start">{auth.user}</p>
+        <label htmlFor="exampleStoreName" className="ml-5 text-4xl">เวลา</label>
       </div>
-      <div class="ml-[90px] py-3 flex flex-row justify-items-start">
+      <div className="ml-[90px] py-3 flex flex-row justify-items-start">
         <input
           type="text"
           onChange={(e) => setMenuname(e.target.value)}
           name="storeMenu"
           id="storeMenu"
-          class="bg-gray-400 rounded-lg text-white ml-5 px-[70px] py-2 text-xl"
+          className="bg-gray-400 rounded-lg text-white ml-5 px-[70px] py-2 text-xl"
         />
-        <div class="py-3 ms-[50px] flex flex-row">
-        <label htmlFor="exampleAmount" class='text-xl'>จำนวน : </label>
+        <div className="py-3 ms-[50px] flex flex-row">
+        <label htmlFor="exampleAmount" className='text-xl'>จำนวน : </label>
         <input
           type="number"
           onChange={(e) => setAmt(e.target.value)}
           name="amount"
           id="amount"
-          class="bg-gray-400 rounded-lg text-white ml-4 p-[1px] text-xl"
+          className="bg-gray-400 rounded-lg text-white ml-4 p-[1px] text-xl"
         />
-        <p class='text-xl ml-5'>กล่อง</p>
+        <p className='text-xl ml-5'>กล่อง</p>
       </div>
 
-      <div class='grid justify-items-center mr-[40px] mt-[30px]'>
-        <button type="Submit" onClick={handleSubmit} class='bg-green-500 p- text-white text-3xl'>
+      <div className='grid justify-items-center mr-[40px] mt-[30px]'>
+        <button type="Submit" onClick={handleSubmit} className='bg-green-500 p- text-white text-3xl'>
           สั่ง
         </button>
       </div>

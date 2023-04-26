@@ -18,7 +18,11 @@ function PostTicket() {
     Promise.all([axios.get(POST_URL)])
       .then((response) => {
         console.log(response[0].data);
+        if(response[0].data == []){
+          setPosts(<></>)
+        }else{
         setPosts(response[0].data.map(getUserName));
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -27,8 +31,12 @@ function PostTicket() {
 
   return (
     <div>
-      <div className='bg-stone-200  flex flex-col items-center    rounded-md'><br /><br />{posts}<br /><br /></div>;
-
+      {
+      posts == <></> ? 
+        <></>
+       :
+       <div className='bg-stone-200  flex flex-col items-center    rounded-md'><br /><br />{posts}<br /><br /></div>
+      }
     </div>
   )
 }

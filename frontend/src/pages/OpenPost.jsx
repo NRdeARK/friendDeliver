@@ -4,7 +4,7 @@ import PostBlog from '../components/PostBlog'
 function OpenPost() {
   return (
     <div className='mt-12'>
-    <PostBlog>  </PostBlog>
+    <PostBlog></PostBlog>
     </div>
   )
 }

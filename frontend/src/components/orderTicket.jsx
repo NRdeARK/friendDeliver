@@ -25,7 +25,7 @@ function OrderTicket() {
       });
   }, []);
 
-  return <div class='w-3/5 h-20 flex flex-col items-center   bg-gray-200 rounded-md'>{Orders}</div>;
+  return <div className='w-3/5 h-20 flex flex-col items-center   bg-gray-200 rounded-md'>{Orders}</div>;
 }
 
 export default OrderTicket;

@@ -38,7 +38,8 @@ function Index() {
         <Destination></Destination>
       </div>
       <div className='p-1 '><Card></Card></div>
-      <div className="  flex items-center justify-center">
+
+      <div className="flex items-center justify-center">
       <PostTicket></PostTicket>
       </div>
       

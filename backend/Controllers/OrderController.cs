@@ -44,7 +44,9 @@ namespace backend.Controllers
                 return Conflict();
             }
             var newMenuname = new Order{
-
+                username = request.username,
+                nickname = request.nickname,
+                realname = request.realname,
                 menuname = request.menuname,
                 amount = request.amount,
                 orderStatus= "waiting"

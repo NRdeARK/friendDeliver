@@ -56,11 +56,11 @@ const CreateOrderConfirmForm = () => {
     //     <td><button onClick={() => deleteOrder(item.orderId)}>cancal</button></td>
     //     <td><button onClick={() => ConFirmOrder(item.orderId)}>confirm</button></td>
     // </tr>
-    <div class='grid justify-items-center mr-[40px] mt-[30px]'>
-    <button type="Submit" onClick={handleSubmit} class='bg-green-500 p- text-white text-3xl'>
+    <div className='grid justify-items-center mr-[40px] mt-[30px]'>
+    <button type="Submit" onClick={handleSubmit} className='bg-green-500 p- text-white text-3xl'>
       confirm
     </button>
-    <button type="Submit" onClick={handleSubmit} class='bg-green-500 p- text-white text-3xl'>
+    <button type="Submit" onClick={handleSubmit} className='bg-green-500 p- text-white text-3xl'>
       cancle
     </button>
 
