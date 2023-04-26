@@ -1,8 +1,7 @@
-import React, { useState, useId, useEffect, useContext} from "react";
+import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
 
 const CreateOrderForm = () => {
-  // const [user, setUser] = useState("");
   const {auth} = useAuth()
   const {toggleUpdateOrder, setToggleUpdateOrder} = useAuth();
   const [storeMenu, setMenuname] = useState("");
@@ -74,7 +73,6 @@ const CreateOrderForm = () => {
           สั่ง
         </button>
       </div>
-
       </div>
       </div>
   );

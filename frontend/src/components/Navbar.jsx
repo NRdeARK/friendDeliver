@@ -6,10 +6,21 @@ import AuthContext from "../context/AuthProvider";
 function Navbar() {
   const { auth } = useContext(AuthContext);
 
-  let Links = [
+  let LinksUnAuth = [
     { name: "Home", link: "/" },
     { name: "Open Order", link: "/openOrder" },
     { name: "Open Post", link: "/openPost" },
+    { name: "Login", link: "/login" },
+  ];
+
+  let LinksAuth = [
+    { name: "Home", link: "/" },
+    { name: "Open Order", link: "/openOrder" },
+    { name: "Open Post", link: "/openPost" },
+    { name: "Order Status", link: "/orderStatus" },
+    { name: "Create Post", link: "/createPost" },
+    { name: "Create Order", link: "/createOrder" },
+    { name: auth.user, link: "/profile" },
   ];
 
   let [open, setOpen] = useState(false);
@@ -33,7 +44,9 @@ function Navbar() {
               open ? "top-10 opacity-100" : "top-[-400px]"
             } md:opacity-100 opacity-0 `}
           >
-            {Links.map((link) => (
+            {auth.user == null
+            ?
+            LinksUnAuth.map((link) => (
               <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
                 <Link
                   to={link.link}
@@ -42,54 +55,19 @@ function Navbar() {
                   {link.name}
                 </Link>
               </li>
-            ))}
-            {auth.user == null ? (
-              <li>
+            ))
+            :
+            LinksAuth.map((link) => (
+              <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
                 <Link
-                  to="/login"
-                  className={
-                    "md:ml-8 text-xl md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500"
-                  }
+                  to={link.link}
+                  className="text-gray-800 hover:text-gray-400 duration-500"
                 >
-                  Login
+                  {link.name}
                 </Link>
               </li>
-            ) : (
-              <>
-                <Link
-                  to="/orderStatus"
-                  className={
-                    "md:ml-8 text-xl md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500"
-                  }
-                >
-                  Order Status
-                </Link>
-                <Link
-                  to="/createPost"
-                  className={
-                    "md:ml-8 text-xl md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500"
-                  }
-                >
-                  Create Post
-                </Link>
-                <Link
-                  to="/createOrder"
-                  className={
-                    "md:ml-8 text-xl md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500"
-                  }
-                >
-                  Create Order
-                </Link>
-                <Link
-                  to="/profile"
-                  className={
-                    "md:ml-8 text-xl md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500"
-                  }
-                >
-                  {auth.user}
-                </Link>
-              </>
-            )}
+            ))
+          }
           </ul>
         </div>
       </div>
