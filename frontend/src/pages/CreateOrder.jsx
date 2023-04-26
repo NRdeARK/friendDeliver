@@ -21,10 +21,10 @@ function CreateOrder() {
         content = response[0].data.map(
           (d) => {
             return(
-              <div>
+              <div className='group'>
                 <VerifyTicket username={d.username} name={d.realname} storename={d.storename} amount={d.amount}
-                locate={d.location} time={d.reserved} date={d.date} key={d.postId} timeCreated={d.timeCreated}></VerifyTicket>
-                <div className=''>
+                locate={d.location} time={d.reserved} date={d.date} key={d.postId} timeCreated={d.timeCreated} type={"Ordering"}></VerifyTicket>
+                <div className='opacity-0 group-hover:opacity-100 duration-200'>
                   <CreateOrderForm></CreateOrderForm>
                 </div>
               </div>
