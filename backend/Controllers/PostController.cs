@@ -96,5 +96,38 @@ namespace backend.Controllers
             return CreatedAtAction("CreatePost", new { id = post.postId }, post);
         }
 
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Post>> PutStatus(long id, Post post)
+        {
+            var selectPost = _context.Posts.Where(e => e.postId == id).FirstOrDefault();
+
+            if (selectPost == null) return NotFound();
+
+            selectPost.status = post.status;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!PostExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        private bool PostExists(long? id)
+        {
+            return (_context.Posts?.Any(e => e.postId == id)).GetValueOrDefault();
+        }
+
     }
 }
