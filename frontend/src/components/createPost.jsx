@@ -1,4 +1,4 @@
-import React, { useState, useId } from "react";
+import React, { useState, useId ,useEffect} from "react";
 import { Link } from 'react-router-dom';
 
 import useAuth from "../hooks/useAuth";
@@ -47,7 +47,10 @@ const CreatePostForm = () => {
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
   };
-
+  useEffect(()=>
+  {
+    console.log(date);
+  },[date])
   return (
     <div className="flex flex-col justify-stretch flex-nowrap h-[500px] w-[900px] bg-gray-200 accent-gray-300 rounded-lg">
       <div className='p-4 ml-[20px] mt-[10px] flex flex-row justify-items-start'>

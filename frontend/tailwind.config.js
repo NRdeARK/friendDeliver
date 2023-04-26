@@ -11,7 +11,7 @@ module.exports = {
       },
       screens: {
         xl: { min: "1280px", max: "1919px" },
-      },
+      }
     },
   },
   plugins: [],

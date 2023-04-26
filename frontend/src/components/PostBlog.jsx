@@ -9,8 +9,11 @@ function PostBlog() {
   function getBlog(item, i) {
     console.log(i);
     return (
-      <div className="flex items-center justify-center">
-        <div key={i} className="h-1/4 w-1/5 border-solid border-2 ">
+      <div className="flex justify-center">
+        <div
+          key={i}
+          className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
+        >
           {Blog(item)}
         </div>
       </div>
@@ -25,8 +28,8 @@ function PostBlog() {
           setPosts(response[0].data.map(getBlog));
         } else {
           setPosts(
-          <div className="flex items-center justify-center">
-            <div key={0} className="h-1/4 w-1/5 border-solid border-2 ">
+          <div className="flex justify-center">
+            <div key={0} className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
               {Blog(response[0].data[0])}
             </div>
           </div>);
