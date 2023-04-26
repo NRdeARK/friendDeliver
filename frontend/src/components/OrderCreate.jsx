@@ -4,16 +4,15 @@ import useAuth from "../hooks/useAuth";
 const CreateOrderForm = () => {
   // const [user, setUser] = useState("");
   const {auth} = useAuth()
-  const [store, setStore] = useState("");
+  const [storeMenu, setMenuname] = useState("");
   const [amount, setAmt] = useState(1);
   const [errMsg, setErrMsg] = useState("");
 
   const handleSubmit = async (e) => {
-    console.log(selectedTime);
     let data = JSON.stringify({
       orderId : 0,
       username: auth.user,
-      menuname: store,
+      menuname: storeMenu,
       amount: amount,
     });
 
@@ -37,7 +36,7 @@ const CreateOrderForm = () => {
   };
 
   return (
-    <div class="flex flex-col justify-stretch flex-nowrap h-[200px] w-[1000px] bg-gray-200 accent-gray-300 rounded-lg w-full">
+    <div class="flex flex-col justify-stretch flex-nowrap h-[200px] w-[980px] bg-gray-200 accent-gray-300 rounded-lg w-full">
       <div class='p-4 ml-[20px] mt-[10px] flex flex-row justify-items-start'>
         <div class="p-5 rounded-full bg-gray-500 justify-start"></div>
         <p class= "ml-5 text-2xl justify-start">{auth.user}</p>
@@ -46,9 +45,9 @@ const CreateOrderForm = () => {
       <div class="ml-[90px] py-3 flex flex-row justify-items-start">
         <input
           type="text"
-          onChange={(e) => setStore(e.target.value)}
-          name="store"
-          id="store"
+          onChange={(e) => setMenuname(e.target.value)}
+          name="storeMenu"
+          id="storeMenu"
           class="bg-gray-400 rounded-lg text-white ml-5 px-[70px] py-2 text-xl"
         />
         <div class="py-3 ms-[50px] flex flex-row">
@@ -70,7 +69,7 @@ const CreateOrderForm = () => {
       </div>
 
       </div>
-    </div>
+      </div>
   );
 };
 
