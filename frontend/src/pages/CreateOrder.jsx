@@ -1,9 +1,12 @@
-import React, {useId, Component} from 'react'
+import React, {useState, Component, useEffect} from 'react'
 
 import CreateOrderForm from '../components/OrderCreate'
 
-import { getAllOrder, createOrder } from '../api/OrderService'
-import OrderBlog from '../components/OrderBlog'
+import VerifyTicket from '../components/verifyTicket'
+
+const POST_URL = "/Post";
+
+import axios from "../api/axios";
 
 
 function CreateOrder() {
@@ -28,24 +31,23 @@ function CreateOrder() {
             )
             
           });
-    }
+        setPosts(content);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
     
    
-    render (){
-        return (
-          <div class='bg-amber-400 mb-[155px]'>
-            <div class='ml-[400px] mt-[100px]'>
-              <CreateOrderForm></CreateOrderForm>
-            </div>
-            <div class="  flex items-center justify-center">
-            <OrderBlog></OrderBlog>
-            </div>
-          </div>
-          
-          
-      
-        )
-    }
+    
+    return (
+      <div className='w-screen h-screen'>
+        <div className='mt-[60px] ml-[70px] flex flex-col items-center gap-y-3'>
+          {posts}
+        </div>
+      </div>
+    )
+    
 }
 
 export default CreateOrder
