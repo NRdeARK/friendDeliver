@@ -47,7 +47,7 @@ function PostTicket() {
           <br />
         </div>
       ) : (
-        <></>
+        <>ไม่มีรายการ</>
       )}
     </div>
   );

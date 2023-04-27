@@ -38,12 +38,14 @@ function OrderTicket() {
   }, []);
 
   return ( isOrders ? (
-    <div className="w-3/5 h-20 flex flex-col items-center   bg-gray-200 rounded-md">
+    <div className="w-3/5 flex flex-col items-center   bg-gray-200 rounded-md">
       {Orders}
     </div>
     
   ) : (
-    <></>
+    <>
+    ไม่มีรายการ
+    </>
   ));
 }
 

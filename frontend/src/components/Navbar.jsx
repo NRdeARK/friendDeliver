@@ -47,10 +47,10 @@ function Navbar() {
             {auth.user == null
             ?
             LinksUnAuth.map((link) => (
-              <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+              <li key={link.name} className="md:ml-4 text-xl md:my-0 my-7">
                 <Link
                   to={link.link}
-                  className="text-gray-800 hover:text-gray-400 duration-500"
+                  className="text-gray-800 hover:bg-gray-200 duration-500 rounded px-2"
                 >
                   {link.name}
                 </Link>
@@ -61,7 +61,7 @@ function Navbar() {
               <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
                 <Link
                   to={link.link}
-                  className="text-gray-800 hover:text-gray-400 duration-500"
+                  className="text-gray-800 hover:bg-gray-200 duration-500 rounded px-2"
                 >
                   {link.name}
                 </Link>
