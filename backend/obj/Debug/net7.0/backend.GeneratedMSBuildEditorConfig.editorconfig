@@ -9,17 +9,9 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = backend
 build_property.RootNamespace = backend
-<<<<<<< HEAD
-build_property.ProjectDir = C:\2D\term2\FileSheet66\WebApp\project\friendDeliver\backend\
+build_property.ProjectDir = C:\Users\Mam23\OneDrive\เอกสาร\GitHub\friendDeliver\backend\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\2D\term2\FileSheet66\WebApp\project\friendDeliver\backend
-=======
-build_property.ProjectDir = C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\
-build_property.RazorLangVersion = 7.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend
->>>>>>> ecf92078d71d8921da3e0a35875ab8a174dfe585
+build_property.MSBuildProjectDirectory = C:\Users\Mam23\OneDrive\เอกสาร\GitHub\friendDeliver\backend
 build_property._RazorSourceGeneratorDebug = 

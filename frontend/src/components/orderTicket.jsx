@@ -4,6 +4,38 @@ import axios from "../api/axios";
 import Tickets from "./ticketOrder";
 const ORDER_URL = "/Order";
 
+// function OrderTicket(props){
+//     let content;
+//     if (props.orderStatus) {
+//         content = <div className='flex flex-row'>
+//             <button >
+//                 confirm
+//             </button>
+
+//             <button>
+//                 cancle
+//             </button>
+//         </div>;
+//       } else {
+//         content = <div></div>;
+//       }
+//     return(
+//         <div>
+//             <div>
+//                 {props.name}
+//             </div>
+//             <div>
+//                 {props.time}
+//             </div>
+//             <div>
+//                 {props.amount}
+//             </div>
+//             <div>
+//                 {content}
+//             </div>
+//         </div>
+//     )
+// }
 function OrderTicket() {
   const [Orders, setOrders] = useState(<></>);
   const [isOrders,setIsOrder] = useState(false);
