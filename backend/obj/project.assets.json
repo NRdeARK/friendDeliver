@@ -10988,24 +10988,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/nonthaphatjitchiranant/.nuget/packages/": {}
+    "C:\\Users\\AVI003\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
+      "projectUniqueName": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
-      "packagesPath": "/Users/nonthaphatjitchiranant/.nuget/packages/",
-      "outputPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/obj/",
+      "projectPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\AVI003\\.nuget\\packages\\",
+      "outputPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "/Users/nonthaphatjitchiranant/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\AVI003\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11074,16 +11084,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
