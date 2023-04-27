@@ -131,7 +131,7 @@ function RegisterForm() {
       {success ? (
         window.location.replace("http://localhost:5173/login")
       ) : (
-        <section className="flex flex-col pt-24 xl:pt-20">
+        <section className="flex flex-col pt-24 xl:pt-20 pb-4">
           <p className="font-bold text-4xl ml-2 flex">Sign up</p>
           <br />
           <form onSubmit={handleSubmit}>

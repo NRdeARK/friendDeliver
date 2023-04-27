@@ -13,6 +13,7 @@ import CreatePost from "./pages/CreatePost";
 import CreateOrder from "./pages/CreateOrder";
 import OpenPost from "./pages/OpenPost";
 import OpenOrder from "./pages/OpenOrder";
+import OrderStatus from "./pages/OrderStatus";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path ="createPost" element = {<CreatePost/>} />
           <Route path ="createOrder" element = {<CreateOrder/>}/>
           <Route path="profile" element={<Profile />} />
+          <Route path="orderStatus" element={<OrderStatus/>}/>
         </Route>
 
         {/*catch all*/}

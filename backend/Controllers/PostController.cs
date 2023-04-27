@@ -50,6 +50,25 @@ namespace backend.Controllers
             return await recieves.ToListAsync();
         }
 
+        [HttpGet("user/{user}")]
+        public async Task<ActionResult<IEnumerable<Post>>> IndexUser(string user)
+        {
+            if (_context.Posts == null)
+            {
+                return Problem("Entity set 'PostContext.Posts'  is null.");
+            }
+
+            var recieves = from m in _context.Posts
+                           select m;
+
+            if (!String.IsNullOrEmpty(user))
+            {
+                recieves = recieves.Where(x => x.username == user);
+            }
+
+            return await recieves.ToListAsync();
+        }
+
         [HttpPost]
         public async Task<ActionResult<Post>> CreatePost(PostCreateDTO post)
         {
@@ -57,7 +76,8 @@ namespace backend.Controllers
             {
                 return Problem("Entity set 'PostContext.PostModels'  is null.");
             }
-            var newPost = new Post{
+            var newPost = new Post
+            {
                 postId = post.postId,
                 username = post.username,
                 nickname = post.nickname,
@@ -68,12 +88,45 @@ namespace backend.Controllers
                 reserved = post.reserved,
                 date = post.date,
                 timeCreated = DateTime.Now,
-                status= "receiving",
-                orderList= ""
+                status = "receiving",
+                orderList = ""
             };
             _context.Posts.Add(newPost);
             await _context.SaveChangesAsync();
             return CreatedAtAction("CreatePost", new { id = post.postId }, post);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Post>> PutStatus(long id, Post post)
+        {
+            var selectPost = _context.Posts.Where(e => e.postId == id).FirstOrDefault();
+
+            if (selectPost == null) return NotFound();
+
+            selectPost.status = post.status;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!PostExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        private bool PostExists(long? id)
+        {
+            return (_context.Posts?.Any(e => e.postId == id)).GetValueOrDefault();
         }
 
     }

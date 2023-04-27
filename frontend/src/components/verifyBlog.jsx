@@ -1,20 +1,23 @@
 import React from "react";
-import verifyTicket from "./verifyTicket"
+import VerifyTicket from "./verifyTicket"
+import useAuth from "../hooks/useAuth";
 
-function verifyBlog(props){
+
+function VerifyBlog({data}){
     let content;
-    if (username === props.user){
-        //REMIND: if username of current login == user that pass as argument we knew that this blog was created by this user.
-        //TODO: Add only verify Ticket
+    const {auth} = useAuth();
+    const {amount , date, location ,nickname, orderList, postId, realname ,reserved, status , storename, timeCreated, username} = data;
+    if (auth.user === username){
         content = <div>
-            <verifyTicket></verifyTicket>
+            <VerifyTicket username={username} name={realname} storename={storename} amount={amount} status={status}
+                locate={location} time={reserved} date={date} key={timeCreated} postId={postId} timeCreated={timeCreated} type={"Selective"}></VerifyTicket>
         </div>
     }
-    //TODO: Add order Ticket
     else{
         let order;
         content = <div>
-            <verifyTicket></verifyTicket>
+            <VerifyTicket username={username} name={realname} storename={storename} amount={amount} status={status}
+                locate={location} time={reserved} date={date} key={timeCreated} postId={postId} timeCreated={timeCreated} type={"Other"}></VerifyTicket>
             {order}
         </div>
 
@@ -25,3 +28,5 @@ function verifyBlog(props){
         </div>
     )
 }
+
+export default VerifyBlog
