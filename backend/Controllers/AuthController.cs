@@ -57,6 +57,34 @@ namespace backend.Controllers
             return Ok("Register success");
         }
 
+
+        [HttpGet("{username}")]
+        public ActionResult<IEnumerable<User>> IndexUser(string username)
+        {
+            if (_context.Users == null)
+            {
+                return Problem("Entity set 'PostContext.Posts'  is null.");
+            }
+
+            var recieves = from m in _context.Users
+                           select m;
+
+            if (String.IsNullOrEmpty(username))
+            {
+                BadRequest();
+            }
+            User request = recieves.First(x => x.username == username);
+            var userData = new UserDataDTO
+            {
+                username = request.username,
+                nickname = request.nickname,
+                realname = request.realname,
+                tel = request.tel,
+            };
+            return Ok(userData);
+        }
+
+
         [HttpPost("login")]
         public ActionResult<User> Login(UserLoginDTO request)
         {

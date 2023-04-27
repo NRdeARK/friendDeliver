@@ -6,10 +6,11 @@ import useAuth from "../hooks/useAuth";
 
 const Order_URL = "/Order";
 
-function OrderBlog() {
+function OrderBlog(postId) {
   const { toggleUpdateOrder } = useAuth();
   const [Orders, setOrders] = useState(<></>);
-  const [isOrder, setIsOrder] = useState(true);
+  const [isOrder, setIsOrder] = useState(false);
+  const [isHover, setIsHover] = useState(false);
   function getBlogOrder(item, i) {
     console.log(i);
     return (
@@ -43,7 +44,7 @@ function OrderBlog() {
             setIsOrder(true);
           } else {
             setOrders(response[0].data.map(getBlogOrder));
-            
+
             setIsOrder(true);
           }
         })
@@ -55,7 +56,28 @@ function OrderBlog() {
     []
   );
 
-  return <div>{isOrder ?  Orders  : <></>}</div>;
+  return (
+    <div>
+      {isOrder ? (
+        <div
+          onMouseEnter={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
+        >
+          {isHover ? (
+            Orders
+          ) : (
+            <div
+              className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-40 text-center"
+            >
+              order
+            </div>
+          )}
+        </div>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
 }
 
 export default OrderBlog;
