@@ -1,33 +1,21 @@
-// import React, {useId, Component} from 'react'
+import React, {useId, Component} from 'react'
 
-// import CreateOrderConfirmForm from '../components/OrderConfirm'
-
-// import { getAllOrder, createOrder } from '../api/OrderService'
+import OrderConfirm from '../components/OrderConfirm'
 
 
-// class testConfirm extends Component {
 
-
-//     getAllUsers = () => {
-//         getAllOrder()
-//           .then(users => {
-//             console.log(users)
-//             this.setState({users: users, numberOfUsers: users.length})
-//           });
-//     }
-    
+class TestConfirm extends Component {
    
-//     render (){
-//         return (
-//           <div class='bg-amber-400 mb-[155px]'>
-//             <div class='ml-[400px] mt-[100px]'>
-//               <CreateOrderForm></CreateOrderForm>
-//             </div>
-//           </div>
-          
+    render (){
+        return (
+          <div className='bg-amber-400 mb-[155px]'>  
+            <div className='ml-[400px] mt-[100px]'>
+              <OrderConfirm></OrderConfirm>
+            </div>  
+          </div>
       
-//         )
-//     }
-// }
+        )
+    }
+}
 
-// export default CreateOrder
+export default TestConfirm

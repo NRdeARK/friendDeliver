@@ -14,6 +14,7 @@ import CreateOrder from "./pages/CreateOrder";
 import OpenPost from "./pages/OpenPost";
 import OpenOrder from "./pages/OpenOrder";
 import OrderStatus from "./pages/OrderStatus";
+import TestConfirm from "./pages/TestConfirm";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="unauthorized" element={<Unauthorized />} />
         <Route path="openPost" element={<OpenPost/>}/>
         <Route path="openOrder" element={<OpenOrder/>}/>
+        <Route path="testOrderConfirm" element={<TestConfirm/>}/>
 
         {/*protected routes*/}
         <Route element={<RequireAuth />}>

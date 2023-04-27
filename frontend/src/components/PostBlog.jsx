@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "../api/axios";
 import Blog from "./Blog";
+import CreateOrderForm from "./OrderCreateForm";
+import OrderBlog from "./OrderBlog";
 const POST_URL = "/Post";
 
 function PostBlog() {
@@ -35,7 +37,10 @@ function PostBlog() {
                 key={1}
                 className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
               >
+                {console.log(response[0].data[0].postId)}
                 {Blog(response[0].data[0])}
+                <OrderBlog ></OrderBlog>
+                <CreateOrderForm postId={response[0].data[0].postId}></CreateOrderForm>
               </div>
             </div>
           );

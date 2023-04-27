@@ -20,6 +20,7 @@ function Navbar() {
     { name: "Order Status", link: "/orderStatus" },
     { name: "Create Post", link: "/createPost" },
     { name: "Create Order", link: "/createOrder" },
+    { name: "testConfirm", link: "/testOrderConfirm" },
     { name: auth.user, link: "/profile" },
   ];
 

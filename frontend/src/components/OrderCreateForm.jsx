@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
 
-const CreateOrderForm = () => {
+function CreateOrderForm(postId=0){
   const {auth} = useAuth()
   const {toggleUpdateOrder, setToggleUpdateOrder} = useAuth();
   const [storeMenu, setMenuname] = useState("");

@@ -11,11 +11,13 @@ function Tickets(props){
             </div>
             
             
-
+            {props.nickname}
+                    {props.realname}
             <div className='ml-[80px] text-xl items-center flex flex-row'>
             <ion-icon name="storefront-outline" class="text-3xl"></ion-icon>
                 <p className='items-center'>
-                    {props.name}
+                    {props.username}
+                    
                 </p>
                 <ion-icon name="restaurant-outline" class="text-3xl"></ion-icon>
             </div>
