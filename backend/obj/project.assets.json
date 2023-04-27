@@ -10988,39 +10988,26 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "/Users/nonthaphatjitchiranant/.nuget/packages/": {}
-=======
-    "C:\\Users\\Mam23\\.nuget\\packages\\": {}
->>>>>>> 37fb9a80ca5b190605ccafd13d710b13829022e4
+    "C:\\Users\\asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
+      "projectUniqueName": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
-      "packagesPath": "/Users/nonthaphatjitchiranant/.nuget/packages/",
-      "outputPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/obj/",
+      "projectPath": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/nonthaphatjitchiranant/.nuget/NuGet/NuGet.Config"
-=======
-      "projectUniqueName": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj",
-      "projectName": "backend",
-      "projectPath": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\Mam23\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Mam23\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> 37fb9a80ca5b190605ccafd13d710b13829022e4
+        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11089,11 +11076,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
->>>>>>> 37fb9a80ca5b190605ccafd13d710b13829022e4
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

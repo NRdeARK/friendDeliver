@@ -1120,6 +1120,7 @@ C:/Users/Mam23/OneDrive/เอกสาร/GitHub/friendDeliver/backend/obj/Debu
 C:/Users/Mam23/OneDrive/เอกสาร/GitHub/friendDeliver/backend/obj/Debug/net7.0/backend.genruntimeconfig.cache
 C:/Users/Mam23/OneDrive/เอกสาร/GitHub/friendDeliver/backend/obj/Debug/net7.0/ref/backend.dll
 =======
+>>>>>>> 37fb9a80ca5b190605ccafd13d710b13829022e4
 C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\bin\Debug\net7.0\appsettings.json
 C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\bin\Debug\net7.0\backend.exe
@@ -1400,4 +1401,3 @@ C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\obj\Debug\net7.0\refi
 C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\obj\Debug\net7.0\backend.pdb
 C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\obj\Debug\net7.0\backend.genruntimeconfig.cache
 C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\obj\Debug\net7.0\ref\backend.dll
->>>>>>> 37fb9a80ca5b190605ccafd13d710b13829022e4

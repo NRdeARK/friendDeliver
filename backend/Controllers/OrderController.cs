@@ -32,7 +32,7 @@ namespace backend.Controllers
             return Ok(await _context.Orders.ToListAsync());
         }
 
-        [HttpPost("Order")]
+        [HttpPost()]
         public async Task<ActionResult<OrderCreateDTO>> CreateOrder(OrderCreateDTO request)
         {
             if (_context.Orders == null)
@@ -44,7 +44,9 @@ namespace backend.Controllers
                 return Conflict();
             }
             var newMenuname = new Order{
-
+                username = request.username,
+                nickname = request.nickname,
+                realname = request.realname,
                 menuname = request.menuname,
                 amount = request.amount,
                 orderStatus= "waiting"

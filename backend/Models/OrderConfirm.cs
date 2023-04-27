@@ -10,7 +10,7 @@ namespace backend.Models
     {
         [Key]
         public long orderId { get; set; }
-        public long userId { get; set; }
+        public long postId { get; set; }
         public string? username { get; set; }
         public string? menuname { get; set; }
         public int? amount { get; set; }
