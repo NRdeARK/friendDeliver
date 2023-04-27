@@ -58,34 +58,34 @@ namespace backend.Controllers
             return Ok("Remove success");
         }
 
-        // [HttpPut("{id}")]
-        // public async Task<IActionResult> PutOrder(long orderId, OrderConfirmDTO ConfirmDTO) //[FromRoute]int id
-        // {
-        //     if (orderId != ConfirmDTO.orderId)
-        //     {
-        //         return BadRequest();
-        //     }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutOrder(long orderId, OrderConfirmDTO ConfirmDTO) //[FromRoute]int id
+        {
+            if (orderId != ConfirmDTO.orderId)
+            {
+                return BadRequest();
+            }
 
-        //     var ordersave = await _context.OrderConfirms.FindAsync(orderId);
-        //     if (ordersave == null)
-        //     {
-        //         return NotFound();
-        //     }
+            var ordersave = await _context.OrderConfirms.FindAsync(orderId);
+            if (ordersave == null)
+            {
+                return NotFound();
+            }
 
-        //     ordersave.orderStatus =  ConfirmDTO.orderStatus;
-        //     // ordersave.orderStatus = OrderConfirmDTO.orderStatus;
+            ordersave.orderStatus =  ConfirmDTO.orderStatus;
+            // ordersave.orderStatus = OrderConfirmDTO.orderStatus;
 
-        //     try
-        //     {
-        //         await _context.SaveChangesAsync();
-        //     }
-        //     catch (DbUpdateConcurrencyException) when (!OrderExists(orderId))
-        //     {
-        //         return NotFound();
-        //     }
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException) when (!OrderExists(orderId))
+            {
+                return NotFound();
+            }
 
-        //     return NoContent();
-        // }
+            return NoContent();
+        }
 
         [HttpPut("{id}confirm")]
         public async Task<IActionResult> PutOrderConfirm(long orderId, OrderConfirmDTO OrderConfirmDTO)
