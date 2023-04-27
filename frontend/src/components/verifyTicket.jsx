@@ -1,35 +1,69 @@
 import React, {useState} from "react";
+import useAuth from "../hooks/useAuth";
+const POST_URL = "/Post/";
+
+import axios from "../api/axios";
+
 
 function VerifyTicket(props){
-    let status;
+    let statusBlog;
+    const {auth} = useAuth();
+
     const [selectedStatus, setStatus] = useState("");
     let user;
 
-    //REMIND: if user == props.username it means this is verifyTicket for Post user
-    //TODO: add select status tag for Post user
-    if (user == props.username){
-        status = <div className="py-3 ms-[180px]">
-            <label htmlFor="exampleTime" className='text-xl'>ช่วงเวลาที่นัดรับ : </label>
+    const handleSubmit = async (e) => {
+        console.log(selectedStatus);
+        let data = {
+            postId: 0,
+            username: "string",
+            nickname: "string",
+            realname: "string",
+            storename: "string",
+            amount: 0,
+            location: "string",
+            reserved: "string",
+            date: "string",
+            status: selectedStatus,
+            orderList: "string",
+            timeCreated: "2023-04-26T14:11:56.466Z"
+        };
+    
+        console.log(data);
+
+        Promise.all([axios.put(POST_URL.concat(props.postId), data)])
+          .then((response) => {
+            console.log(response[0]);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+
+    if (props.type == 'Selective'){
+        statusBlog = <div>
+            <label htmlFor="exampleTime" className='text-lg'>สถานะ</label>
             <select
-            value={props.status}
-            onChange={(e) => setSelectedTime(e.target.value)}
-            className='bg-gray-400 rounded-lg text-white text-xl'
+            value={selectedStatus}
+            onChange={(e) => setStatus(e.target.value)}
+            className='bg-gray-400 rounded-lg text-white text-lgl'
             >
-             <option value="closed_reciving">ปิดรับออเดอร์</option> {" "}
-            <option value="reciving">กำลังรับ</option> {" "}
-            <option value="delivering">ถึงจุดนัดแล้ว</option> {" "}
+             <option value="closed_reciving">ปิดรับออเดอร์</option> 
+            <option value="reciving">กำลังรับ</option> 
+            <option value="delivering">ถึงจุดนัดแล้ว</option> 
             <option value="closed">ส่งเรียบร้อย</option>
             </select>
+            <button onClick={handleSubmit} className="ml-[10px] border-solid border-l-black border-l-[12px] border-y-transparent border-y-[12px]"></button>
         </div>
     }
-    else if (props.status === 'recieving'){
-        status = <div>
+    else if (props.status === 'Ordering'){
+        statusBlog = <div>
             <div>
             </div>
         </div>
     }
     else{
-        status = <div>
+        statusBlog = <div>
             <div>
                 {props.status}
             </div>
@@ -41,7 +75,7 @@ function VerifyTicket(props){
                 <div className="p-5 rounded-full bg-gray-500 justify-start"></div>
                 <div className="ml-[10px] text-4xl"> {props.name} </div>
                 <div className="ml-[50px] self-end">Posted {props.timeCreated.substring(11,16)}</div>
-                <div>{status}</div>
+                <div className="ml-[80px] self-end">{statusBlog}</div>
             </div>
             <div className="text-3xl ml-[20px] pt-5">ร้าน : {props.storename}</div>
             

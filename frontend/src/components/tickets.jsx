@@ -3,22 +3,27 @@ import { Link } from 'react-router-dom';
 
 function Tickets(props){
     return(
-        <div className='flex flex-row items-center justify-around'>
-            <div className='text-4xl items-center'>
+        <div className='flex flex-row items-center  grid grid-cols-5 gap-4 p-4'>
+            <div className='col-span-2 text-2xl items-center flex justify-start ml-6'>
                 <p className='items-center'>
                     {props.storename}
                 </p>
             </div>
+            
+            
 
-            <div className='ml-[50px] mb-[10px] bg-amount w-[100px] h-[90px]'></div>
-            <div className='ml-[80px] text-3xl items-center flex flex-row'>
+            <div className='ml-[80px] text-xl items-center flex flex-row'>
+            <ion-icon name="storefront-outline" class="text-3xl"></ion-icon>
                 <p className='items-center'>
                     {props.name}
                 </p>
+                <ion-icon name="restaurant-outline" class="text-3xl"></ion-icon>
             </div>
 
-            <div className='ml-[40px] bg-user w-[140px] h-[150px]'></div>
-            <div className='ml-[80px] text-3xl items-center flex flex-row'>
+           
+            
+            
+            <div className='col-span-2 text-xl items-center flex justify-start ml-16 '>
                 <p className='items-center'>
                     จำนวน {props.amount} กล่อง
                 </p>

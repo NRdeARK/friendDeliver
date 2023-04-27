@@ -39,7 +39,7 @@ function LoginForm() {
           },
         }
       );
-      console.log(JSON.stringify(response));
+      // console.log(JSON.stringify(response));
       //const roles = response?.data?.roles;
 
       const nickname = response?.data?.nickname;

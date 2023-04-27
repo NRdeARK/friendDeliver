@@ -6,8 +6,9 @@ const POST_URL = "/Post";
 
 function PostBlog() {
   const [posts, setPosts] = useState(<></>);
+  const [isPosts, setIsPosts] = useState(false);
+
   function getBlog(item, i) {
-    console.log(i);
     return (
       <div className="flex justify-center">
         <div
@@ -17,22 +18,50 @@ function PostBlog() {
           {Blog(item)}
         </div>
       </div>
-      
     );
   }
+
   useEffect(() => {
     Promise.all([axios.get(POST_URL)])
       .then((response) => {
-        console.log(response[0].data);
-        console.log(response[0].data[0]["username"]);
-        setPosts(response[0].data.map(getBlog));
+        console.log(Object.keys(response[0].data).length);
+        if (Object.keys(response[0].data).length <= 0) {
+          setPosts(<></>);
+          setIsPosts(false);
+        } else if (Object.keys(response[0].data).length == 1) {
+          setPosts(
+            <div className="flex justify-center">
+              <div
+                key={1}
+                className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
+              >
+                {Blog(response[0].data[0])}
+              </div>
+            </div>
+          );
+          setIsPosts(true);
+        } else {
+          setPosts(response[0].data.map(getBlog));
+          setIsPosts(true);
+        }
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  return <div  > <br /> <br /> <br />{posts}</div>;
+  return (
+    <div>
+      {isPosts ? (
+        <div>
+          <br /> <br /> <br />
+          {posts}
+        </div>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
 }
 
 export default PostBlog;
