@@ -15,16 +15,22 @@ function Index() {
         }}
       ></div>
 
-      <div className="absolute  inset-0 flex items-center justify-center">
-        <div className=" bg-slate-100/75 h-3/5 w-2/4  border-gray-300 rounded p-4  flex flex-col items-center    ">
+      <div className="pt-12 absolute  inset-0 flex items-center justify-center">
+        <div className=" bg-slate-100/80 h-3/5 w-2/4  border-gray-300 rounded-[20px] p-4  flex flex-col items-center    ">
           <div
-            className=" bg-cover bg-center z-20 h-1/4  w-1/4 sm:w-4/12 "
+            className=" bg-cover bg-center z-20 h-2/4  w-1/4 sm:w-4/12 "
             style={{
               backgroundImage:
                 "url('https://media.discordapp.net/attachments/1006931952454082590/1098314659070750880/Frame_15__1_-removebg-preview.png?width=673&height=578')",
             }}
           ></div>
-          <h1>FriendDeliver</h1>
+          <h1 className="text-4xl font-bold tracking-wide ">FriendDeliver</h1>
+          
+          <div className="px-22 pb-7 h-full text-center  flex items-center justify-center ">
+            <p className="pb-7 pt-5 text-xl font-medium">เมื่อวันที่ไม่ว่างหรือไม่สะดวกไปซื้ออาหาร ลองใช้บริการซื้ออาหารออนไลน์ 
+            <br />ที่จะช่วยประหยัดเวลาและสะดวกมากขึ้น ไม่ต้องเสียเวลาจองโต๊ะอีกต่อไป!</p>
+
+          </div>
         </div>
       </div>
 

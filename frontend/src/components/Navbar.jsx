@@ -35,7 +35,7 @@ function Navbar() {
             <ion-icon name="code"></ion-icon>
             <ion-icon name="chevron-forward"></ion-icon>
             <ion-icon name=""></ion-icon>
-            <p>    FriendDeliver</p>
+            <p>FriendDeliver</p>
           </div>
           <div onClick={() => setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden">
             <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
