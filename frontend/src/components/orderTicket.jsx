@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "../api/axios";
-import Tickets from "./tickets";
+import Tickets from "./ticketOrder";
 const ORDER_URL = "/Order";
 
 function OrderTicket() {
