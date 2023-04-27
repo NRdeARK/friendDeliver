@@ -1,13 +1,12 @@
 import React from "react";
 import CreateOrderForm from "../components/OrderCreateForm";
+import { getAllOrder, createOrder } from '../api/OrderService'
+import OrderTicket from '../components/orderTicket'
 
-// import {useState, Component, useEffect} from 'react'
+import {useState, Component, useEffect} from 'react'
 // import VerifyTicket from '../components/verifyTicket'
 // const ORDER_URL = "/Order";
 // import axios from "../api/axios";
-
-import { getAllOrder, createOrder } from '../api/OrderService'
-import OrderTicket from '../components/orderTicket'
 
 
 class CreateOrder extends Component {
