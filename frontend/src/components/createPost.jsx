@@ -1,10 +1,11 @@
-import React, { useState, useId, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import React, { useState, useId, useEffect} from "react";
+import { useNavigate } from "react-router-dom"
+import { Link,  } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const CreatePostForm = () => {
   // const [user, setUser] = useState("");
+  const navigate = useNavigate();
   const { auth } = useAuth();
   const [store, setStore] = useState("");
   const [amount, setAmt] = useState(1);
@@ -41,10 +42,14 @@ const CreatePostForm = () => {
     };
 
     fetch("http://localhost:5287/api/Post", requestOptions)
-      .then((response) => response.text())
+      .then((response) => {
+        response.text()
+        navigate("/OpenPost")
+      })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
   };
+
   useEffect(() => {
     console.log(date);
   }, [date]);
@@ -177,16 +182,14 @@ const CreatePostForm = () => {
                         setShowModal(false);
                       }}
                     >
-                      <Link to="/openPost">
-                        Link to other page
-                        </Link>
+                      ยืนยัน
                     </button>
                     <button
                       className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                       type="button"
                       onClick={() => setShowModal(false)}
                     >
-                      Close
+                      ยกเลิก
                     </button>
                     
                   </div>
