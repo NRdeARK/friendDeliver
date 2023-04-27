@@ -1,9 +1,9 @@
 import React from "react";
 import CreateOrderForm from "../components/OrderCreateForm";
 import { getAllOrder, createOrder } from '../api/OrderService'
-import OrderTicket from '../components/orderTicket'
-
+// import OrderTicket from '../components/orderTicket'
 import {useState, Component, useEffect} from 'react'
+import OrderBlog from "../components/OrderBlog"
 // import VerifyTicket from '../components/verifyTicket'
 // const ORDER_URL = "/Order";
 // import axios from "../api/axios";
@@ -36,9 +36,6 @@ import {useState, Component, useEffect} from 'react'
       
 //         )
 //     }
-
-import OrderBlog from "../components/OrderBlog";
-
 function CreateOrder() {
   return (
     <div className="bg-amber-400 mb-[155px]">

@@ -8,8 +8,8 @@ class CreatePost extends Component {
    
     render (){
         return (
-          <div className='bg-amber-400 mb-[155px]'>  
-            <div className='ml-[400px] mt-[100px]'>
+          <div className='bg-amber-400 h-screen flex items-center justify-center'>  
+            <div className=''>
               <CreatePostForm></CreatePostForm>
             </div>  
           </div>
