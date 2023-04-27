@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj": {}
+    "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj": {
+    "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj",
-        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\obj\\",
+        "projectPath": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj",
+        "packagesPath": "C:\\Users\\Mam23\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Mam23\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -90,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
