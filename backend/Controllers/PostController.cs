@@ -88,7 +88,7 @@ namespace backend.Controllers
                 reserved = post.reserved,
                 date = post.date,
                 timeCreated = DateTime.Now,
-                status = "receiving",
+                status = "กำลังรับออเดอร์",
                 orderList = ""
             };
             _context.Posts.Add(newPost);
@@ -96,32 +96,26 @@ namespace backend.Controllers
             return CreatedAtAction("CreatePost", new { id = post.postId }, post);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Post>> PutStatus(long id, Post post)
+        [HttpPut("{postId}")]
+        public async Task<ActionResult<Post>> PutStatus(PostUpdateStatus request)
         {
-            var selectPost = _context.Posts.Where(e => e.postId == id).FirstOrDefault();
-
-            if (selectPost == null) return NotFound();
-
-            selectPost.status = post.status;
-
-            try
+            if (_context.Posts == null)
             {
-                await _context.SaveChangesAsync();
+                return Problem("Entity set 'PostContext.PostModels'  is null.");
             }
-            catch (DbUpdateConcurrencyException)
+            if (!PostExists(request.postId))
             {
-                if (!PostExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
-
-            return NoContent();
+            var selectPost = _context.Posts.Where(e => e.postId == request.postId).FirstOrDefault();
+            if (selectPost == null)
+            {
+                return NotFound();
+            }
+            selectPost.status = request.status;
+            _context.Update(selectPost);
+            await _context.SaveChangesAsync();
+            return Ok("post Update");
         }
 
         private bool PostExists(long? id)

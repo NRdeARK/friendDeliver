@@ -68,7 +68,8 @@ namespace backend.Controllers
                 postId = request.postId,
                 menuname = request.menuname,
                 amount = request.amount,
-                orderStatus= "waiting"
+                orderStatus= "รอยืนยัน",
+                timeCreated = DateTime.Now 
             };
 
             _context.Orders.Add(newMenuname);
@@ -76,13 +77,32 @@ namespace backend.Controllers
             return Ok("Create Order success");
         }
 
-        
+        [HttpPut("/status/")]
+        public async Task<ActionResult<OrderUpdateStatus>> updateOrderStatus(OrderUpdateStatus request)
+        {
+            if (_context.Orders == null)
+            {
+                return Problem("Entity set 'OrderContext.Orders'  is null.");
+            }
+            if (OrderExists(request.orderId))
+            {
+                return NotFound();
+            }
+            var selectPost = _context.Orders.Where(e => e.orderId == request.orderId).FirstOrDefault();
+            if(selectPost == null ){
+                return NotFound();
+            }
+            selectPost.orderStatus = request.status;
+            _context.Orders.Update(selectPost);
+            await _context.SaveChangesAsync();
+            return Ok("update Order success");
+        }
+
+
 
         private bool OrderExists(long? orderId)
         {
             return (_context.Orders?.Any(e => e.orderId == orderId)).GetValueOrDefault();
         }
-
-
     }
 }
