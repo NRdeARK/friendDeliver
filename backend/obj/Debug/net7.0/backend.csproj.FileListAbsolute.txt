@@ -1401,7 +1401,6 @@ C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\obj\Debug\net7.0\refi
 C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\obj\Debug\net7.0\backend.pdb
 C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\obj\Debug\net7.0\backend.genruntimeconfig.cache
 C:\Users\asus\Documents\Coding_stuff\friendDeliver\backend\obj\Debug\net7.0\ref\backend.dll
-<<<<<<< HEAD
 C:\Users\Mam23\OneDrive\เอกสาร\GitHub\friendDeliver\backend\obj\Debug\net7.0\backend.dll
 C:\Users\Mam23\OneDrive\เอกสาร\GitHub\friendDeliver\backend\obj\Debug\net7.0\refint\backend.dll
 C:\Users\Mam23\OneDrive\เอกสาร\GitHub\friendDeliver\backend\obj\Debug\net7.0\backend.pdb
@@ -1962,5 +1961,4 @@ C:\2D\term2\FileSheet66\WebApp\project\friendDeliver\backend\obj\Debug\net7.0\re
 C:\2D\term2\FileSheet66\WebApp\project\friendDeliver\backend\obj\Debug\net7.0\backend.pdb
 C:\2D\term2\FileSheet66\WebApp\project\friendDeliver\backend\obj\Debug\net7.0\backend.genruntimeconfig.cache
 C:\2D\term2\FileSheet66\WebApp\project\friendDeliver\backend\obj\Debug\net7.0\ref\backend.dll
-=======
 >>>>>>> ecf92078d71d8921da3e0a35875ab8a174dfe585
