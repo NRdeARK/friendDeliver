@@ -32,6 +32,24 @@ namespace backend.Controllers
             return Ok(await _context.Orders.ToListAsync());
         }
 
+        [HttpGet("{postId}")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrderByPostId(long postId)
+        {
+          if (_context.Orders == null)
+          {
+              return NotFound();
+          }
+          var recieves = from m in _context.Orders
+                           select m;
+
+        if(postId.Equals(null))
+        {
+            return BadRequest("post ID is null");
+        }
+            recieves = recieves.Where(x => x.postId == postId);
+            return Ok(await recieves.ToListAsync());
+        }
+
         [HttpPost()]
         public async Task<ActionResult<OrderCreateDTO>> CreateOrder(OrderCreateDTO request)
         {
@@ -47,6 +65,7 @@ namespace backend.Controllers
                 username = request.username,
                 nickname = request.nickname,
                 realname = request.realname,
+                postId = request.postId,
                 menuname = request.menuname,
                 amount = request.amount,
                 orderStatus= "waiting"

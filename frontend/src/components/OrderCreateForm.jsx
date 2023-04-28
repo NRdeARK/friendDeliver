@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
 
-const CreateOrderForm = () => {
+function CreateOrderForm(props){
   const {auth} = useAuth()
   const {toggleUpdateOrder, setToggleUpdateOrder} = useAuth();
   const [storeMenu, setMenuname] = useState("");
@@ -9,16 +9,18 @@ const CreateOrderForm = () => {
   const [errMsg, setErrMsg] = useState("");
   
   const handleSubmit = async (e) => {
+    // console.log(auth)
     let data = JSON.stringify({
       orderId : 0,
-      username: auth.user,
+      postId : props.postId,
+      username: auth.username,
       nickname: auth.nickname,
       realname: auth.realname,
       menuname: storeMenu,
       amount: amount,
     });
 
-    console.log(data);
+    // console.log(data);
 
     var myHeaders = new Headers();
     myHeaders.append("Origin", "localhost:5173");

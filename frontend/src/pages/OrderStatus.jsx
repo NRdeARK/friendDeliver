@@ -12,6 +12,7 @@ function OrderStatus(){
     let content;
     const [posts, setPosts] = useState(<></>);
     const {auth} = useAuth();
+
     useEffect(() => {
         Promise.all([axios.get(POST_URL.concat(auth.user))])
           .then((response) => {
@@ -31,6 +32,7 @@ function OrderStatus(){
             console.log(error);
           });
       }, []);
+      
     return(
         <div className="w-screen h-screen">
             <div className="mt-[60px] ml-[70px] flex flex-col items-center gap-y-3">

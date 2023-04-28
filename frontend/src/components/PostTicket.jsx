@@ -21,7 +21,7 @@ function PostTicket() {
   useEffect(() => {
     Promise.all([axios.get(POST_URL)])
       .then((response) => {
-        // console.log(response[0].data);
+        console.log(response[0].data);
         if (Object.keys(response[0].data).length == 0) {
           setPosts(<></>);
           // console.log(posts);
