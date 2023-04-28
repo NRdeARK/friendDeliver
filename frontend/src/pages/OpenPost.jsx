@@ -5,17 +5,15 @@ import { Link } from "react-router-dom";
 function OpenPost() {
   return (
     <div>
-      cl
-      {/* <div className=" h-14"></div>
-      <div className=" h-4"></div> */}
-      <Link to="/createPost" className="flex justify-end mr-24">
+      <Link to="/createPost" className="flex justify-end mr-24 mt-36">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-16 h-16 bg-white rounded-full p-0 mt-16 shadow-md"
+          className="w-16 h-16 bg-white rounded-full p-0 shadow-lg transition ease-in-out delay-150 duration-300
+                    hover:-translate-y-1 hover:scale-110"
         >
           <path
             strokeLinecap="round"
