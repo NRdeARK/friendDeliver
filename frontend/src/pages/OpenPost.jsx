@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 function OpenPost() {
   return (
     <div>
-      {" "}
       cl
       <div className=" h-14"></div>
       <div className=" h-4"></div>

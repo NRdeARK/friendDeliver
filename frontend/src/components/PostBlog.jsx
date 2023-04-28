@@ -5,19 +5,27 @@ import Blog from "./Blog";
 import CreateOrderForm from "./OrderCreateForm";
 import OrderBlog from "./OrderBlog";
 const POST_URL = "/Post";
+import useAuth from "../hooks/useAuth";
 
 function PostBlog() {
+  const { auth } = useAuth();
   const [posts, setPosts] = useState(<></>);
   const [isPosts, setIsPosts] = useState(false);
 
   function getBlog(item, i) {
+    // console.log(item.postId);
     return (
-      <div className="flex justify-center">
-        <div
-          key={i}
-          className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
-        >
+      <div className="flex justify-center" key={i}>
+        <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
           {Blog(item)}
+          {auth.user == null ? (
+            <></>
+          ) : (
+            <div>
+              <OrderBlog postId={item.postId}></OrderBlog>
+              <CreateOrderForm postId={item.postId}></CreateOrderForm>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -26,7 +34,7 @@ function PostBlog() {
   useEffect(() => {
     Promise.all([axios.get(POST_URL)])
       .then((response) => {
-        console.log(Object.keys(response[0].data).length);
+        // console.log(Object.keys(response[0].data).length);
         if (Object.keys(response[0].data).length <= 0) {
           setPosts(<></>);
           setIsPosts(false);
@@ -37,10 +45,17 @@ function PostBlog() {
                 key={1}
                 className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
               >
-                {console.log(response[0].data[0].postId)}
                 {Blog(response[0].data[0])}
-                <OrderBlog ></OrderBlog>
-                <CreateOrderForm postId={response[0].data[0].postId}></CreateOrderForm>
+                {auth.user == null ? (
+                  <></>
+                ) : (
+                  <div>
+                    <OrderBlog postId={response[0].data[0].postId}></OrderBlog>
+                    <CreateOrderForm
+                      postId={response[0].data[0].postId}
+                    ></CreateOrderForm>
+                  </div>
+                )}
               </div>
             </div>
           );
