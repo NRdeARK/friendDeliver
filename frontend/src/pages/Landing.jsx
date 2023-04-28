@@ -27,7 +27,7 @@ function Index() {
           <h1 className="text-4xl font-bold tracking-wide ">FriendDeliver</h1>
           
           <div className="px-22 pb-7 h-full text-center  flex items-center justify-center ">
-            <p className="pb-7 pt-5 text-xl font-medium">เมื่อวันที่ไม่ว่างหรือไม่สะดวกไปซื้ออาหาร ลองใช้บริการซื้ออาหารออนไลน์ 
+            <p className="pb-12  text-xl font-medium">เมื่อวันที่ไม่ว่างหรือไม่สะดวกไปซื้ออาหาร ลองใช้บริการซื้ออาหารออนไลน์ 
             <br />ที่จะช่วยประหยัดเวลาและสะดวกมากขึ้น ไม่ต้องเสียเวลาจองโต๊ะอีกต่อไป!</p>
 
           </div>

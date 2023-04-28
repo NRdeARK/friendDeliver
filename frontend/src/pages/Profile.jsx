@@ -1,48 +1,62 @@
 import React from "react";
 import useAuth from "../hooks/useAuth";
+import { useState, useEffect } from "react";
 import axios from "../api/axios";
-import { useNavigate } from "react-router-dom";
 import Logout from "../components/Logout";
-const USER_URL = "/auth/" 
+const USER_URL = "/Auth/";
 
 function Profile() {
   const { auth } = useAuth();
-  function getUserData(){
-    Promise.all([axios.get(USER_URL+auth)])
-        .then((response) => {
-          if (Object.keys(response[0].data).length <= 0) {
-            setOrders(<></>);
-            setIsOrder(false);
-          } else if (Object.keys(response[0].data).length == 1) {
-            setOrders(
-              <div className="flex justify-center">
-                <div
-                  key={0}
-                  className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
-                >
-                  {BlogOrder(response[0].data[0])}
-                </div>
-              </div>
-            );
-            setIsOrder(true);
-          } else {
-            setOrders(response[0].data.map(getBlogOrder));
-            
-            setIsOrder(true);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-  }
-  const navigate = useNavigate();
+  const [tel, setTel] = useState("");
+
+  useEffect(() => {
+    Promise.all([axios.get(USER_URL + auth.user)])
+      .then((response) => {
+        console.log(response[0].data);
+        setTel(response[0].data.tel);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
-    <div >
-      <Logout></Logout>
-        
+    <div>
+      <div className="flex items-center justify-center   ">
+        <div className=" ">
+          <img
+            className="absolute inset-x-0 bottom-[0] w-100 lg:w-screen    "
+            src="https://media.discordapp.net/attachments/1095391598034026657/1101137741657419796/5eede7de0e9d84fd.png?width=1046&height=588"
+          ></img>
+        </div>
+
+        <div className="absolute  inset-0 flex items-center justify-center ">
+          <div className=" bg-slate-100 h-3/5 w-2/4  border-gray-400 rounded-[30px] drop-shadow-xl p-4  flex flex-col items-center    ">
+            <div
+              className=" bg-cover bg-center z-20 h-1/4  w-1/3 sm:w-4/12 "
+              style={{
+                backgroundImage:
+                  "url('https://media.discordapp.net/attachments/1006931952454082590/1098314659070750880/Frame_15__1_-removebg-preview.png?width=673&height=578')",
+              }}
+            ></div>
+            <div>FriendDeliver</div>
+
+            <div>
+              Profile
+              {auth.username}
+              {auth.nickname}
+              {auth.realname}
+              {tel}
+            </div>
+            <br />
+            <div className="">
+              <Logout></Logout>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
 
 export default Profile;
