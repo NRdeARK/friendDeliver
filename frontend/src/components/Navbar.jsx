@@ -8,7 +8,7 @@ function Navbar() {
 
   let LinksUnAuth = [
     { name: "Home", link: "/" },
-    { name: "Open Order", link: "/openOrder" },
+    // { name: "Open Order", link: "/openOrder" },
     { name: "Open Post", link: "/openPost" },
     { name: "Login", link: "/login" },
   ];
@@ -18,7 +18,7 @@ function Navbar() {
     // { name: "Open Order", link: "/openOrder" },
     { name: "Open Post", link: "/openPost" },
     { name: "Order Status", link: "/orderStatus" },
-    { name: "Create Post", link: "/createPost" },
+    // { name: "Create Post", link: "/createPost" },
     // { name: "Create Order", link: "/createOrder" },
     { name: "testConfirm", link: "/testOrderConfirm" },
     { name: auth.user, link: "/profile" },
