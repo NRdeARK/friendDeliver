@@ -1,5 +1,4 @@
 export async function getAllPosts() {
-
     const response = await fetch('http://localhost:5287/api/Post');
     return await response.json();
 }

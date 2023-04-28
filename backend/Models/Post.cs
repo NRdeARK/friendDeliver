@@ -6,6 +6,8 @@ namespace backend.Models
         [Key]
         public long postId { get; set; }
         public string? username { get; set; }
+        public string? nickname { get; set; }
+        public string? realname { get; set; }
         public string? storename { get; set; }
         public int? amount { get; set; }
         public string? location { get; set; }
