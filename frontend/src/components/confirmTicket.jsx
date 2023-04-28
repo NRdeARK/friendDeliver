@@ -17,7 +17,7 @@ function confirmTicket(props){
           redirect: "follow",
         };
     
-        fetch("http://localhost:5287/api/createOrder", requestOptions)
+        fetch("http://localhost:5287/api/OrderConfirm/GetPost", requestOptions)
           .then((response) => response.json())
           .then((result) => setOrder(result))
           .catch((error) => console.log("error", error));
