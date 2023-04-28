@@ -1,38 +1,27 @@
 import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
-const POST_URL = "/Post/";
+const POST_URL = "/Post/status/";
 
 import axios from "../api/axios";
 
-import userLogo from "../assets/user.jpg";
-
-function VerifyTicket(props) {
+function VerifyTicket(data) {
+  const props = data.props
+  const type = data.type
   let statusBlog;
+  console.log(props)
   const { auth } = useAuth();
-
-  const [selectedStatus, setStatus] = useState("");
-  let user;
+  const [selectedStatus, setStatus] = useState(props.status);
 
   const handleSubmit = async (e) => {
     console.log(selectedStatus);
     let data = {
-      postId: 0,
-      username: "string",
-      nickname: "string",
-      realname: "string",
-      storename: "string",
-      amount: 0,
-      location: "string",
-      reserved: "string",
-      date: "string",
-      status: selectedStatus,
-      orderList: "string",
-      timeCreated: "2023-04-26T14:11:56.466Z",
+      postId: props.postId,
+      status: selectedStatus
     };
 
     console.log(data);
 
-    Promise.all([axios.put(POST_URL.concat(props.postId), data)])
+    Promise.all([axios.put(POST_URL, data)])
       .then((response) => {
         console.log(response[0]);
       })
@@ -41,10 +30,10 @@ function VerifyTicket(props) {
       });
   };
 
-  if (props.type == "Selective") {
+  if (type == "Selective") {
     statusBlog = (
-      <div className="flex items-center justify-center">
-        <label htmlFor="exampleTime" className="text-lg font-semibold">
+      <div>
+        <label htmlFor="exampleTime" className="text-lg">
           สถานะ
         </label>
         <select
@@ -52,10 +41,10 @@ function VerifyTicket(props) {
           onChange={(e) => setStatus(e.target.value)}
           className="bg-gray-400 rounded-lg text-white text-lg mx-1 border"
         >
-           <option value="closed_reciving">ปิดรับออเดอร์</option> 
-          <option value="reciving">กำลังรับ</option> 
-          <option value="delivering">ถึงจุดนัดแล้ว</option> 
-          <option value="closed">ส่งเรียบร้อย</option>
+          <option value="กำลังรับออเดอร์">กำลังรับออเดอร์</option> 
+          <option value="ปิดรับออเดอร์">ปิดรับออเดอร์</option> 
+          <option value="ถึงจุดนัดแล้ว">ถึงจุดนัดแล้ว</option> 
+          <option value="ส่งเรียบร้อย">ส่งเรียบร้อย</option>
         </select>
         <button
           onClick={handleSubmit}
@@ -89,8 +78,7 @@ function VerifyTicket(props) {
         <div className="flex flex-row">
           <img src={userLogo} alt="" className="w-11 rounded-full" />
           <p className="flex items-center pl-4 text-2xl">
-            {" "}
-            {props.name}
+            {auth.nickname} {auth.realname}
             <span className="pl-10 font-light text-base">
               Posted {props.timeCreated.substring(11, 16)}
             </span>
@@ -101,7 +89,7 @@ function VerifyTicket(props) {
           <p className="text-3xl py-4">ร้าน : {props.storename} </p>
           <div className="pl-24">
             <p className="pb-2">จำนวนที่รับ : {props.amount} จาน</p>
-            <p className="pb-2">จุดนัดรับ : {props.locate}</p>
+            <p className="pb-2">จุดนัดรับ : {props.location}</p>
             <p className="pb-2">ช่วงเวลานัดรับ : {props.time}</p>
             <p>
               วันที่/เดือน/ปี : {day}/{month}/{year}

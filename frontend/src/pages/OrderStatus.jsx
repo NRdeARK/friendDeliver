@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import VerifyBlog from "../components/verifyBlog";
-
 const POST_URL = "/Post/user/";
-
 import axios from "../api/axios";
-
 import useAuth from "../hooks/useAuth";
 
 function OrderStatus() {
@@ -17,10 +13,10 @@ function OrderStatus() {
     Promise.all([axios.get(POST_URL.concat(auth.user))])
       .then((response) => {
         console.log(response[0].data);
-        content = response[0].data.map((d) => {
+        content = response[0].data.map((item, i) => {
           return (
-            <div>
-              <VerifyBlog data={d}></VerifyBlog>
+            <div key={i}>
+              <VerifyBlog data={item}></VerifyBlog>
             </div>
           );
         });

@@ -1,13 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
-import userLogo from "../assets/user.jpg";
+import { useNavigate } from "react-router-dom";
 
 function CreateOrderForm(props) {
-  const { auth } = useAuth();
+  const { auth, setShowModal, setIsAllow, showModal, setData, setSubmit, submit,data} = useAuth();
   const { toggleUpdateOrder, setToggleUpdateOrder } = useAuth();
   const [storeMenu, setMenuname] = useState("");
   const [amount, setAmt] = useState(1);
   const [errMsg, setErrMsg] = useState("");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(storeMenu)
+    setData({storeMenu,amount})
+    if (storeMenu == "") {
+      setIsAllow(false);
+    } else {
+      setIsAllow(true);
+    }
+  }, [showModal]);
+
+  useEffect(()=>{
+    if(submit==true){
+      handleSubmit();
+      setSubmit(false)
+    }
+  },[submit])
 
   const handleSubmit = async (e) => {
     // console.log(auth)
@@ -38,10 +57,14 @@ function CreateOrderForm(props) {
       .then((response) => {
         response.text();
         setToggleUpdateOrder(!toggleUpdateOrder);
+        setData({})
       })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+    navigate("/orderStatus");
   };
+
+  
 
   return (
     <div className="flex flex-col bg-gray-400/50 rounded-xl w-full">
@@ -74,8 +97,8 @@ function CreateOrderForm(props) {
             onChange={(e) => setAmt(e.target.value)}
             name="amount"
             id="amount"
-            min="1"
             className="bg-gray-400 rounded-lg text-white ml-5 px-2 text-xl w-12 h-fit py-2"
+            value={1}
           />
           <p className="text-xl ml-5">กล่อง</p>
         </div>
@@ -83,8 +106,10 @@ function CreateOrderForm(props) {
         <div className="flex items-center mr-[40px]">
           <button
             type="Submit"
-            onClick={handleSubmit}
-            className="bg-emerald-500 text-2xl rounded-lg text-white ml-5 p-2 "
+            onClick={() => {
+              setShowModal(true);
+            }}
+            className="bg-emerald-500 text-2xl rounded-lg text-white ml-5 p-2"
           >
             สั่ง
           </button>
