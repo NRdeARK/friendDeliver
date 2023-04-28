@@ -4,29 +4,31 @@ import axios from "../api/axios";
 import BlogOrder from "./BlogOrder";
 import useAuth from "../hooks/useAuth";
 
-const Order_URL = "/Order";
+const Order_URL = "/Order/";
 
-function OrderBlog(postId) {
+function OrderBlog(props) {
   const { toggleUpdateOrder } = useAuth();
   const [Orders, setOrders] = useState(<></>);
   const [isOrder, setIsOrder] = useState(false);
   const [isHover, setIsHover] = useState(false);
   function getBlogOrder(item, i) {
-    console.log(i);
+    // console.log(i);
+    // console.log(item);
     return (
-      <div
-        key={i}
-        className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
-      >
-        {item.username}
-        {BlogOrder(item)}
+      <div className="flex justify-center" key={i}>
+        <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
+          {BlogOrder(item)}
+        </div>
       </div>
     );
   }
+
   useEffect(
     () => {
-      Promise.all([axios.get(Order_URL)])
+      // console.log(Order_URL + props.postId);
+      Promise.all([axios.get(Order_URL + props.postId.toString())])
         .then((response) => {
+          // console.log(response);
           if (Object.keys(response[0].data).length <= 0) {
             setOrders(<></>);
             setIsOrder(false);
@@ -44,7 +46,6 @@ function OrderBlog(postId) {
             setIsOrder(true);
           } else {
             setOrders(response[0].data.map(getBlogOrder));
-
             setIsOrder(true);
           }
         })
@@ -66,9 +67,7 @@ function OrderBlog(postId) {
           {isHover ? (
             Orders
           ) : (
-            <div
-              className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-40 text-center"
-            >
+            <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-40 text-center">
               order
             </div>
           )}
