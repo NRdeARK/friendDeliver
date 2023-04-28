@@ -14,7 +14,6 @@ namespace backend.Models
         public string? username { get; set; }
         public string? menuname { get; set; }
         public int? amount { get; set; }
-        public string? date { get; set; }
         public string? orderStatus { get; set; }
         public DateTime? timeCreated { get; set; }
     }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 function CreateOrderForm(props){
   const {auth} = useAuth()
@@ -7,6 +8,7 @@ function CreateOrderForm(props){
   const [storeMenu, setMenuname] = useState("");
   const [amount, setAmt] = useState(1);
   const [errMsg, setErrMsg] = useState("");
+  const navigate = useNavigate()
   
   const handleSubmit = async (e) => {
     // console.log(auth)
@@ -40,7 +42,7 @@ function CreateOrderForm(props){
       })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-    
+    navigate("/orderStatus")
   };
 
   return (
@@ -48,7 +50,6 @@ function CreateOrderForm(props){
       <div className='p-4 ml-[20px] mt-[10px] flex flex-row justify-items-start'>
         <div className="p-5 rounded-full bg-gray-500 justify-start"></div>
         <p className= "ml-5 text-2xl justify-start">{auth.user}</p>
-        <label htmlFor="exampleStoreName" className="ml-5 text-4xl">เวลา</label>
       </div>
       <div className="ml-[90px] py-3 flex flex-row justify-items-start">
         <input
