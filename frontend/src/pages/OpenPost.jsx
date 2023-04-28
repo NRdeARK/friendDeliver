@@ -7,16 +7,16 @@ function OpenPost() {
     <div>
       {" "}
       cl
-      <div className=" h-14"></div>
-      <div className=" h-4"></div>
-      <Link to="/createPost">
+      {/* <div className=" h-14"></div>
+      <div className=" h-4"></div> */}
+      <Link to="/createPost" className="flex justify-end mr-24">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-16 h-16 bg-white rounded-full p-0"
+          className="w-16 h-16 bg-white rounded-full p-0 mt-16 shadow-md"
         >
           <path
             strokeLinecap="round"
