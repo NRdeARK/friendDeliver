@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj": {}
+    "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj": {}
   },
   "projects": {
-    "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj": {
+    "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
+        "projectUniqueName": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/backend.csproj",
-        "packagesPath": "/Users/nonthaphatjitchiranant/.nuget/packages/",
-        "outputPath": "/Users/nonthaphatjitchiranant/Downloads/project/friendDeliver/backend/obj/",
+        "projectPath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
+        "packagesPath": "C:\\Users\\natta\\.nuget\\packages\\",
+        "outputPath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nonthaphatjitchiranant/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\natta\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
