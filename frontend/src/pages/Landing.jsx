@@ -3,6 +3,7 @@ PostTicket;
 import PostTicket from "../components/PostTicket";
 import Destination from "../components/Destination";
 import Card from "../components/Card";
+import AboutUs from "../components/AboutUs";
 
 function Index() {
   return (
@@ -16,7 +17,7 @@ function Index() {
       ></div>
 
       <div className="pt-12 absolute  inset-0 flex items-center justify-center">
-        <div className=" bg-slate-100/80 h-3/5 w-2/4  border-gray-300 rounded-[20px] p-4  flex flex-col items-center    ">
+        <div className=" bg-slate-100/75 h-3/5 w-2/4  border-gray-300 rounded p-4  flex flex-col items-center    ">
           <div
             className=" bg-cover bg-center z-20 h-2/4  w-1/4 sm:w-4/12 "
             style={{
@@ -25,11 +26,15 @@ function Index() {
             }}
           ></div>
           <h1 className="text-4xl font-bold tracking-wide ">FriendDeliver</h1>
-          
-          <div className="px-22 pb-7 h-full text-center  flex items-center justify-center ">
-            <p className="pb-12  text-xl font-medium">เมื่อวันที่ไม่ว่างหรือไม่สะดวกไปซื้ออาหาร ลองใช้บริการซื้ออาหารออนไลน์ 
-            <br />ที่จะช่วยประหยัดเวลาและสะดวกมากขึ้น ไม่ต้องเสียเวลาจองโต๊ะอีกต่อไป!</p>
 
+          <div className="px-22 pb-7 h-full text-center  flex items-center justify-center ">
+            <p className="pb-12 pt-5 text-xl font-medium">
+              เมื่อวันที่ไม่ว่างหรือไม่สะดวกไปซื้ออาหาร
+              ลองใช้บริการซื้ออาหารออนไลน์
+              <br />
+              ที่จะช่วยประหยัดเวลาและสะดวกมากขึ้น
+              ไม่ต้องเสียเวลาจองโต๊ะอีกต่อไป!
+            </p>
           </div>
         </div>
       </div>
@@ -37,16 +42,24 @@ function Index() {
       <div className="bg-slate-100/20 ">
         <Destination></Destination>
       </div>
-      <div className="p-1 ">
+      {/* <div className="lg:px-52">
         <Card></Card>
-      </div>
+      </div> */}
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center my-16 text-[24px] font-bold ">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+        <ion-icon name=""></ion-icon>
+        รายการที่รับฝากซื้ออาหาร
+        <ion-icon name=""></ion-icon>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+      <div className="flex items-center justify-center lg:px-52  ">
         <PostTicket></PostTicket>
       </div>
-
-      <br />
-      <br />
+      <div className="mt-32">
+        <AboutUs></AboutUs>
+      </div>
+   
     </div>
   );
 }

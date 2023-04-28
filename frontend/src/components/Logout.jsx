@@ -13,7 +13,7 @@ function Logout() {
           setAuth({});
           navigate("/login");
         }}
-        className="bg-red-500"
+        className="bg-red-400 p-3  rounded-[30px]"
       >
         Logout
       </button>

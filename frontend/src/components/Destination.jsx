@@ -10,8 +10,8 @@ function Destination() {
 
         <div className='flex content-center justify-between mt-16 gap-4 xl:flex-row flex-col-reverse lg:flex-row xl:mt-[2.5rem] '>
             <div className='xl:w-2/4 text-start text-xl  w-full'>
-                <h2 className='pb-4'>ข้าวผัดอร่อยมากๆ</h2>
-                <p className='text-justify pr-9 max-xl:pr-0'>
+                
+                <p className='text-justify pr-9 max-xl:pr-0 lg:pt-16'>
                 ศูนย์รวมร้านอาหารมากมาย ทั้งอาหารตามสั่ง อาหารจานเดียว สเต็ก ก๋วยเตี๋ยว ร้านกาแฟ ผลไม้ และของหวาน บรรยากาศสบายๆ ราคาก็ไม่แพง        
                 แถมรสชาติอาหารก็ยังถูกใจอีกด้วย และมีห้องแอร์ไว้รองรับสำหรับทานอาหารหรือนั่งพักผ่อน อ่านหนังสือกับเพื่อนๆก็ได้สบายๆ
                 </p>
