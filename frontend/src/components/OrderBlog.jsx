@@ -10,7 +10,7 @@ function OrderBlog(props) {
   const { toggleUpdateOrder } = useAuth();
   const [Orders, setOrders] = useState(<></>);
   const [isOrder, setIsOrder] = useState(false);
-  const [isHover, setIsHover] = useState(false);
+
   function getBlogOrder(item, i) {
     // console.log(i);
     // console.log(item);
@@ -34,14 +34,16 @@ function OrderBlog(props) {
             setIsOrder(false);
           } else if (Object.keys(response[0].data).length == 1) {
             setOrders(
-              <div className="flex justify-center">
-                <div
-                  key={0}
-                  className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
-                >
-                  {BlogOrder(response[0].data[0])}
+              <li>
+                <div className="flex justify-center">
+                  <div
+                    key={0}
+                    className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
+                  >
+                    {BlogOrder(response[0].data[0])}
+                  </div>
                 </div>
-              </div>
+              </li>
             );
             setIsOrder(true);
           } else {
@@ -59,22 +61,7 @@ function OrderBlog(props) {
 
   return (
     <div>
-      {isOrder ? (
-        <div
-          onMouseEnter={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
-        >
-          {isHover ? (
-            Orders
-          ) : (
-            <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-40 text-center">
-              order
-            </div>
-          )}
-        </div>
-      ) : (
-        <></>
-      )}
+      {isOrder ? <ul className="ease-in duration-500">{Orders}</ul> : <></>}
     </div>
   );
 }
