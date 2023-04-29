@@ -69,6 +69,20 @@ namespace backend.Controllers
             return await recieves.ToListAsync();
         }
 
+        [HttpGet("{postId}")]
+        public async Task<ActionResult<IEnumerable<Post>>> getPostByPostId(long postId)
+        {
+            if (_context.Posts == null)
+            {
+                return Problem("Entity set 'PostContext.Posts'  is null.");
+            }
+
+            var recieves = from m in _context.Posts
+                           select m;
+            recieves = recieves.Where(x => x.postId == postId);
+            return await recieves.ToListAsync();
+        }
+
         [HttpPost]
         public async Task<ActionResult<Post>> CreatePost(PostCreateDTO post)
         {

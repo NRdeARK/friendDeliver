@@ -8,7 +8,6 @@ function VerifyTicket(data) {
   const props = data.props
   const type = data.type
   let statusBlog;
-  console.log(props)
   const { auth } = useAuth();
   const [selectedStatus, setStatus] = useState(props.status);
 
@@ -69,7 +68,7 @@ function VerifyTicket(data) {
     <div className="w-[750px] h-[300px] bg-stone-200 rounded-lg flex flex-col p-5">
       <div className="flex flex-row">
         <div className="p-5 rounded-full bg-gray-500 justify-start"></div>
-        <div className="ml-[10px] text-4xl"> {auth.nickname} {auth.realname}</div>
+        <div className="ml-[10px] text-4xl"> {props.nickname} {props.realname}</div>
         <div className="ml-[50px] self-end">
           Posted {props.timeCreated.substring(11, 16)}
         </div>
