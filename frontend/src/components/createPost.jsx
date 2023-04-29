@@ -201,7 +201,7 @@ const CreatePostForm = () => {
                                     w-1/2 py-2"
                           type="button"
                           onClick={() => {
-                            setSubmit(true);
+                            handleSubmit();
                             setShowModal(false);
                           }}
                         >
