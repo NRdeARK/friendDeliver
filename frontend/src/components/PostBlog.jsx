@@ -11,9 +11,7 @@ function PostBlog() {
   const [isPosts, setIsPosts] = useState(false);
 
   function getBlog(item, i) {
-    return (
-      <PostSet item ={item} key = {i}></PostSet>
-    );
+    return <PostSet item={item} key={i}></PostSet>;
   }
 
   useEffect(() => {
@@ -43,7 +41,8 @@ function PostBlog() {
     <div>
       {isPosts ? (
         <div>
-          <br /> <br /> <br />
+          <br />
+          <br />
           {posts}
         </div>
       ) : (

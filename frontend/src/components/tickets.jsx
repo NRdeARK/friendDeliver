@@ -18,7 +18,7 @@ function Tickets(props) {
             <div className="p-6">
               <div className="flex flex-col items-start sm:flex-row sm:items-center text-left ">
                 <div>
-                  <p className="text-gray-400 text-gray-50"><ion-icon name="person-outline" class="mr-4"></ion-icon>{props.username}</p>
+                  <p className="text-gray-400"><ion-icon name="person-outline" class="mr-4"></ion-icon>{props.username}</p>
                   <h2 className="mt-2 text-[22px] font-bold  text-gray-50">
                   ร้าน {props.storename}
                   </h2>
