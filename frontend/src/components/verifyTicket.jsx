@@ -50,7 +50,7 @@ function VerifyTicket(data) {
         </select>
         <button
           onClick={handleSubmit}
-          className="mx-1 border-solid border-l-black border-l-[12px] border-y-transparent border-y-[12px]"
+          className="mx-1 border-solid border-l-black border-l-[12px] border-y-transparent border-y-[12px] hover:border-l-black/50"
         ></button>
       </div>
     );
