@@ -13,7 +13,7 @@ function AboutUs() {
         </p>
         <div class="grid gap-2 lg:gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
           <div class="text-center text-gray-500 dark:text-gray-400">
-            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Avatar"></img>
+            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://media.discordapp.net/attachments/1095391598034026657/1101799319801188493/343766812_1498595100883594_5921284633908914026_n.png?width=526&height=701" alt="Bonnie Avatar"></img>
             <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#">Bonnie Green</a>
             </h3>

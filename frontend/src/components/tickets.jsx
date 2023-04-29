@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import Anhourago from "../components/Anhourago"
 
 function Tickets(props) {
   return (
@@ -45,8 +46,9 @@ function Tickets(props) {
                   </svg> */}
                     <ion-icon name="restaurant-outline" class="text-gray-50"></ion-icon>
                   <span className="ml-2 text-gray-50 "> จำนวน {props.amount} กล่อง</span>
-                  <span className="mx-2">•</span>
-                  <span className="text-gray-400">โรงอาหารพระเทพฯ</span>
+                  <span className="mx-2 text-gray-50">•</span>
+                  <span className="text-gray-400">Post {props.timeCreated.substring(11, 16)} น. </span>
+                  
                 </p>
               </div>
             </div>
