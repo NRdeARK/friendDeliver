@@ -145,7 +145,7 @@ function OrderStatus() {
 
   return (
     <div className="w-screen h-screen">
-      <div className="mt-[60px] ml-[70px] flex flex-col items-center gap-y-3">
+      <div className="mt-36 flex flex-col gap-y-3">
         {postsBuyer}
         {postsOwner}
       </div>
