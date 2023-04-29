@@ -14,7 +14,7 @@ function Navbar() {
   ];
 
   let LinksAuth = [
-    { name: "Home", link: "/" },
+    { name: "Home", link: "/" }, 
     // { name: "Open Order", link: "/openOrder" },
     { name: "Open Post", link: "/openPost" },
     { name: "Order Status", link: "/orderStatus" },

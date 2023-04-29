@@ -4,11 +4,13 @@ const POST_URL = "/Post/status/";
 
 import axios from "../api/axios";
 
+import userLogo from "../assets/user.jpg";
+
 function VerifyTicket(data) {
-  const props = data.props
-  const type = data.type
+  const props = data.props;
+  const type = data.type;
   let statusBlog;
-  console.log(props)
+  console.log(props);
   const { auth } = useAuth();
   const [selectedStatus, setStatus] = useState(props.status);
 
@@ -16,7 +18,7 @@ function VerifyTicket(data) {
     console.log(selectedStatus);
     let data = {
       postId: props.postId,
-      status: selectedStatus
+      status: selectedStatus,
     };
 
     console.log(data);
@@ -32,14 +34,14 @@ function VerifyTicket(data) {
 
   if (type == "Selective") {
     statusBlog = (
-      <div>
-        <label htmlFor="exampleTime" className="text-lg">
+      <div className="flex items-center">
+        <label htmlFor="exampleTime" className="text-lg ml-1">
           สถานะ
         </label>
         <select
           value={selectedStatus}
           onChange={(e) => setStatus(e.target.value)}
-          className="bg-gray-400 rounded-lg text-white text-lg mx-1 border"
+          className="bg-gray-400 rounded-lg text-white text-lg ml-1 border"
         >
           <option value="กำลังรับออเดอร์">กำลังรับออเดอร์</option> 
           <option value="ปิดรับออเดอร์">ปิดรับออเดอร์</option> 
@@ -48,7 +50,7 @@ function VerifyTicket(data) {
         </select>
         <button
           onClick={handleSubmit}
-          className="ml-[10px] border-solid border-l-black border-l-[12px] border-y-transparent border-y-[12px]"
+          className="mx-1 border-solid border-l-black border-l-[12px] border-y-transparent border-y-[12px]"
         ></button>
       </div>
     );
@@ -72,13 +74,13 @@ function VerifyTicket(data) {
   return (
     <div className="flex justify-center">
       <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
-        <div className="float-right bg-gray-400 rounded-xl p-1 px-2">
+        <div className="float-right bg-gray-400 rounded-xl p-1">
           <p className="flex justify-center">{statusBlog}</p>
         </div>
         <div className="flex flex-row">
           <img src={userLogo} alt="" className="w-11 rounded-full" />
           <p className="flex items-center pl-4 text-2xl">
-            {auth.nickname} {auth.realname}
+            {auth.nickname}({auth.realname})
             <span className="pl-10 font-light text-base">
               Posted {props.timeCreated.substring(11, 16)}
             </span>

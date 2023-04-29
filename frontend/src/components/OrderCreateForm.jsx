@@ -1,38 +1,47 @@
 import React, { useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import userLogo from "../assets/user.jpg";
 
 function CreateOrderForm(props) {
-  const { auth, setShowModal, setIsAllow, showModal, setData, setSubmit, submit} = useAuth();
+  const {
+    auth,
+    setShowModal,
+    setIsAllow,
+    showModal,
+    setData,
+    setSubmit,
+    submit,
+  } = useAuth();
   const { toggleUpdateOrder, setToggleUpdateOrder } = useAuth();
   const [storeMenu, setMenuname] = useState("");
   const [amount, setAmt] = useState(1);
   const [errMsg, setErrMsg] = useState("");
-  const [checkForm, setCheckForm] = useState(false)
-  const [checkSubmit, setCheckSubmit] = useState(false)
-
+  const [checkForm, setCheckForm] = useState(false);
+  const [checkSubmit, setCheckSubmit] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(checkForm){
-    setData({storeMenu,amount})
-    if (storeMenu == "") {
-      setIsAllow(false);
-    } else {
-      setIsAllow(true);
-      setCheckSubmit(true)
-    }}
-    setCheckForm(false)
+    if (checkForm) {
+      setData({ storeMenu, amount });
+      if (storeMenu == "") {
+        setIsAllow(false);
+      } else {
+        setIsAllow(true);
+        setCheckSubmit(true);
+      }
+    }
+    setCheckForm(false);
   }, [showModal]);
 
-  useEffect(()=>{
-    if(submit && checkSubmit){
+  useEffect(() => {
+    if (submit && checkSubmit) {
       handleSubmit();
-      setSubmit(false)
+      setSubmit(false);
     }
-    setCheckSubmit(false)
-  },[submit])
+    setCheckSubmit(false);
+  }, [submit]);
 
   const handleSubmit = async (e) => {
     // console.log(auth)
@@ -63,14 +72,12 @@ function CreateOrderForm(props) {
       .then((response) => {
         response.text();
         setToggleUpdateOrder(!toggleUpdateOrder);
-        setData({})
+        setData({});
       })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
     navigate("/orderStatus");
   };
-
-  
 
   return (
     <div className="flex flex-col bg-gray-400/50 rounded-xl w-full">
@@ -104,7 +111,7 @@ function CreateOrderForm(props) {
             name="amount"
             id="amount"
             className="bg-gray-400 rounded-lg text-white ml-5 px-2 text-xl w-12 h-fit py-2"
-            value={1}
+            min={1}
           />
           <p className="text-xl ml-5">กล่อง</p>
         </div>
@@ -113,7 +120,7 @@ function CreateOrderForm(props) {
           <button
             type="Submit"
             onClick={() => {
-              setCheckForm(true)
+              setCheckForm(true);
               setShowModal(true);
             }}
             className="bg-emerald-500 text-2xl rounded-lg text-white ml-5 p-2"
