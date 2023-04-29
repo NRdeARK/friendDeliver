@@ -36,8 +36,10 @@ const ORDER_URL = "/Order";
 //         </div>
 //     )
 // }
+
 function OrderTicket() {
   const [Orders, setOrders] = useState(<></>);
+  const [OrderId, setOrderIds] = useState(<></>);
   const [isOrders,setIsOrder] = useState(false);
   function getUserName(item, i) {
     // console.log(i);

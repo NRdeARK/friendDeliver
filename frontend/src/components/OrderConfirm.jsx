@@ -7,7 +7,6 @@ const CreateOrderConfirmForm = () => {
   const [store, setStore] = useState("");
   const [amount, setAmt] = useState(1);
   const [errMsg, setErrMsg] = useState("");
-  const [text, setText] = useState("");
 
   const handleConfirm = async (e) => {
     console.log(selectedTime);

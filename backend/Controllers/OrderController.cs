@@ -25,27 +25,27 @@ namespace backend.Controllers
         [HttpGet()]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrder()
         {
-          if (_context.Orders == null)
-          {
-              return NotFound();
-          }
+            if (_context.Orders == null)
+            {
+                return NotFound();
+            }
             return Ok(await _context.Orders.ToListAsync());
         }
 
         [HttpGet("{postId}")]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrderByPostId(long postId)
         {
-          if (_context.Orders == null)
-          {
-              return NotFound();
-          }
-          var recieves = from m in _context.Orders
+            if (_context.Orders == null)
+            {
+                return NotFound();
+            }
+            var recieves = from m in _context.Orders
                            select m;
 
-        if(postId.Equals(null))
-        {
-            return BadRequest("post ID is null");
-        }
+            if (postId.Equals(null))
+            {
+                return BadRequest("post ID is null");
+            }
             recieves = recieves.Where(x => x.postId == postId);
             return Ok(await recieves.ToListAsync());
         }
@@ -61,14 +61,15 @@ namespace backend.Controllers
             {
                 return Conflict();
             }
-            var newMenuname = new Order{
+            var newMenuname = new Order
+            {
                 username = request.username,
                 nickname = request.nickname,
                 realname = request.realname,
                 postId = request.postId,
                 menuname = request.menuname,
                 amount = request.amount,
-                orderStatus= "waiting"
+                orderStatus = "waiting"
             };
 
             _context.Orders.Add(newMenuname);
@@ -76,7 +77,7 @@ namespace backend.Controllers
             return Ok("Create Order success");
         }
 
-        
+
 
         private bool OrderExists(long? orderId)
         {

@@ -71,9 +71,11 @@ function CreateOrderForm(props){
       </div>
 
       <div className='grid justify-items-center mr-[40px] mt-[30px]'>
-        <button type="Submit" onClick={handleSubmit} className='bg-green-500 p- text-white text-3xl'>
+
+      <button type="submit"  onClick={handleSubmit} className="ml-[10px] border-solid border-l-black border-l-[12px] border-y-transparent border-y-[12px]"></button>
+        {/* <button type="Submit" onClick={handleSubmit} className='bg-green-500 p- text-white text-3xl'>
           สั่ง
-        </button>
+        </button> */}
       </div>
       </div>
       </div>
@@ -81,3 +83,15 @@ function CreateOrderForm(props){
 };
 
 export default CreateOrderForm;
+
+{/* <select
+            value={selectedStatus}
+            onChange={(e) => setStatus(e.target.value)}
+            className='bg-gray-400 rounded-lg text-white text-lgl'
+            >
+             <option value="closed_reciving">ปิดรับออเดอร์</option> 
+            <option value="reciving">กำลังรับ</option> 
+            <option value="delivering">ถึงจุดนัดแล้ว</option> 
+            <option value="closed">ส่งเรียบร้อย</option>
+            </select>
+            <button onClick={handleSubmit} className="ml-[10px] border-solid border-l-black border-l-[12px] border-y-transparent border-y-[12px]"></button> */}
