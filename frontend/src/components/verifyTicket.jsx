@@ -72,6 +72,12 @@ function VerifyTicket(data) {
   const month = date[1];
   const year = date[0];
   return (
+    // <div className="w-[750px] h-[300px] bg-stone-200 rounded-lg flex flex-col p-5">
+    //   <div className="flex flex-row">
+    //     <div className="p-5 rounded-full bg-gray-500 justify-start"></div>
+    //     <div className="ml-[10px] text-4xl"> {props.nickname} {props.realname}</div>
+    //     <div className="ml-[50px] self-end">
+    //       Posted {props.timeCreated.substring(11, 16)}
     <div className="flex justify-center">
       <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
         <div className="float-right bg-gray-400 rounded-xl p-1">

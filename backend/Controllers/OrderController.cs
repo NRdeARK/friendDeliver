@@ -21,7 +21,6 @@ namespace backend.Controllers
             _context = context;
         }
 
-
         [HttpGet()]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrder()
         {
@@ -47,6 +46,24 @@ namespace backend.Controllers
             return BadRequest("post ID is null");
         }
             recieves = recieves.Where(x => x.postId == postId);
+            return Ok(await recieves.ToListAsync());
+        }
+
+        [HttpGet("username/{username}")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrderByUsername(string username)
+        {
+          if (_context.Orders == null)
+          {
+              return NotFound();
+          }
+          var recieves = from m in _context.Orders
+                           select m;
+
+        if(username.Equals(null))
+        {
+            return BadRequest("post ID is null");
+        }
+            recieves = recieves.Where(x => x.username == username);
             return Ok(await recieves.ToListAsync());
         }
 
@@ -77,28 +94,26 @@ namespace backend.Controllers
             return Ok("Create Order success");
         }
 
-        [HttpPut("/status/")]
-        public async Task<ActionResult<OrderUpdateStatus>> updateOrderStatus(OrderUpdateStatus request)
-        {
-            if (_context.Orders == null)
-            {
-                return Problem("Entity set 'OrderContext.Orders'  is null.");
-            }
-            if (OrderExists(request.orderId))
-            {
-                return NotFound();
-            }
-            var selectPost = _context.Orders.Where(e => e.orderId == request.orderId).FirstOrDefault();
-            if(selectPost == null ){
-                return NotFound();
-            }
-            selectPost.orderStatus = request.status;
-            _context.Orders.Update(selectPost);
-            await _context.SaveChangesAsync();
-            return Ok("update Order success");
-        }
-
-
+        // [HttpPut("status/{orderId}/{status}")]
+        // public async Task<ActionResult<OrderUpdateStatus>> updateOrderStatus(string orderId, string)
+        // {
+        //     if (_context.Orders == null)
+        //     {
+        //         return Problem("Entity set 'OrderContext.Orders'  is null.");
+        //     }
+        //     if (OrderExists(request.orderId))
+        //     {
+        //         return NotFound();
+        //     }
+        //     var selectPost = _context.Orders.Where(e => e.orderId == request.orderId).FirstOrDefault();
+        //     if(selectPost == null ){
+        //         return NotFound();
+        //     }
+        //     selectPost.orderStatus = request.status;
+        //     _context.Orders.Update(selectPost);
+        //     await _context.SaveChangesAsync();
+        //     return Ok("update Order success");
+        // }
 
         private bool OrderExists(long? orderId)
         {

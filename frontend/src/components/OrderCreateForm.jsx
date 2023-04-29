@@ -48,7 +48,7 @@ function CreateOrderForm(props) {
     let data = JSON.stringify({
       orderId: 0,
       postId: props.postId,
-      username: auth.username,
+      username: auth.user,
       nickname: auth.nickname,
       realname: auth.realname,
       menuname: storeMenu,
