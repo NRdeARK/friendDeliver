@@ -92,7 +92,7 @@ function VerifyTicket(data) {
           <div className="pl-24">
             <p className="pb-2">จำนวนที่รับ : {props.amount} จาน</p>
             <p className="pb-2">จุดนัดรับ : {props.location}</p>
-            <p className="pb-2">ช่วงเวลานัดรับ : {props.time}</p>
+            <p className="pb-2">ช่วงเวลานัดรับ : {props.reserved}</p>
             <p>
               วันที่/เดือน/ปี : {day}/{month}/{year}
             </p>

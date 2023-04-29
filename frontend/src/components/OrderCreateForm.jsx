@@ -80,7 +80,7 @@ function CreateOrderForm(props) {
   };
 
   return (
-    <div className="flex flex-col bg-gray-400/50 rounded-xl w-full">
+    <div className="flex flex-col bg-gray-400/50 rounded-xl w-full shadow-lg">
       <div className="p-4 ml-[20px] mt-[10px] flex flex-row">
         <img src={userLogo} alt="" className="w-11 rounded-full" />
         <p className="flex ml-5 text-2xl items-center">{auth.user}</p>
@@ -88,7 +88,7 @@ function CreateOrderForm(props) {
           เวลา
         </label> */}
       </div>
-      <div className="ml-20 py-3 flex flex-row ">
+      <div className="ml-20 py-3 flex flex-row">
         <div className="flex items-center w-full">
           <label htmlFor="exampleMenu" className="text-xl">
             เมนู
