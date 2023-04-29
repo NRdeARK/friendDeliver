@@ -27,13 +27,7 @@ function OrderStatus() {
       });
   }, []);
 
-  return (
-    <div className="w-screen h-screen">
-      <div className="mt-[60px] ml-[70px] flex flex-col items-center gap-y-3">
-        {posts}
-      </div>
-    </div>
-  );
+  return <div className="mt-40">{posts}</div>;
 }
 
 export default OrderStatus;
