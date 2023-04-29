@@ -58,13 +58,6 @@ const CreatePostForm = () => {
     } else {
       setIsAllow(true);
     }
-    //   const [store, setStore] = useState("");
-    // const [amount, setAmt] = useState(1);
-    // const [location, setLocation] = useState("");
-    // const [date, setDate] = useState("");
-    // const [selectedTime, setSelectedTime] = useState("ช่วงเช้า");
-    // const [errMsg, setErrMsg] = useState("");
-    // const [showModal, setShowModal] = React.useState(false);
   }, [showModal]);
 
   useEffect(() => {
