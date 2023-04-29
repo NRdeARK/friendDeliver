@@ -101,7 +101,7 @@ const CreatePostForm = () => {
           name="amount"
           id="amount"
           className="bg-gray-400 rounded-lg text-white ml-4 p-[1px] text-xl"
-          min={1}
+          value={amount}
         />
         <p className="text-xl ml-5">จาน</p>
       </div>
