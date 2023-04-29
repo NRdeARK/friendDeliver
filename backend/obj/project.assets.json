@@ -10988,19 +10988,44 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\natta\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\AVI003\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+>>>>>>> 4e148c2d04954e0418e71f6cc15dda6ac70cf659
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
       "projectName": "backend",
       "projectPath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
       "packagesPath": "C:\\Users\\natta\\.nuget\\packages\\",
       "outputPath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\obj\\",
+=======
+      "projectUniqueName": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
+      "projectName": "backend",
+      "projectPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\AVI003\\.nuget\\packages\\",
+      "outputPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\obj\\",
+>>>>>>> 4e148c2d04954e0418e71f6cc15dda6ac70cf659
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\natta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\AVI003\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> 4e148c2d04954e0418e71f6cc15dda6ac70cf659
       ],
       "originalTargetFrameworks": [
         "net7.0"

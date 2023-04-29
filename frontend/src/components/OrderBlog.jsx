@@ -16,7 +16,7 @@ function OrderBlog(props) {
     // console.log(item);
     return (
       <div className="flex justify-center" key={i}>
-        <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
+        <div className="bg-gray-400/50 mb-7 p-5 rounded-xl drop-shadow-md w-full">
           {BlogOrder(item)}
         </div>
       </div>
@@ -38,7 +38,7 @@ function OrderBlog(props) {
                 <div className="flex justify-center">
                   <div
                     key={0}
-                    className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12"
+                    className="bg-gray-400/50 mb-7 p-5 rounded-xl drop-shadow-md w-full"
                   >
                     {BlogOrder(response[0].data[0])}
                   </div>

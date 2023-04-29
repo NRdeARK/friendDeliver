@@ -1,7 +1,8 @@
-import React, { useState, useId, useEffect} from "react";
-import { useNavigate } from "react-router-dom"
-import { Link,  } from "react-router-dom";
+import React, { useState, useId, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import userLogo from "../assets/user.jpg";
 
 const CreatePostForm = () => {
   // const [user, setUser] = useState("");
@@ -14,6 +15,7 @@ const CreatePostForm = () => {
   const [selectedTime, setSelectedTime] = useState("ช่วงเช้า");
   const [errMsg, setErrMsg] = useState("");
   const [showModal, setShowModal] = React.useState(false);
+  const [isAllow, setIsAllow] = useState(true);
 
   const handleSubmit = async (e) => {
     console.log(selectedTime);
@@ -43,26 +45,46 @@ const CreatePostForm = () => {
 
     fetch("http://localhost:5287/api/Post", requestOptions)
       .then((response) => {
-        response.text()
-        navigate("/OpenPost")
+        response.text();
+        navigate("/OpenPost");
       })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
   };
 
   useEffect(() => {
+    if (store == "" || location == "" || date == "" || selectedTime == "") {
+      setIsAllow(false);
+    } else {
+      setIsAllow(true);
+    }
+    //   const [store, setStore] = useState("");
+    // const [amount, setAmt] = useState(1);
+    // const [location, setLocation] = useState("");
+    // const [date, setDate] = useState("");
+    // const [selectedTime, setSelectedTime] = useState("ช่วงเช้า");
+    // const [errMsg, setErrMsg] = useState("");
+    // const [showModal, setShowModal] = React.useState(false);
+  }, [showModal]);
+
+  useEffect(() => {
     console.log(date);
   }, [date]);
+
   return (
-    <div className="flex flex-col justify-stretch flex-nowrap h-[500px] w-[900px] bg-gray-200 accent-gray-300 rounded-lg">
-      <div className="p-4 ml-[20px] mt-[10px] flex flex-row justify-items-start">
-        <div className="p-5 rounded-full bg-gray-500 justify-start"></div>
+    <div
+      className="flex flex-col justify-stretch flex-nowrap bg-gray-200 mt-16
+                  accent-gray-300 rounded-3xl drop-shadow-md w-7/12 h-fit p-5"
+    >
+      <div className="pl-4 flex flex-row items-center">
+        <img src={userLogo} alt="" className="w-11 rounded-full" />
         <p className="ml-5 text-2xl justify-start">
           {auth.nickname}({auth.realname})
         </p>
       </div>
-      <div className="ml-[70px] py-5 flex flex-row ">
-        <label htmlFor="exampleStoreName" className="ml-5 text-4xl">
+      <br />
+      <div className="flex flex-row ml-24 items-center">
+        <label htmlFor="exampleStoreName" className="text-4xl xl:text-2xl">
           ร้าน :{" "}
         </label>
         <input
@@ -70,188 +92,185 @@ const CreatePostForm = () => {
           onChange={(e) => setStore(e.target.value)}
           name="store"
           id="store"
-          className="bg-gray-400 rounded-lg text-white ml-5 px-[80px] py-2 text-xl"
+          className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl w-3/4 xl:text-base"
         />
       </div>
-
-      <div className="py-3 ms-[180px] flex flex-row">
-        <label htmlFor="exampleAmount" className="text-xl">
-          จำนวนที่รับ :{" "}
-        </label>
-        <input
-          type="number"
-          onChange={(e) => setAmt(e.target.value)}
-          name="amount"
-          id="amount"
-          className="bg-gray-400 rounded-lg text-white ml-4 p-[1px] text-xl"
-        />
-        <p className="text-xl ml-5">จาน</p>
+      <br />
+      <div className="ml-40">
+        <div className="flex flex-row items-center">
+          <label htmlFor="exampleAmount" className="text-2xl xl:text-xl">
+            จำนวนที่รับ :{" "}
+          </label>
+          <input
+            type="number"
+            onChange={(e) => setAmt(e.target.value)}
+            name="amount"
+            id="amount"
+            className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl w-1/12 xl:text-base"
+            value={amount}
+            min={1}
+          />
+          <p className="text-2xl ml-2 xl:text-xl">จาน</p>
+        </div>
+        <br />
+        <div className="flex flex-row items-center">
+          <label htmlFor="exampleLocation" className="text-2xl xl:text-xl">
+            จุดนัดรับ :{" "}
+          </label>
+          <input
+            type="text"
+            onChange={(e) => setLocation(e.target.value)}
+            name="locate"
+            id="locate"
+            className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl w-4/6 xl:text-base"
+          />
+        </div>
+        <br />
+        <div className="flex flex-row items-center">
+          <label htmlFor="exampleTime" className="text-2xl xl:text-xl">
+            ช่วงเวลาที่นัดรับ :{" "}
+          </label>
+          <select
+            value={selectedTime}
+            onChange={(e) => setSelectedTime(e.target.value)}
+            className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl xl:text-base"
+          >
+              <option value="ช่วงเช้า">ช่วงเช้า</option> {" "}
+            <option value="ช่วงสาย">ช่วงสาย</option> {" "}
+            <option value="ช่วงเที่ยง">ช่วงเที่ยง</option> {" "}
+            <option value="ช่วงบ่าย">ช่วงบ่าย</option> {" "}
+            <option value="ช่วงเย็น">ช่วงเย็น</option>
+          </select>
+        </div>
+        <br />
+        <div className="flex flex-row items-center">
+          <label htmlFor="exampleDate" className="text-2xl xl:text-xl">
+            ว/ด/ป :{" "}
+          </label>
+          <input
+            type="date"
+            onChange={(e) => setDate(e.target.value)}
+            name="date"
+            id="date"
+            className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl xl:text-base"
+          />
+        </div>
       </div>
-
-      <div className="py-3 ms-[180px]">
-        <label htmlFor="exampleLocation" className="text-xl">
-          จุดนัดรับ :{" "}
-        </label>
-        <input
-          type="text"
-          onChange={(e) => setLocation(e.target.value)}
-          name="locate"
-          id="locate"
-          className="bg-gray-400 rounded-lg text-white text-xl p-[1px]"
-        />
-      </div>
-
-      <div className="py-3 ms-[180px]">
-        <label htmlFor="exampleTime" className="text-xl">
-          ช่วงเวลาที่นัดรับ :{" "}
-        </label>
-        <select
-          value={selectedTime}
-          onChange={(e) => setSelectedTime(e.target.value)}
-          className="bg-gray-400 rounded-lg text-white text-xl"
-        >
-            <option value="ช่วงเช้า">ช่วงเช้า</option> {" "}
-          <option value="ช่วงสาย">ช่วงสาย</option> {" "}
-          <option value="ช่วงเที่ยง">ช่วงเที่ยง</option> {" "}
-          <option value="ช่วงบ่าย">ช่วงบ่าย</option> {" "}
-          <option value="ช่วงเย็น">ช่วงเย็น</option>
-        </select>
-      </div>
-
-      <div className="py-3 ms-[180px]">
-        <label htmlFor="exampleDate" className="text-xl">
-          ว/ด/ป :{" "}
-        </label>
-        <input
-          type="date"
-          onChange={(e) => setDate(e.target.value)}
-          name="date"
-          id="date"
-          className="bg-gray-400 rounded-lg text-white text-xl"
-        />
-      </div>
-      <div className="grid justify-items-end mr-[40px] mt-[40px]">
+      <br />
+      <div className="flex justify-end mr-4">
         <button
           type="Submit"
           onClick={() => {
             setShowModal(true);
           }}
-          className="bg-teal-500 p-1 text-white text-3xl"
+          className="bg-emerald-500 text-2xl rounded-lg text-white ml-5 p-2 xl:text-xl"
         >
           โพสต์
         </button>
         {showModal ? (
-        // <>
-        //   <div
-        //     className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-        //   >
-        //     <div className="relative w-auto my-6 mx-auto max-w-3xl">
-        //       {/*content*/}
-        //       <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-        //         {/*header*/}
-                
-        //         <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                
-        //           <h3 className="text-3xl font-semibold">
-                  
-        //           <ion-icon name="mail-open-outline" class="text-3xl px-4"></ion-icon>
-                  
-        //           Verification
-
-        //           </h3>
-        //           <button
-        //             className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-        //             onClick={() => setShowModal(false)}
-        //           >
-        //             <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-        //               ×
-        //             </span>
-        //           </button>
-        //         </div>
-        //         {/*body*/}
-        //         <div className="relative p-6 flex-auto">
-        //           <p className="my-4 text-slate-500 text-lg leading-relaxed">
-        //             I always felt like I could do anything. That’s the main
-        //             thing people are controlled by! Thoughts- their perception
-                    
-        //           </p>
-        //         </div>
-        //         {/*footer*/}
-        //         <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-        //           <button
-        //             className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        //             type="button"
-        //             onClick={() => setShowModal(false)}
-        //           >
-        //             Close
-        //           </button>
-        //           <button
-        //             className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        //             type="button"
-        //             onClick={() => {
-        //               handleSubmit();
-        //               setShowModal(false);}}
-        //           >
-        //             <Link to="/openPost">Confirm</Link>
-        //           </button>
-          <>
-            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-              <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                {/*content*/}
-                <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                  {/*header*/}
-                  <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                    <h3 className="text-3xl font-semibold">ยืนยัน</h3>
-                    <button
-                      className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                      onClick={() => setShowModal(false)}
-                    >
-                      <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                        ×
-                      </span>
-                    </button>
-                  </div>
-                  {/*body*/}
-                  <div className="relative p-6 flex-auto">
-                    <h1>
-                      {auth.nickname} ({auth.realname}) #{auth.user}
-                    </h1>
-                    <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                      storename: {store} <br />
-                      amount: {amount} <br />
-                      location: {location} <br />
-                      reserved: {selectedTime} <br />
-                      date: {date}
-                    </p>
-                  </div>
-                  {/*footer*/}
-                  <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                    
-                  <button
-                      className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => {
-                        handleSubmit();
-                        setShowModal(false);
-                      }}
-                    >
-                      ยืนยัน
-                    </button>
-                    <button
-                      className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => setShowModal(false)}
-                    >
-                      ยกเลิก
-                    </button>
-                    
+          <div>
+            {isAllow ? (
+              <>
+                <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                  <div className="relative w-1/2 my-6 mx-auto">
+                    {/*content*/}
+                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                      {/*header*/}
+                      <div className="p-5 border-b border-solid border-slate-200 rounded-t flex justify-center">
+                        <h3 className="text-3xl font-semibold">ยืนยัน</h3>
+                      </div>
+                      {/*body*/}
+                      <div className="relative p-5 flex-auto">
+                        <h1 className="text-xl pl-10 xl:p-1">
+                          {auth.nickname} ({auth.realname}) #{auth.user}
+                        </h1>
+                        <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
+                          ชื่อร้าน : {store} <br />
+                          จำนวน : {amount} จาน <br />
+                          จุดนัดรับ: {location} <br />
+                          ช่วงเวลาที่นัดรับ : {selectedTime} <br />
+                          วันที่ : {date.split("-")[2]}/{date.split("-")[1]}/
+                          {date.split("-")[0]}
+                        </p>
+                      </div>
+                      {/*footer*/}
+                      <div className="flex items-center justify-end p-5 border-t border-solid border-slate-200 rounded-b">
+                        <button
+                          className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm rounded shadow 
+                                    hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150
+                                    w-1/2 py-2"
+                          type="button"
+                          onClick={() => {
+                            setSubmit(true);
+                            setShowModal(false);
+                          }}
+                        >
+                          ยืนยัน
+                        </button>
+                        <button
+                          className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none 
+                                    focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:text-red-500/75
+                                    w-1/2"
+                          type="button"
+                          onClick={() => setShowModal(false)}
+                        >
+                          ยกเลิก
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-          </>
-        ) : null}
+                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+              </>
+            ) : (
+              <>
+                <div
+                  className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none 
+                              focus:outline-none"
+                >
+                  <div className="relative w-1/2 my-6 mx-auto">
+                    {/*content*/}
+                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                      {/*header*/}
+                      <div className="flex justify-center p-5 border-b border-solid border-slate-200 rounded-t">
+                        <h3 className="text-3xl font-semibold">
+                          กรุณากรอกให้ครบ
+                        </h3>
+                      </div>
+                      {/*body*/}
+                      <div className="relative p-5 flex-auto">
+                        <h1 className="text-xl pl-10 xl:p-1">
+                          {auth.nickname} ({auth.realname}) #{auth.user}
+                        </h1>
+                        <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
+                          ชื่อร้าน : {store} <br />
+                          จำนวน : {amount} จาน <br />
+                          จุดนัดรับ: {location} <br />
+                          ช่วงเวลาที่นัดรับ : {selectedTime} <br />
+                          วันที่ : {date.split("-")[2]}/{date.split("-")[1]}/
+                          {date.split("-")[0]}
+                        </p>
+                      </div>
+                      {/*footer*/}
+                      <button
+                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none 
+                        focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:text-red-500/75
+                        border-t border-solid border-slate-200"
+                        type="button"
+                        onClick={() => setShowModal(false)}
+                      >
+                        ยกเลิก
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+              </>
+            )}
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

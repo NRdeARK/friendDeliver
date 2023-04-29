@@ -8,11 +8,9 @@ const Order_URL = "/Order/";
 function VerifyBlog({data}){
     let content;
     const {auth} = useAuth();
-    const {amount , date, location ,nickname, orderList, postId, realname ,reserved, status , storename, timeCreated, username} = data;
-    if (auth.user === username){
+    if (auth.user == data.username){
         content = <div>
-            <VerifyTicket username={username} name={realname} storename={storename} amount={amount} status={status}
-                locate={location} time={reserved} date={date} key={timeCreated} postId={postId} timeCreated={timeCreated} type={"Selective"}></VerifyTicket>
+            <VerifyTicket props={data} type={"Selective"}></VerifyTicket>
         </div>
     }
     else{
@@ -34,11 +32,8 @@ function VerifyBlog({data}){
           console.log(error);
         });
         content = <div>
-            <VerifyTicket username={username} name={realname} storename={storename} amount={amount} status={status}
-                locate={location} time={reserved} date={date} key={timeCreated} postId={postId} timeCreated={timeCreated} type={"Other"}></VerifyTicket>
-            {order}
+            <VerifyTicket props={data} type={"Other"}></VerifyTicket>
         </div>
-
     }
     return(
         <div>
