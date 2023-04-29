@@ -3,29 +3,35 @@ import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
 function CreateOrderForm(props) {
-  const { auth, setShowModal, setIsAllow, showModal, setData, setSubmit, submit,data} = useAuth();
+  const { auth, setShowModal, setIsAllow, showModal, setData, setSubmit, submit} = useAuth();
   const { toggleUpdateOrder, setToggleUpdateOrder } = useAuth();
   const [storeMenu, setMenuname] = useState("");
   const [amount, setAmt] = useState(1);
   const [errMsg, setErrMsg] = useState("");
+  const [checkForm, setCheckForm] = useState(false)
+  const [checkSubmit, setCheckSubmit] = useState(false)
+
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(storeMenu)
+    if(checkForm){
     setData({storeMenu,amount})
     if (storeMenu == "") {
       setIsAllow(false);
     } else {
       setIsAllow(true);
-    }
+      setCheckSubmit(true)
+    }}
+    setCheckForm(false)
   }, [showModal]);
 
   useEffect(()=>{
-    if(submit==true){
+    if(submit && checkSubmit){
       handleSubmit();
       setSubmit(false)
     }
+    setCheckSubmit(false)
   },[submit])
 
   const handleSubmit = async (e) => {
@@ -107,6 +113,7 @@ function CreateOrderForm(props) {
           <button
             type="Submit"
             onClick={() => {
+              setCheckForm(true)
               setShowModal(true);
             }}
             className="bg-emerald-500 text-2xl rounded-lg text-white ml-5 p-2"

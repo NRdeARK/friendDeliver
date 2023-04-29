@@ -8,18 +8,18 @@ function Navbar() {
 
   let LinksUnAuth = [
     { name: "Home", link: "/" },
-    { name: "Open Order", link: "/openOrder" },
+    // { name: "Open Order", link: "/openOrder" },
     { name: "Open Post", link: "/openPost" },
     { name: "Login", link: "/login" },
   ];
 
   let LinksAuth = [
     { name: "Home", link: "/" },
-    { name: "Open Order", link: "/openOrder" },
+    // { name: "Open Order", link: "/openOrder" },
     { name: "Open Post", link: "/openPost" },
     { name: "Order Status", link: "/orderStatus" },
-    { name: "Create Post", link: "/createPost" },
-    { name: "Create Order", link: "/createOrder" },
+    // { name: "Create Post", link: "/createPost" },
+    // { name: "Create Order", link: "/createOrder" },
     { name: "testConfirm", link: "/testOrderConfirm" },
     { name: auth.user, link: "/profile" },
   ];
@@ -36,14 +36,14 @@ function Navbar() {
             <ion-icon name="code"></ion-icon>
             <ion-icon name="chevron-forward"></ion-icon>
             <ion-icon name=""></ion-icon>
-            <p>    FriendDeliver</p>
+            <p>FriendDeliver</p>
           </div>
-          <div onClick={() => setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden">
+          <div onClick={() => setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer lg:hidden">
             <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
           </div>
           <ul
-            className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? "top-10 opacity-100" : "top-[-400px]"
-              } md:opacity-100 opacity-0 `}
+            className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${open ? "top-10 opacity-100" : "top-[-400px]"
+              } lg:opacity-100 opacity-0 `}
           >
             {auth.user == null
             ?

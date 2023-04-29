@@ -27,14 +27,14 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="unauthorized" element={<Unauthorized />} />
         <Route path="openPost" element={<OpenPost/>}/>
-        <Route path="openOrder" element={<OpenOrder/>}/>
+        {/* <Route path="openOrder" element={<OpenOrder/>}/> */}
         <Route path="testOrderConfirm" element={<TestConfirm/>}/>
 
         {/*protected routes*/}
         <Route element={<RequireAuth />}>
           <Route path="protected" element={<Protected />} />
           <Route path ="createPost" element = {<CreatePost/>} />
-          <Route path ="createOrder" element = {<CreateOrder/>}/>
+          {/* <Route path ="createOrder" element = {<CreateOrder/>}/> */}
           <Route path="profile" element={<Profile />} />
           <Route path="orderStatus" element={<OrderStatus/>}/>
         </Route>

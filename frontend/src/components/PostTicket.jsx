@@ -12,7 +12,7 @@ function PostTicket() {
     return (
       <div
         key={i}
-        className="flex flex-row justify-around items-center border-t-[1px] border-b-[1px] border-gray-600 p-3"
+        className=" "
       >
         {Tickets(item)}
       </div>
@@ -39,12 +39,10 @@ function PostTicket() {
   return (
     <div>
       { isPost ? (
-        <div className="bg-stone-200 flex flex-col items-center rounded-md">
-          <br />
-          <br />
+        <div className=" grid grid-row gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+          
           {posts}
-          <br />
-          <br />
+          
         </div>
       ) : (
         <>ไม่มีรายการ</>
