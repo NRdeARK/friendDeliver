@@ -79,10 +79,10 @@ const CreatePostForm = () => {
     fetch("http://localhost:5287/api/Post", requestOptions)
       .then((response) => {
         response.text();
-        navigate("/OpenPost");
       })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+      setData([])
       navigate("/openPost");
   };
 
