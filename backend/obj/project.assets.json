@@ -10988,35 +10988,19 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\natta\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\asus\\.nuget\\packages\\": {}
->>>>>>> a9dfde46473a32d8356165694ef761c166cdc68c
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "c:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
+      "projectUniqueName": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "c:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
+      "projectPath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
       "packagesPath": "C:\\Users\\natta\\.nuget\\packages\\",
-      "outputPath": "c:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\obj\\",
+      "outputPath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\natta\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-      "projectUniqueName": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj",
-      "projectName": "backend",
-      "projectPath": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> a9dfde46473a32d8356165694ef761c166cdc68c
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -11090,8 +11074,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
