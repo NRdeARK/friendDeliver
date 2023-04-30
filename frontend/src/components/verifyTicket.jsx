@@ -7,7 +7,7 @@ function VerifyTicket(data) {
   const props = data.props.data;
   const type = data.type;
   let statusBlog;
-  // console.log(props);
+  console.log(props);
   const [selectedStatus, setStatus] = useState(props.status);
 
   const handleSubmit = async (e) => {

@@ -11,6 +11,7 @@ const ORDER_POSTID_URL = "Order/";
 
 function VerifyBlog(data) {
   const props = data.data;
+  console.log(props)
   let content;
   const { auth } = useAuth();
   const [orderList, setOrderList] = useState([]);
