@@ -7,15 +7,18 @@ function OpenPost() {
   return (
     <div>
       <div className="flex justify-end mr-24 mt-36">
-        <Link to="/createPost">
+        <Link
+          to="/createPost"
+          className="flex flex-col items-center transition ease-in-out delay-150 duration-300
+                    hover:-translate-y-1 hover:scale-110"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-16 h-16 bg-white rounded-full p-0 shadow-lg transition ease-in-out delay-150 duration-300
-                    hover:-translate-y-1 hover:scale-110"
+            className="w-16 h-16 bg-white rounded-full p-0 shadow-lg "
           >
             <path
               strokeLinecap="round"
@@ -23,6 +26,7 @@ function OpenPost() {
               d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
+          <p className="font-semibold text-lg mt-2">create post</p>
         </Link>
       </div>
       <PostBlog></PostBlog>
