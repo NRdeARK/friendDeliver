@@ -12,7 +12,6 @@ import { Route, Routes } from "react-router-dom";
 import CreatePost from "./pages/CreatePost";
 import CreateOrder from "./pages/CreateOrder";
 import OpenPost from "./pages/OpenPost";
-import OpenOrder from "./pages/OpenOrder";
 import OrderStatus from "./pages/OrderStatus";
 import TestConfirm from "./pages/testConfirm";
 

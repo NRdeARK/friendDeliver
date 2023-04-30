@@ -15,7 +15,6 @@ function Navbar() {
     { name: "Home", link: "/" },
     { name: "Open Post", link: "/openPost" },
     { name: "Order Status", link: "/orderStatus" },
-    { name: "testConfirm", link: "/testOrderConfirm" },
     { name: auth.user, link: "/profile" },
   ];
 
