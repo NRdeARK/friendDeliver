@@ -86,21 +86,18 @@ function OrderStatus() {
 
           console.log(postList);
           console.log(buyerPostlist);
-        if(buyerPostlist.lenght != 0){
-          for (let i in buyerPostlist) {
-            if(!postList.includes(buyerPostlist[i])){
-              postList.push(buyerPostlist[i])
-              validateBuyerPostlist.push(buyerPostlist[i])
-              console.log(buyerPostlist[i])
+          if (buyerPostlist.lenght != 0) {
+            for (let i in buyerPostlist) {
+              if (!postList.includes(buyerPostlist[i])) {
+                postList.push(buyerPostlist[i]);
+                validateBuyerPostlist.push(buyerPostlist[i]);
+                console.log(buyerPostlist[i]);
+              }
             }
+            setListBuyerPostId(validateBuyerPostlist);
+          } else {
+            setListBuyerPostId([]);
           }
-          setListBuyerPostId(validateBuyerPostlist);
-        }else{
-          setListBuyerPostId([]);
-        }
-
-
-
         })
         .catch((error) => {
           console.log(error);

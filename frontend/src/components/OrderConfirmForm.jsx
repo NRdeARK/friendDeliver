@@ -72,7 +72,7 @@ const OrderConfirmForm = (data) => {
         <br />
       </div>
       {
-      confirmed != ""?
+      confirmed != "-"?
       <>{console.log(confirmed)}</>
       :
         <>
