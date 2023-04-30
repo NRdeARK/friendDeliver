@@ -55,7 +55,7 @@ function OrderStatus() {
           } else if (Object.keys(response).length == 1) {
             content = response[0].data;
           } else {
-            content = response.data.map((item) => {
+            content = response[0].data.map((item) => {
               return item;
             });
           }
@@ -94,15 +94,7 @@ function OrderStatus() {
   }, [resOrder, resPost]);
   return (
     <div className="w-screen h-screen">
-      <div className="mt-[60px] ml-[70px] flex flex-col items-center gap-y-3">
-        {/* {JSON.stringify(resOrder)}
-        <br />
-        {JSON.stringify(resPost)}
-        <br />
-        <br />
-        {JSON.stringify(combine)}
-        <br />
-        <br /> */}
+      <div className="mt-36 flex flex-col gap-y-3">
         {handleJson()}
       </div>
     </div>
