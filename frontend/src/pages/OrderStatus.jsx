@@ -9,27 +9,31 @@ import useAuth from "../hooks/useAuth";
 function OrderStatus() {
   const [resOrder, setResOrder] = useState("");
   const [resPost, setResPost] = useState("");
-  const [combine, setCombine] = useState();
   const [unique, setUnique] = useState("");
 
+  const [content,setContent] = useState(<></>);
   const { auth, data } = useAuth();
 
-  function handleJson() {
+  useEffect(()=> {
+    // console.log(resOrder,resPost,unique)
     if (resOrder != "" && resPost != "" && unique != "") {
       let s = JSON.stringify(unique)
       const postList = JSON.parse(s);
       console.log(JSON.parse(postList[0]));
       if (postList.length == 0) {
-        return <></>;
+        console.log("test1")
+        setContent(<></>)
       } else if (postList.length == 1) {
-        return <div key={1}><VerifyBlog data={JSON.parse(postList[0])}></VerifyBlog></div>;
+        console.log("test2")
+        setContent( <div key={1}><VerifyBlog data={JSON.parse(postList[0])}></VerifyBlog></div>);
       } else {
-        return postList.map((item, i) => {
+        console.log("test3")
+        setContent( postList.map((item, i) => {
           return <div key={i}><VerifyBlog data={JSON.parse(postList[i])}></VerifyBlog></div>;
-        });
+        }));
       }
     }
-  }
+  },[unique])
 
   useEffect(() => {
     axios
@@ -48,7 +52,7 @@ function OrderStatus() {
       })
       .then((response) => {
         axios.all(response.map((link) => axios.get(link))).then((response) => {
-          console.log(response[0].data[0]);
+          // console.log(response[0].data[0]);
           let content;
           if (Object.keys(response).length == 0) {
             content = [];
@@ -88,14 +92,13 @@ function OrderStatus() {
       let content = resOrder.concat(resPost);
       let uniqueContent = new Set(content.map(JSON.stringify));
       console.log(content);
-      setCombine(resOrder.concat(resPost));
       setUnique(Array.from(uniqueContent));
     }
   }, [resOrder, resPost]);
   return (
     <div className="w-screen h-screen">
-      <div className="mt-36 flex  flex-col gap-y-3 px-4 ">
-        {handleJson()}
+      <div className="mt-36 flex flex-col gap-y-3">
+        {content}
       </div>
     </div>
   );
