@@ -27,7 +27,9 @@ function VerifyBlog(data) {
 
   if (auth.user == props.username) {
     content = (
-      <div>
+      <div
+      className= {props.status == "ส่งเรียบร้อย" ? "hidden" : "visible"} 
+      >
         <VerifyTicket props={data} type={"Selective"}></VerifyTicket>
         {orderList.map((item) => {
           if (props.username == item.username)
