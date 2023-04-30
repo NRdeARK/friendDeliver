@@ -10988,16 +10988,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\natta\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\asus\\.nuget\\packages\\": {}
->>>>>>> ba9e21cd1508dbbd0591fadf0d6527f60d35ef43
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
       "projectName": "backend",
       "projectPath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
@@ -11006,17 +11001,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\natta\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-      "projectUniqueName": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj",
-      "projectName": "backend",
-      "projectPath": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asus\\Documents\\Coding_stuff\\friendDeliver\\backend\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> ba9e21cd1508dbbd0591fadf0d6527f60d35ef43
       ],
       "originalTargetFrameworks": [
         "net7.0"
