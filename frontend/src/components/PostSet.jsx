@@ -12,7 +12,7 @@ function PostSet(props) {
   const [isFoodClick, setIsFoodClick] = useState(false);
   return (
     <div className="flex justify-center">
-      <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
+      <div className="bg-slate-700 text-slate-50 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
         {Blog(item)}
         {auth.user == null ? (
           <></>
@@ -20,7 +20,7 @@ function PostSet(props) {
           <>
             <div className="flex justify-between my-8 h-10">
               <button
-                className="bg-gray-100/75 drop-shadow-md w-1/2 text-center rounded text-lg hover:bg-gray-200 mr-4"
+                className="bg-gray-100/75 text-black drop-shadow-md w-1/2 text-center rounded text-lg hover:bg-gray-200 mr-4"
                 onClick={() => {
                   setIsRecentClick(!isRecentClick);
                   // console.log("test");
@@ -29,7 +29,7 @@ function PostSet(props) {
                 recent order
               </button>
               <button
-                className="bg-gray-100/75 drop-shadow-md w-1/2 text-center rounded text-lg hover:bg-gray-200 ml-4"
+                className="bg-gray-100/75 text-black drop-shadow-md w-1/2 text-center rounded text-lg hover:bg-gray-200 ml-4"
                 onClick={() => {
                   setIsFoodClick(!isFoodClick);
                 }}

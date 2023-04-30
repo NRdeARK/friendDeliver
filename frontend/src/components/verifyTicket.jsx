@@ -17,7 +17,7 @@ function VerifyTicket(data) {
       status: selectedStatus,
     };
 
-    // console.log(data);
+    console.log(data);
 
     Promise.all([axios.put(POST_URL, data)])
       .then((response) => {
@@ -31,7 +31,7 @@ function VerifyTicket(data) {
   if (type == "Selective") {
     statusBlog = (
       <div className="flex items-center">
-        <label htmlFor="exampleTime" className="text-lg ml-1">
+        <label htmlFor="exampleTime" className="text-lg ml-1 text-black">
           สถานะ
         </label>
         <select
@@ -39,9 +39,9 @@ function VerifyTicket(data) {
           onChange={(e) => setStatus(e.target.value)}
           className="bg-gray-400 rounded-lg text-white text-lg ml-1 border"
         >
-          <option value="กำลังรับออเดอร์">กำลังรับออเดอร์</option> 
-          <option value="ปิดรับออเดอร์">ปิดรับออเดอร์</option> 
-          <option value="ถึงจุดนัดแล้ว">ถึงจุดนัดแล้ว</option> 
+          <option value="กำลังรับออเดอร์">กำลังรับออเดอร์</option> 
+          <option value="ปิดรับออเดอร์">ปิดรับออเดอร์</option> 
+          <option value="ถึงจุดนัดแล้ว">ถึงจุดนัดแล้ว</option> 
           <option value="ส่งเรียบร้อย">ส่งเรียบร้อย</option>
         </select>
         <button
@@ -52,7 +52,7 @@ function VerifyTicket(data) {
     );
   } else {
     statusBlog = (
-      <div>
+      <div >
         <div>{props.status}</div>
       </div>
     );
@@ -64,7 +64,7 @@ function VerifyTicket(data) {
 
   return (
     <div className="flex justify-center">
-      <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
+      <div className="bg-slate-700 mb-8 p-10 rounded-3xl drop-shadow-md w-7/12 text-slate-100">
         <div className="float-right bg-gray-400 rounded-xl p-1">
           <p className="flex justify-center">{statusBlog}</p>
         </div>

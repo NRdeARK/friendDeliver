@@ -49,9 +49,9 @@ function Profile() {
             </div>
             <div className=" lg:border-0  lg:w-0 lg:border-r lg:h-4/5 sm:border-b w-1/2 border-gray-400"></div>
 
-            <div className="basis-3/5 pr-[40px] bg-slate-300/70 rounded-[20px]  border-gray-300 flex lg:w-3/4  items-center justify-center m-2 lg:m-10">
+            <div className="basis-3/5 pr-[40px] bg-slate-300/70 rounded-[20px]  border-gray-300 flex lg:w-3/4  items-center justify-center m-2 lg:ml-10 lg:m-0" >
               <div className="p-4">
-                <dev className="lg:h-full   ">
+                <div className="lg:h-full   ">
                   <div className="font-semibold text-neutral-600/45 text-lg lg:pb-6 pb-4 ">
                     Profile
                   </div>
@@ -66,17 +66,15 @@ function Profile() {
                   <p className="lg:pl-2">Realname : {auth.realname}</p>
                   <br />
                   <p className="lg:pl-2 lg:pb-4">Tel Number : {tel}</p>
-                </dev>
+                </div>
               </div>
             </div>
-            <div className="lg:absolute lg:inset-0 lg:top-[360px] xl:left-[620px] py-2 flex ms:hiddin ">
+            <div className=" lg:pt-[340px] lg:pr-4">
               <Logout></Logout>
             </div>
             
           </div>
-          <div>
-            
-          </div>
+          
         </div>
       </div>
     </div>

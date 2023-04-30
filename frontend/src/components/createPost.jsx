@@ -89,7 +89,7 @@ const CreatePostForm = () => {
   return (
     <div
       className="flex flex-col justify-stretch flex-nowrap bg-gray-200 mt-16
-                  accent-gray-300 rounded-3xl drop-shadow-md w-7/12 h-fit p-5"
+                  accent-gray-300 rounded-3xl drop-shadow-md w-7/12 h-fit p-5 bg-slate-700 text-slate-50"
     >
       <div className="pl-4 flex flex-row items-center">
         <img src={userLogo} alt="" className="w-11 rounded-full" />

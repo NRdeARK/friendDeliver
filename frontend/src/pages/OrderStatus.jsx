@@ -122,8 +122,17 @@ function OrderStatus() {
   }, [resOrder, resPost]);
 
   return (
-    <div className="w-screen h-screen">
-      <div className="mt-36 flex flex-col gap-y-3">{content}</div>
+    <div className="w-screen h-screen ">
+      <div className="z-0 ">
+        <img
+            className=" fixed inset-x-0 bottom-[0] left-0 w-screen    "
+            src="https://cdn.discordapp.com/attachments/1006931952454082590/1102136486234705950/12.png"
+          ></img>
+      </div>
+      
+      <div className="z-50 mt-36 flex flex-col gap-y-3 ">
+        {content}
+      </div>
     </div>
   );
 }
