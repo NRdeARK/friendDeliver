@@ -55,7 +55,7 @@ function OrderStatus() {
           } else if (Object.keys(response).length == 1) {
             content = response[0].data;
           } else {
-            content = response.data.map((item) => {
+            content = response[0].data.map((item) => {
               return item;
             });
           }
@@ -93,21 +93,9 @@ function OrderStatus() {
     }
   }, [resOrder, resPost]);
   return (
-    <div className="flex justify-center mr-2 mt-36 ">
-      <div className="  flex flex-col items-center ">
-        <div>
-          {handleJson()}
-        </div>
-        
-        {/* {JSON.stringify(resOrder)}
-        <br />
-        {JSON.stringify(resPost)}
-        <br />
-        <br />
-        {JSON.stringify(combine)}
-        <br />
-        <br /> */}
-        
+    <div className="w-screen h-screen">
+      <div className="mt-36 flex flex-col gap-y-3">
+        {handleJson()}
       </div>
     </div>
   );

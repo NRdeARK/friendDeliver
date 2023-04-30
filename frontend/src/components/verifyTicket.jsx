@@ -19,13 +19,13 @@ function VerifyTicket(data) {
 
     // console.log(data);
 
-    // Promise.all([axios.put(POST_URL, data)])
-    //   .then((response) => {
-    //     // console.log(response[0]);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    Promise.all([axios.put(POST_URL, data)])
+      .then((response) => {
+        console.log(response[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   if (type == "Selective") {
