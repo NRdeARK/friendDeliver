@@ -93,8 +93,12 @@ function OrderStatus() {
     }
   }, [resOrder, resPost]);
   return (
-    <div className="w-screen h-screen">
-      <div className="mt-[60px] ml-[70px] flex flex-col items-center gap-y-3">
+    <div className="flex justify-center mr-2 mt-36 ">
+      <div className="  flex flex-col items-center ">
+        <div>
+          {handleJson()}
+        </div>
+        
         {/* {JSON.stringify(resOrder)}
         <br />
         {JSON.stringify(resPost)}
@@ -103,7 +107,7 @@ function OrderStatus() {
         {JSON.stringify(combine)}
         <br />
         <br /> */}
-        {handleJson()}
+        
       </div>
     </div>
   );

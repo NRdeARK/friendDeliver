@@ -31,10 +31,10 @@ function VerifyBlog(data) {
     
 
     content = (
-      <div>
+      <div className="bg-gray-200 rounded-3xl px-12">
         <VerifyTicket props={data} type={"Selective"}></VerifyTicket>
         {orderList.map((data) => {
-            return <OrderConfirmForm props={data}></OrderConfirmForm>;
+            return <div className="pb-12"><OrderConfirmForm props={data}></OrderConfirmForm></div>;
           
         })}
       </div>

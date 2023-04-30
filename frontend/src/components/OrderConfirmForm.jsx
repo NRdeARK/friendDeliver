@@ -59,7 +59,7 @@ const OrderConfirmForm = (data) => {
     
   };
   return (
-    <div className=" bg-gray-200 accent-gray-300 rounded-lg">
+    <div className=" bg-gray-200 accent-gray-300 rounded-lg w-full">
       <div className="flex justify-center">
         <h2>
           {props.nickname}({props.realname}){" "}

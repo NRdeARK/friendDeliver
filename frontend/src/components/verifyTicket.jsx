@@ -63,8 +63,8 @@ function VerifyTicket(data) {
   const year = date[0];
 
   return (
-    <div className="flex justify-center">
-      <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
+    <div className="flex justify-center ">
+      <div className="bg-gray-200 mb-16 pt-8 rounded-3xl drop-shadow-md w-full">
         <div className="float-right bg-gray-400 rounded-xl p-1">
           <p className="flex justify-center">{statusBlog}</p>
         </div>
@@ -72,13 +72,13 @@ function VerifyTicket(data) {
           <img src={userLogo} alt="" className="w-11 rounded-full" />
           <div className="flex items-center pl-4 text-2xl">
             {props.nickname}({props.realname})
-            <span className="pl-10 font-light text-base">
+            <span className="pl-4 pr-10 font-light text-base">
               Posted {props.timeCreated.substring(11, 16)}
             </span>
           </div>
         </div>
         <br />
-        <div className="pl-6 text-xl">
+        <div className=" text-xl">
           <p className="text-3xl py-4">ร้าน : {props.storename} </p>
           <div className="pl-24">
             <p className="pb-2">จำนวนที่รับ : {props.amount} จาน</p>
