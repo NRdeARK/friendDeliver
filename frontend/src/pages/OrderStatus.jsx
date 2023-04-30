@@ -94,7 +94,7 @@ function OrderStatus() {
   }, [resOrder, resPost]);
   return (
     <div className="w-screen h-screen">
-      <div className="mt-36 flex flex-col gap-y-3">
+      <div className="mt-36 flex  flex-col gap-y-3 px-4 ">
         {handleJson()}
       </div>
     </div>

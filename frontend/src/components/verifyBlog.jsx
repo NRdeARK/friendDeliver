@@ -27,16 +27,18 @@ function VerifyBlog(data) {
 
   if (auth.user == props.username) {
     content = (
-      <div>
+      <div className="">
+        
         <VerifyTicket props={data} type={"Selective"}></VerifyTicket>
         {orderList.map((item) => {
           if (props.username == item.username)
             return (
-              <OrderConfirmForm type={"owner"} props={item}></OrderConfirmForm>
+              
+                <div className="flex justify-center ">  <OrderConfirmForm type={"owner"} props={item}></OrderConfirmForm></div>
             );
           else
             return (
-              <OrderConfirmForm type={"other"} props={item}></OrderConfirmForm>
+              <div className="flex justify-center"> <OrderConfirmForm type={"other"} props={item}></OrderConfirmForm></div>
             );
         })}
       </div>
@@ -47,7 +49,7 @@ function VerifyBlog(data) {
         <VerifyTicket props={data} type={"Other"}></VerifyTicket>
         {orderList.map((item) => {
           return (
-            <OrderConfirmForm type={"other"} props={item}></OrderConfirmForm>
+            <div className="flex justify-center"><OrderConfirmForm type={"other"} props={item}></OrderConfirmForm></div>
           );
           // if(data.username == auth.user){
           // // return <OrderReceiveForm props={data}></OrderReceiveForm>;

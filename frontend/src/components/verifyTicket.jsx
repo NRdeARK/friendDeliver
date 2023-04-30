@@ -7,7 +7,7 @@ function VerifyTicket(data) {
   const props = data.props.data;
   const type = data.type;
   let statusBlog;
-  console.log(props);
+  // console.log(props);
   const [selectedStatus, setStatus] = useState(props.status);
 
   const handleSubmit = async (e) => {
@@ -17,11 +17,11 @@ function VerifyTicket(data) {
       status: selectedStatus,
     };
 
-    // console.log(data);
+    console.log(data);
 
     Promise.all([axios.put(POST_URL, data)])
       .then((response) => {
-        console.log(response[0]);
+        // console.log(response[0]);
       })
       .catch((error) => {
         console.log(error);
@@ -39,9 +39,9 @@ function VerifyTicket(data) {
           onChange={(e) => setStatus(e.target.value)}
           className="bg-gray-400 rounded-lg text-white text-lg ml-1 border"
         >
-          <option value="กำลังรับออเดอร์">กำลังรับออเดอร์</option> 
-          <option value="ปิดรับออเดอร์">ปิดรับออเดอร์</option> 
-          <option value="ถึงจุดนัดแล้ว">ถึงจุดนัดแล้ว</option> 
+          <option value="กำลังรับออเดอร์">กำลังรับออเดอร์</option> 
+          <option value="ปิดรับออเดอร์">ปิดรับออเดอร์</option> 
+          <option value="ถึงจุดนัดแล้ว">ถึงจุดนัดแล้ว</option> 
           <option value="ส่งเรียบร้อย">ส่งเรียบร้อย</option>
         </select>
         <button
@@ -63,8 +63,8 @@ function VerifyTicket(data) {
   const year = date[0];
 
   return (
-    <div className="flex justify-center ">
-      <div className="bg-gray-200 mb-16 pt-8 rounded-3xl drop-shadow-md w-full">
+    <div className="flex justify-center">
+      <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
         <div className="float-right bg-gray-400 rounded-xl p-1">
           <p className="flex justify-center">{statusBlog}</p>
         </div>
@@ -72,13 +72,13 @@ function VerifyTicket(data) {
           <img src={userLogo} alt="" className="w-11 rounded-full" />
           <div className="flex items-center pl-4 text-2xl">
             {props.nickname}({props.realname})
-            <span className="pl-4 pr-10 font-light text-base">
+            <span className="pl-10 font-light text-base">
               Posted {props.timeCreated.substring(11, 16)}
             </span>
           </div>
         </div>
         <br />
-        <div className=" text-xl">
+        <div className="pl-6 text-xl">
           <p className="text-3xl py-4">ร้าน : {props.storename} </p>
           <div className="pl-24">
             <p className="pb-2">จำนวนที่รับ : {props.amount} จาน</p>
