@@ -7,23 +7,23 @@ function OpenPost() {
   return (
     <div>
       <div className="flex justify-end mr-24 mt-36">
-      <Link to="/createPost">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-16 h-16 bg-white rounded-full p-0 shadow-lg transition ease-in-out delay-150 duration-300
+        <Link to="/createPost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-16 h-16 bg-white rounded-full p-0 shadow-lg transition ease-in-out delay-150 duration-300
                     hover:-translate-y-1 hover:scale-110"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      </Link>
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </Link>
       </div>
       <PostBlog></PostBlog>
       {showModal ? (
@@ -80,7 +80,10 @@ function OpenPost() {
             </>
           ) : (
             <>
-              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+              <div
+                className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none 
+                              focus:outline-none"
+              >
                 <div className="relative w-1/4 my-6 mx-auto">
                   {/*content*/}
                   <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">

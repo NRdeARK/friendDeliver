@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavbarList from "./NavbarList";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthProvider";
@@ -8,19 +7,14 @@ function Navbar() {
 
   let LinksUnAuth = [
     { name: "Home", link: "/" },
-    // { name: "Open Order", link: "/openOrder" },
     { name: "Open Post", link: "/openPost" },
     { name: "Login", link: "/login" },
   ];
 
   let LinksAuth = [
-    { name: "Home", link: "/" }, 
-    // { name: "Open Order", link: "/openOrder" },
+    { name: "Home", link: "/" },
     { name: "Open Post", link: "/openPost" },
     { name: "Order Status", link: "/orderStatus" },
-    // { name: "Create Post", link: "/createPost" },
-    // { name: "Create Order", link: "/createOrder" },
-    { name: "testConfirm", link: "/testOrderConfirm" },
     { name: auth.user, link: "/profile" },
   ];
 

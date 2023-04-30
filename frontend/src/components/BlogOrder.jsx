@@ -9,7 +9,7 @@ function BlogOrder(props) {
         <div className="flex flex-row">
           <img src={userLogo} alt="" className="w-11 rounded-full" />
           <p className="flex items-center pl-4 text-2xl">
-            {props.nickname}({props.realname}) #{props.username}
+            {props.nickname}({props.realname})
             <span className="pl-10 font-light text-base">
               Posted {props.timeCreated.substring(11, 16)}
             </span>

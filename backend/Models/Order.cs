@@ -18,5 +18,7 @@ namespace backend.Models
         public int? amount { get; set; }
         public string? orderStatus { get; set; }
         public DateTime? timeCreated { get; set; }
+        public string? isConfirmed { get; set; }
+        public string? isReceived { get; set; }
     }
 }

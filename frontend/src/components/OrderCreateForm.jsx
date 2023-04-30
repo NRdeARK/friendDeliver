@@ -13,6 +13,7 @@ function CreateOrderForm(props) {
     setSubmit,
     submit,
   } = useAuth();
+  
   const { toggleUpdateOrder, setToggleUpdateOrder } = useAuth();
   const [storeMenu, setMenuname] = useState("");
   const [amount, setAmt] = useState(1);
@@ -48,7 +49,7 @@ function CreateOrderForm(props) {
     let data = JSON.stringify({
       orderId: 0,
       postId: props.postId,
-      username: auth.username,
+      username: auth.user,
       nickname: auth.nickname,
       realname: auth.realname,
       menuname: storeMenu,
@@ -80,7 +81,7 @@ function CreateOrderForm(props) {
   };
 
   return (
-    <div className="flex flex-col bg-gray-400/50 rounded-xl w-full">
+    <div className="flex flex-col bg-gray-400/50 rounded-xl w-full shadow-lg">
       <div className="p-4 ml-[20px] mt-[10px] flex flex-row">
         <img src={userLogo} alt="" className="w-11 rounded-full" />
         <p className="flex ml-5 text-2xl items-center">{auth.user}</p>
@@ -88,7 +89,7 @@ function CreateOrderForm(props) {
           เวลา
         </label> */}
       </div>
-      <div className="ml-20 py-3 flex flex-row ">
+      <div className="ml-20 py-3 flex flex-row">
         <div className="flex items-center w-full">
           <label htmlFor="exampleMenu" className="text-xl">
             เมนู
@@ -111,6 +112,7 @@ function CreateOrderForm(props) {
             name="amount"
             id="amount"
             className="bg-gray-400 rounded-lg text-white ml-5 px-2 text-xl w-12 h-fit py-2"
+            value={amount}
             min={1}
           />
           <p className="text-xl ml-5">กล่อง</p>
@@ -134,3 +136,15 @@ function CreateOrderForm(props) {
 }
 
 export default CreateOrderForm;
+
+{/* <select
+            value={selectedStatus}
+            onChange={(e) => setStatus(e.target.value)}
+            className='bg-gray-400 rounded-lg text-white text-lgl'
+            >
+             <option value="closed_reciving">ปิดรับออเดอร์</option> 
+            <option value="reciving">กำลังรับ</option> 
+            <option value="delivering">ถึงจุดนัดแล้ว</option> 
+            <option value="closed">ส่งเรียบร้อย</option>
+            </select>
+            <button onClick={handleSubmit} className="ml-[10px] border-solid border-l-black border-l-[12px] border-y-transparent border-y-[12px]"></button> */}

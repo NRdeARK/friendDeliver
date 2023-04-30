@@ -16,6 +16,7 @@ namespace backend.Controllers
     {
         private readonly PostContext _context;
 
+
         public PostController(PostContext context)
         {
             _context = context;
@@ -69,6 +70,21 @@ namespace backend.Controllers
             return await recieves.ToListAsync();
         }
 
+
+        [HttpGet("{postId}")]
+        public async Task<ActionResult<IEnumerable<Post>>> getPostByPostId(long postId)
+        {
+            if (_context.Posts == null)
+            {
+                return Problem("Entity set 'PostContext.Posts'  is null.");
+            }
+
+            var recieves = from m in _context.Posts
+                           select m;
+            recieves = recieves.Where(x => x.postId == postId);
+            return await recieves.ToListAsync();
+        }
+
         [HttpPost]
         public async Task<ActionResult<Post>> CreatePost(PostCreateDTO post)
         {
@@ -89,7 +105,6 @@ namespace backend.Controllers
                 date = post.date,
                 timeCreated = DateTime.Now,
                 status = "กำลังรับออเดอร์",
-                orderList = ""
             };
             _context.Posts.Add(newPost);
             await _context.SaveChangesAsync();
