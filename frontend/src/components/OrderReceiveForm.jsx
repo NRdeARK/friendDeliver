@@ -47,7 +47,7 @@ const OrderReceiveForm = (data) => {
         <div>{received}</div>
         <br />
       </div>
-      {received != "" && props.isConfirmed == "Confirmed" ? (
+      {received != "-" && props.isConfirmed == "Confirmed" ? (
         <></>
       ) : (
         props.isConfirmed != "Confirmed" ?

@@ -88,8 +88,8 @@ namespace backend.Controllers
                 amount = request.amount,
                 orderStatus = "รอยืนยัน",
                 timeCreated = DateTime.Now,
-                isConfirmed = "",
-                isReceived = ""
+                isConfirmed = "-",
+                isReceived = "-"
             };
 
             _context.Orders.Add(newMenuname);
