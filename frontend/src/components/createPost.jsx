@@ -65,190 +65,148 @@ const CreatePostForm = () => {
   }, [date]);
 
   return (
-    <div
-      className="flex flex-col justify-stretch flex-nowrap bg-gray-200 mt-16
+    <div className="w-screen h-screen flex items-center justify-center">
+      <div
+        className="flex flex-col justify-stretch flex-nowrap bg-gray-200 mt-16
                   accent-gray-300 rounded-3xl drop-shadow-md w-7/12 h-fit p-5"
-    >
-      <div className="pl-4 flex flex-row items-center">
-        <img src={userLogo} alt="" className="w-11 rounded-full" />
-        <p className="ml-5 text-2xl justify-start">
-          {auth.nickname}({auth.realname})
-        </p>
-      </div>
-      <br />
-      <div className="flex flex-row ml-24 items-center">
-        <label htmlFor="exampleStoreName" className="text-4xl xl:text-2xl">
-          ร้าน :{" "}
-        </label>
-        <input
-          type="text"
-          onChange={(e) => setStore(e.target.value)}
-          name="store"
-          id="store"
-          className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl w-3/4 xl:text-base"
-        />
-      </div>
-      <br />
-      <div className="ml-40">
-        <div className="flex flex-row items-center">
-          <label htmlFor="exampleAmount" className="text-2xl xl:text-xl">
-            จำนวนที่รับ :{" "}
-          </label>
-          <input
-            type="number"
-            onChange={(e) => setAmt(e.target.value)}
-            name="amount"
-            id="amount"
-            className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl w-1/12 xl:text-base"
-            value={amount}
-            min={1}
-          />
-          <p className="text-2xl ml-2 xl:text-xl">จาน</p>
+      >
+        <div className="pl-4 flex flex-row items-center">
+          <img src={userLogo} alt="" className="w-11 rounded-full" />
+          <p className="ml-5 text-2xl justify-start">
+            {auth.nickname}({auth.realname})
+          </p>
         </div>
         <br />
-        <div className="flex flex-row items-center">
-          <label htmlFor="exampleLocation" className="text-2xl xl:text-xl">
-            จุดนัดรับ :{" "}
+        <div className="flex flex-row ml-24 items-center">
+          <label htmlFor="exampleStoreName" className="text-4xl xl:text-2xl">
+            ร้าน :{" "}
           </label>
           <input
             type="text"
-            onChange={(e) => setLocation(e.target.value)}
-            name="locate"
-            id="locate"
-            className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl w-4/6 xl:text-base"
+            onChange={(e) => setStore(e.target.value)}
+            name="store"
+            id="store"
+            className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl w-3/4 xl:text-base"
           />
         </div>
         <br />
-        <div className="flex flex-row items-center">
-          <label htmlFor="exampleTime" className="text-2xl xl:text-xl">
-            ช่วงเวลาที่นัดรับ :{" "}
-          </label>
-          <select
-            value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
-            className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl xl:text-base"
+        <div className="ml-40">
+          <div className="flex flex-row items-center">
+            <label htmlFor="exampleAmount" className="text-2xl xl:text-xl">
+              จำนวนที่รับ :{" "}
+            </label>
+            <input
+              type="number"
+              onChange={(e) => setAmt(e.target.value)}
+              name="amount"
+              id="amount"
+              className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl w-1/12 xl:text-base"
+              value={amount}
+              min={1}
+            />
+            <p className="text-2xl ml-2 xl:text-xl">จาน</p>
+          </div>
+          <br />
+          <div className="flex flex-row items-center">
+            <label htmlFor="exampleLocation" className="text-2xl xl:text-xl">
+              จุดนัดรับ :{" "}
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setLocation(e.target.value)}
+              name="locate"
+              id="locate"
+              className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl w-4/6 xl:text-base"
+            />
+          </div>
+          <br />
+          <div className="flex flex-row items-center">
+            <label htmlFor="exampleTime" className="text-2xl xl:text-xl">
+              ช่วงเวลาที่นัดรับ :{" "}
+            </label>
+            <select
+              value={selectedTime}
+              onChange={(e) => setSelectedTime(e.target.value)}
+              className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl xl:text-base"
+            >
+                <option value="ช่วงเช้า">ช่วงเช้า</option> {" "}
+              <option value="ช่วงสาย">ช่วงสาย</option> {" "}
+              <option value="ช่วงเที่ยง">ช่วงเที่ยง</option> {" "}
+              <option value="ช่วงบ่าย">ช่วงบ่าย</option> {" "}
+              <option value="ช่วงเย็น">ช่วงเย็น</option>
+            </select>
+          </div>
+          <br />
+          <div className="flex flex-row items-center">
+            <label htmlFor="exampleDate" className="text-2xl xl:text-xl">
+              ว/ด/ป :{" "}
+            </label>
+            <input
+              type="date"
+              onChange={(e) => setDate(e.target.value)}
+              name="date"
+              id="date"
+              className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl xl:text-base"
+            />
+          </div>
+        </div>
+        <br />
+        <div className="flex justify-end mr-4">
+          <button
+            type="Submit"
+            onClick={() => {
+              setShowModal(true);
+            }}
+            className="bg-emerald-500 text-2xl rounded-lg text-white ml-5 p-2 xl:text-xl"
           >
-              <option value="ช่วงเช้า">ช่วงเช้า</option> {" "}
-            <option value="ช่วงสาย">ช่วงสาย</option> {" "}
-            <option value="ช่วงเที่ยง">ช่วงเที่ยง</option> {" "}
-            <option value="ช่วงบ่าย">ช่วงบ่าย</option> {" "}
-            <option value="ช่วงเย็น">ช่วงเย็น</option>
-          </select>
-        </div>
-        <br />
-        <div className="flex flex-row items-center">
-          <label htmlFor="exampleDate" className="text-2xl xl:text-xl">
-            ว/ด/ป :{" "}
-          </label>
-          <input
-            type="date"
-            onChange={(e) => setDate(e.target.value)}
-            name="date"
-            id="date"
-            className="bg-gray-400 rounded-lg text-white ml-3 p-2 text-xl xl:text-base"
-          />
+            โพสต์
+          </button>
         </div>
       </div>
-      <br />
-      <div className="flex justify-end mr-4">
-        <button
-          type="Submit"
-          onClick={() => {
-            setShowModal(true);
-          }}
-          className="bg-emerald-500 text-2xl rounded-lg text-white ml-5 p-2 xl:text-xl"
-        >
-          โพสต์
-        </button>
-        {showModal ? (
-          <div>
-            {isAllow ? (
-              <>
-                <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                  <div className="relative w-1/2 my-6 mx-auto">
-                    {/*content*/}
-                    <div className="border-0 rounded-xl shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                      {/*header*/}
-                      <div className="p-5 border-b border-solid border-slate-200 rounded-t flex justify-center">
-                        <h3 className="text-3xl font-semibold">ยืนยัน</h3>
-                      </div>
-                      {/*body*/}
-                      <div className="relative p-5 flex-auto">
-                        <h1 className="text-xl pl-10 xl:p-1">
-                          {auth.nickname} ({auth.realname}) #{auth.user}
-                        </h1>
-                        <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
-                          ชื่อร้าน : {store} <br />
-                          จำนวน : {amount} จาน <br />
-                          จุดนัดรับ: {location} <br />
-                          ช่วงเวลาที่นัดรับ : {selectedTime} <br />
-                          วันที่ : {date.split("-")[2]}/{date.split("-")[1]}/
-                          {date.split("-")[0]}
-                        </p>
-                      </div>
-                      {/*footer*/}
-                      <div className="flex items-center justify-end p-5 border-t border-solid border-slate-200 rounded-b">
-                        <button
-                          className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm rounded shadow 
+      {showModal ? (
+        <div>
+          {isAllow ? (
+            <>
+              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                <div className="relative w-1/2 my-6 mx-auto">
+                  {/*content*/}
+                  <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                    {/*header*/}
+                    <div className="p-5 border-b border-solid border-slate-200 rounded-t flex justify-center">
+                      <h3 className="text-3xl font-semibold">ยืนยัน</h3>
+                    </div>
+                    {/*body*/}
+                    <div className="relative p-5 flex-auto">
+                      <h1 className="text-xl pl-10 xl:p-1">
+                        {auth.nickname} ({auth.realname}) #{auth.user}
+                      </h1>
+                      <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
+                        ชื่อร้าน : {store} <br />
+                        จำนวน : {amount} จาน <br />
+                        จุดนัดรับ: {location} <br />
+                        ช่วงเวลาที่นัดรับ : {selectedTime} <br />
+                        วันที่ : {date.split("-")[2]}/{date.split("-")[1]}/
+                        {date.split("-")[0]}
+                      </p>
+                    </div>
+                    {/*footer*/}
+                    <div className="flex items-center justify-end p-5 border-t border-solid border-slate-200 rounded-b">
+                      <button
+                        className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm rounded shadow 
                                     hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150
                                     w-1/2 py-2"
-                          type="button"
-                          onClick={() => {
-                            handleSubmit()
-                            setShowModal(false);
-                          }}
-                        >
-                          ยืนยัน
-                        </button>
-                        <button
-                          className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none 
-                                    focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:text-red-500/75
-                                    w-1/2"
-                          type="button"
-                          onClick={() => setShowModal(false)}
-                        >
-                          ยกเลิก
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-              </>
-            ) : (
-              <>
-                <div
-                  className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none 
-                              focus:outline-none"
-                >
-                  <div className="relative w-1/2 my-6 mx-auto">
-                    {/*content*/}
-                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                      {/*header*/}
-                      <div className="flex justify-center p-5 border-b border-solid border-slate-200 rounded-t">
-                        <h3 className="text-3xl font-semibold">
-                          กรุณากรอกให้ครบ
-                        </h3>
-                      </div>
-                      {/*body*/}
-                      <div className="relative p-5 flex-auto">
-                        <h1 className="text-xl pl-10 xl:p-1">
-                          {auth.nickname} ({auth.realname}) #{auth.user}
-                        </h1>
-                        <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
-                          ชื่อร้าน : {store} <br />
-                          จำนวน : {amount} จาน <br />
-                          จุดนัดรับ: {location} <br />
-                          ช่วงเวลาที่นัดรับ : {selectedTime} <br />
-                          วันที่ : {date.split("-")[2]}/{date.split("-")[1]}/
-                          {date.split("-")[0]}
-                        </p>
-                      </div>
-                      {/*footer*/}
+                        type="button"
+                        onClick={() => {
+                          handleSubmit();
+                          setShowModal(false);
+                        }}
+                      >
+                        ยืนยัน
+                      </button>
                       <button
                         className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none 
-                        focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:text-red-500/75
-                        border-t border-solid border-slate-200"
+                                    focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:text-red-500/75
+                                    w-1/2"
                         type="button"
                         onClick={() => setShowModal(false)}
                       >
@@ -257,14 +215,58 @@ const CreatePostForm = () => {
                     </div>
                   </div>
                 </div>
-                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-              </>
-            )}
-          </div>
-        ) : (
-          <></>
-        )}
-      </div>
+              </div>
+              <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+            </>
+          ) : (
+            <>
+              <div
+                className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none 
+                              focus:outline-none"
+              >
+                <div className="relative w-1/2 my-6 mx-auto">
+                  {/*content*/}
+                  <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                    {/*header*/}
+                    <div className="flex justify-center p-5 border-b border-solid border-slate-200 rounded-t">
+                      <h3 className="text-3xl font-semibold">
+                        กรุณากรอกให้ครบ
+                      </h3>
+                    </div>
+                    {/*body*/}
+                    <div className="relative p-5 flex-auto">
+                      <h1 className="text-xl pl-10 xl:p-1">
+                        {auth.nickname} ({auth.realname}) #{auth.user}
+                      </h1>
+                      <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
+                        ชื่อร้าน : {store} <br />
+                        จำนวน : {amount} จาน <br />
+                        จุดนัดรับ: {location} <br />
+                        ช่วงเวลาที่นัดรับ : {selectedTime} <br />
+                        วันที่ : {date.split("-")[2]}/{date.split("-")[1]}/
+                        {date.split("-")[0]}
+                      </p>
+                    </div>
+                    {/*footer*/}
+                    <button
+                      className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none 
+                        focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:text-red-500/75
+                        border-t border-solid border-slate-200"
+                      type="button"
+                      onClick={() => setShowModal(false)}
+                    >
+                      ยกเลิก
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+            </>
+          )}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
