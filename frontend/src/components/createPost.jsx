@@ -58,13 +58,6 @@ const CreatePostForm = () => {
     } else {
       setIsAllow(true);
     }
-    //   const [store, setStore] = useState("");
-    // const [amount, setAmt] = useState(1);
-    // const [location, setLocation] = useState("");
-    // const [date, setDate] = useState("");
-    // const [selectedTime, setSelectedTime] = useState("ช่วงเช้า");
-    // const [errMsg, setErrMsg] = useState("");
-    // const [showModal, setShowModal] = React.useState(false);
   }, [showModal]);
 
   useEffect(() => {
@@ -174,7 +167,7 @@ const CreatePostForm = () => {
                 <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                   <div className="relative w-1/2 my-6 mx-auto">
                     {/*content*/}
-                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                    <div className="border-0 rounded-xl shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                       {/*header*/}
                       <div className="p-5 border-b border-solid border-slate-200 rounded-t flex justify-center">
                         <h3 className="text-3xl font-semibold">ยืนยัน</h3>
@@ -201,7 +194,7 @@ const CreatePostForm = () => {
                                     w-1/2 py-2"
                           type="button"
                           onClick={() => {
-                            setSubmit(true);
+                            handleSubmit()
                             setShowModal(false);
                           }}
                         >

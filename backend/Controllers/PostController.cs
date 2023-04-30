@@ -16,6 +16,7 @@ namespace backend.Controllers
     {
         private readonly PostContext _context;
 
+
         public PostController(PostContext context)
         {
             _context = context;
@@ -69,6 +70,7 @@ namespace backend.Controllers
             return await recieves.ToListAsync();
         }
 
+
         [HttpGet("{postId}")]
         public async Task<ActionResult<IEnumerable<Post>>> getPostByPostId(long postId)
         {
@@ -103,7 +105,6 @@ namespace backend.Controllers
                 date = post.date,
                 timeCreated = DateTime.Now,
                 status = "กำลังรับออเดอร์",
-                orderList = ""
             };
             _context.Posts.Add(newPost);
             await _context.SaveChangesAsync();

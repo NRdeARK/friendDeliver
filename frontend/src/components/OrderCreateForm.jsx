@@ -112,6 +112,7 @@ function CreateOrderForm(props) {
             name="amount"
             id="amount"
             className="bg-gray-400 rounded-lg text-white ml-5 px-2 text-xl w-12 h-fit py-2"
+            value={amount}
             min={1}
           />
           <p className="text-xl ml-5">กล่อง</p>

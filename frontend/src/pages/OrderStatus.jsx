@@ -53,7 +53,7 @@ function OrderStatus() {
       Promise.all([axios.get(ORDER_USER_URL.concat(auth.user))])
         .then((response) => {
           console.log("stage 1");
-          console.log(response[0].data[0].postId);
+          // console.log(response[0].data[0].postId);
 
           let buyerPostlist = [];
           let validateBuyerPostlist = [];
@@ -86,7 +86,7 @@ function OrderStatus() {
 
           console.log(postList);
           console.log(buyerPostlist);
-
+        if(buyerPostlist.lenght != 0){
           for (let i in buyerPostlist) {
             if(!postList.includes(buyerPostlist[i])){
               postList.push(buyerPostlist[i])
@@ -94,8 +94,13 @@ function OrderStatus() {
               console.log(buyerPostlist[i])
             }
           }
-
           setListBuyerPostId(validateBuyerPostlist);
+        }else{
+          setListBuyerPostId([]);
+        }
+
+
+
         })
         .catch((error) => {
           console.log(error);
@@ -145,7 +150,7 @@ function OrderStatus() {
 
   return (
     <div className="w-screen h-screen">
-      <div className="mt-[60px] ml-[70px] flex flex-col items-center gap-y-3">
+      <div className="mt-36 flex flex-col gap-y-3">
         {postsBuyer}
         {postsOwner}
       </div>

@@ -1,35 +1,31 @@
 import React, { useState } from "react";
-import useAuth from "../hooks/useAuth";
 const POST_URL = "/Post/status/";
-
 import axios from "../api/axios";
-
 import userLogo from "../assets/user.jpg";
 
 function VerifyTicket(data) {
-  const props = data.props;
+  const props = data.props.data;
   const type = data.type;
   let statusBlog;
-  console.log(props);
-  const { auth } = useAuth();
+  // console.log(props);
   const [selectedStatus, setStatus] = useState(props.status);
 
   const handleSubmit = async (e) => {
-    console.log(selectedStatus);
+    // console.log(selectedStatus);
     let data = {
       postId: props.postId,
       status: selectedStatus,
     };
 
-    console.log(data);
+    // console.log(data);
 
-    Promise.all([axios.put(POST_URL, data)])
-      .then((response) => {
-        console.log(response[0]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // Promise.all([axios.put(POST_URL, data)])
+    //   .then((response) => {
+    //     // console.log(response[0]);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
   if (type == "Selective") {
@@ -54,12 +50,6 @@ function VerifyTicket(data) {
         ></button>
       </div>
     );
-  } else if (props.status === "Ordering") {
-    statusBlog = (
-      <div>
-        <div></div>
-      </div>
-    );
   } else {
     statusBlog = (
       <div>
@@ -71,13 +61,8 @@ function VerifyTicket(data) {
   const day = date[2];
   const month = date[1];
   const year = date[0];
+
   return (
-    // <div className="w-[750px] h-[300px] bg-stone-200 rounded-lg flex flex-col p-5">
-    //   <div className="flex flex-row">
-    //     <div className="p-5 rounded-full bg-gray-500 justify-start"></div>
-    //     <div className="ml-[10px] text-4xl"> {props.nickname} {props.realname}</div>
-    //     <div className="ml-[50px] self-end">
-    //       Posted {props.timeCreated.substring(11, 16)}
     <div className="flex justify-center">
       <div className="bg-gray-200 mb-16 p-10 rounded-3xl drop-shadow-md w-7/12">
         <div className="float-right bg-gray-400 rounded-xl p-1">
@@ -85,12 +70,12 @@ function VerifyTicket(data) {
         </div>
         <div className="flex flex-row">
           <img src={userLogo} alt="" className="w-11 rounded-full" />
-          <p className="flex items-center pl-4 text-2xl">
-            {auth.nickname}({auth.realname})
+          <div className="flex items-center pl-4 text-2xl">
+            {props.nickname}({props.realname})
             <span className="pl-10 font-light text-base">
               Posted {props.timeCreated.substring(11, 16)}
             </span>
-          </p>
+          </div>
         </div>
         <br />
         <div className="pl-6 text-xl">
@@ -106,6 +91,7 @@ function VerifyTicket(data) {
         </div>
       </div>
     </div>
+
   );
 }
 
