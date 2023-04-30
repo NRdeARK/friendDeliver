@@ -1962,7 +1962,6 @@ C:\2D\term2\FileSheet66\WebApp\project\friendDeliver\backend\obj\Debug\net7.0\ba
 C:\2D\term2\FileSheet66\WebApp\project\friendDeliver\backend\obj\Debug\net7.0\backend.genruntimeconfig.cache
 C:\2D\term2\FileSheet66\WebApp\project\friendDeliver\backend\obj\Debug\net7.0\ref\backend.dll
 >>>>>>> ecf92078d71d8921da3e0a35875ab8a174dfe585
-<<<<<<< HEAD
 D:\BKP\University\2565\2-2565\web\friendDeliver\backend\bin\Debug\net7.0\appsettings.Development.json
 D:\BKP\University\2565\2-2565\web\friendDeliver\backend\bin\Debug\net7.0\appsettings.json
 D:\BKP\University\2565\2-2565\web\friendDeliver\backend\bin\Debug\net7.0\backend.exe
@@ -2243,5 +2242,4 @@ D:\BKP\University\2565\2-2565\web\friendDeliver\backend\obj\Debug\net7.0\refint\
 D:\BKP\University\2565\2-2565\web\friendDeliver\backend\obj\Debug\net7.0\backend.pdb
 D:\BKP\University\2565\2-2565\web\friendDeliver\backend\obj\Debug\net7.0\backend.genruntimeconfig.cache
 D:\BKP\University\2565\2-2565\web\friendDeliver\backend\obj\Debug\net7.0\ref\backend.dll
-=======
 >>>>>>> main
