@@ -45,7 +45,7 @@ function PostTicket() {
           
         </div>
       ) : (
-        <>ไม่มีรายการ</>
+        <div className="rounded-[45px] bg-amber-50 p-10 px-24">ไม่มีรายการ</div>
       )}
     </div>
   );

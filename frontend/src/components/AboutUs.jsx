@@ -3,53 +3,52 @@ import React from "react";
 function AboutUs() {
   return (
     <div className="bg-slate-700 bt-[160px] h-full pt-12 pb-2">
-      <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-        <h2 class="mb-4 text-4xl tracking-tight  text-gray-900 dark:text-white">
+      <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+        <h2 className="mb-4 text-4xl tracking-tight  text-gray-900 dark:text-white">
           Our Team
         </h2>
-        <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-          Explore the whole collection of open-source web components and
-          elements built with the utility classes from Tailwind
+        <p className="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+          ----------------------------------------------------------------
         </p>
-        <div class="grid gap-2 lg:gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://media.discordapp.net/attachments/1095391598034026657/1101799319801188493/343766812_1498595100883594_5921284633908914026_n.png?width=526&height=701" alt="Bonnie Avatar"></img>
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#">Bonnie Green</a>
+        <div className="grid gap-2 lg:gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
+          <div className="text-center text-gray-500 dark:text-gray-400">
+            <img className="object-cover   mx-auto mb-4 w-36 h-36 rounded-full" src="https://media.discordapp.net/attachments/1095391598034026657/1101942645275758613/xlo6mdpa.png?width=397&height=406" ></img>
+            <h3 className="mb-1 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <a href="#">กัลยรัตน์ ผูกโอสถ</a>
             </h3>
-            <p>CEO/Co-founder</p>
+            <p>64010045</p>
             
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png" alt="Helene Avatar"></img>
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#">Helene Engels</a>
+          <div className="text-center text-gray-500 dark:text-gray-400">
+            <img className="object-cover mx-auto mb-4 w-36 h-36 rounded-full" src="https://media.discordapp.net/attachments/1095391598034026657/1101878577865162783/2D_MAM.jpg?width=610&height=406" alt="Helene Avatar"></img>
+            <h3 className="mb-1 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <a href="#">เกริกไกวัล สุภาเสพย์</a>
             </h3>
-            <p>CTO/Co-founder</p>
+            <p>64010065</p>
             
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Avatar"></img>
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#">Jese Leos</a>
+          <div className="text-center text-gray-500 dark:text-gray-400">
+            <img className="mx-auto mb-4 w-36 h-36 rounded-full" src="https://media.discordapp.net/attachments/1095391598034026657/1101876476816654476/324886816_1305254330039923_7806163042403497149_n.png?width=406&height=406" alt="Jese Avatar"></img>
+            <h3 className="mb-1 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <a href="#">ณัฏฐพันธุ์ รักวิทยาศาสตร์</a>
             </h3>
-            <p>SEO &amp; Marketing</p>
+            <p>64010223</p>
             
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="Joseph Avatar"></img>
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#">Joseph Mcfall</a>
+          <div className="text-center text-gray-500 dark:text-gray-400">
+            <img className="object-cover mx-auto mb-4 w-36 h-36 rounded-full" src="https://media.discordapp.net/attachments/1095391598034026657/1101880363200028682/FB_IMG_1682779135649.jpg?width=405&height=406" ></img>
+            <h3 className="mb-1 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <a href="#">ณัฐพล บุญแดง</a>
             </h3>
-            <p>Sales</p>
+            <p>64010248</p>
             
           </div>
-          <div class="text-center text-gray-500 dark:text-gray-400">
-            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png" alt="Sofia Avatar"></img>
-            <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#">Lana Byrd</a>
+          <div className="text-center text-gray-500 dark:text-gray-400">
+            <img className="object-cover mx-auto mb-4 w-36 h-36 rounded-full" src="https://media.discordapp.net/attachments/989160439155949650/1101942176340000848/2cfep736.png?width=372&height=406" ></img>
+            <h3 className="mb-1 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <a href="#">นนทพันธ์ จิตรชิรานันท์</a>
             </h3>
-            <p>Web Designer</p>
+            <p>64010400</p>
             
           </div>
         </div>

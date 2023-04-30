@@ -10988,34 +10988,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AVI003\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Mam23\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
+      "projectUniqueName": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\AVI003\\.nuget\\packages\\",
-      "outputPath": "D:\\BKP\\University\\2565\\2-2565\\web\\friendDeliver\\backend\\obj\\",
+      "projectPath": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\Mam23\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mam23\\OneDrive\\เอกสาร\\GitHub\\friendDeliver\\backend\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\AVI003\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Mam23\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
