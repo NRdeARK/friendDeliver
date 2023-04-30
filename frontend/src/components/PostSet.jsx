@@ -23,7 +23,7 @@ function PostSet(props) {
                 className="bg-gray-100/75 drop-shadow-md w-1/2 text-center rounded text-lg hover:bg-gray-200 mr-4"
                 onClick={() => {
                   setIsRecentClick(!isRecentClick);
-                  console.log("test");
+                  // console.log("test");
                 }}
               >
                 recent order

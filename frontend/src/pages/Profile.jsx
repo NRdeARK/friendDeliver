@@ -12,7 +12,7 @@ function Profile() {
   useEffect(() => {
     Promise.all([axios.get(USER_URL + auth.user)])
       .then((response) => {
-        console.log(response[0].data);
+        // console.log(response[0].data);
         setTel(response[0].data.tel);
       })
       .catch((error) => {

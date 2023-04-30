@@ -15,23 +15,23 @@ function OrderStatus() {
   const { auth, data } = useAuth();
 
   useEffect(() => {
-    console.log(resOrder, resPost, unique);
+    // console.log(resOrder, resPost, unique);
     if ((resOrder != null || resPost != null) && unique != null) {
       if (unique != []) {
         let s = JSON.stringify(unique);
         const postList = JSON.parse(s);
         if (postList.length == 0) {
-          console.log("test1");
+          // console.log("test1");
           setContent(<></>);
         } else if (postList.length == 1) {
-          console.log("test2");
+          // console.log("test2");
           setContent(
             <div key={1}>
               <VerifyBlog data={JSON.parse(postList[0])}></VerifyBlog>
             </div>
           );
         } else {
-          console.log("test3");
+          // console.log("test3");
           setContent(
             postList.map((item, i) => {
               return (
@@ -51,7 +51,7 @@ function OrderStatus() {
       axios
         .get(ORDER_USER_URL.concat(auth.user))
         .then((response) => {
-          console.log(response);
+          // console.log("GET order by user:",response);
           if (Object.keys(response.data).length == 0) {
             return [];
           } else if (Object.keys(response.data).length == 1) {
@@ -66,24 +66,29 @@ function OrderStatus() {
           axios
             .all(response.map((link) => axios.get(link)))
             .then((response) => {
-              // console.log(response[0].data[0]);
+              // console.log("GET postID by order",response);
               let content;
               if (Object.keys(response).length == 0) {
                 content = [];
               } else if (Object.keys(response).length == 1) {
                 content = response[0].data;
               } else {
-                content = response[0].data.map((item) => {
-                  return item;
+                content = response.map((item) => {
+                  return item.data;
                 });
+                let container = []; 
+                for(let i in content){
+                  container.push(content[i][0])
+                }
+                content = container
               }
-              console.log(content);
+              // console.log(content);
               setResOrder(content);
             });
         })
         .then(() => {
           axios.get(POST_USER_URL.concat(auth.user)).then((response) => {
-            console.log(response.data);
+            // console.log(response);
             let content;
             if (Object.keys(response.data).length == 0) {
               content = [];
@@ -91,10 +96,11 @@ function OrderStatus() {
               content = response.data;
             } else {
               content = response.data.map((item) => {
+                // console.log(item)
                 return item;
               });
             }
-            console.log(content);
+            // console.log(content);
             setResPost(content);
           });
         })
@@ -105,14 +111,16 @@ function OrderStatus() {
   );
 
   useEffect(() => {
-    console.log(resOrder, resPost);
+    console.log(resOrder);
+    console.log(resPost);
     if (resOrder != null && resPost != null) {
       let content = resOrder.concat(resPost);
       let uniqueContent = new Set(content.map(JSON.stringify));
-      console.log(content);
+      // console.log(content);
       setUnique(Array.from(uniqueContent));
     }
   }, [resOrder, resPost]);
+
   return (
     <div className="w-screen h-screen">
       <div className="mt-36 flex flex-col gap-y-3">{content}</div>

@@ -7,7 +7,7 @@ function VerifyTicket(data) {
   const props = data.props.data;
   const type = data.type;
   let statusBlog;
-  console.log(props);
+  // console.log(props);
   const [selectedStatus, setStatus] = useState(props.status);
 
   const handleSubmit = async (e) => {
@@ -21,7 +21,7 @@ function VerifyTicket(data) {
 
     Promise.all([axios.put(POST_URL, data)])
       .then((response) => {
-        console.log(response[0]);
+        // console.log(response[0]);
       })
       .catch((error) => {
         console.log(error);

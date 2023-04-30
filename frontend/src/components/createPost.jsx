@@ -51,7 +51,7 @@ const CreatePostForm = () => {
   }, [submit]);
 
   const handleSubmit = async (e) => {
-    console.log(selectedTime);
+    // console.log(selectedTime);
     let data = JSON.stringify({
       postId: 0,
       username: auth.user,
@@ -63,7 +63,7 @@ const CreatePostForm = () => {
       reserved: selectedTime,
       date: date,
     });
-    console.log(data);
+    // console.log(data);
 
     var myHeaders = new Headers();
     myHeaders.append("Origin", "localhost:5173");

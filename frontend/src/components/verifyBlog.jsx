@@ -9,7 +9,7 @@ const ORDER_POSTID_URL = "Order/";
 
 function VerifyBlog(data) {
   const props = data.data;
-  console.log(data);
+  // console.log(data);
   let content;
   const { auth } = useAuth();
   const [orderList, setOrderList] = useState([]);
@@ -38,7 +38,7 @@ function VerifyBlog(data) {
             );
           else
             return (
-              <OrderConfirmForm type={"other"} props={item}></OrderConfirmForm>
+              <OrderConfirmForm type={"rider"} props={item}></OrderConfirmForm>
             );
         })}
       </div>
