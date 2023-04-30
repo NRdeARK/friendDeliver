@@ -7,6 +7,10 @@ function CreatePost() {
   const { showModal, isAllow, data, auth, setSubmit, setShowModal } = useAuth();
   return (
     <div className="flex items-center justify-center h-screen bg-amber-400">
+      <img
+            className="z-0 fixed inset-x-0 bottom-[0]  w-50 lg:w-screen    "
+            src="https://media.discordapp.net/attachments/1006931952454082590/1102104390036369448/9.png?width=881&height=496"
+          ></img>
       <CreatePostForm></CreatePostForm>
       {showModal ? (
         <div>

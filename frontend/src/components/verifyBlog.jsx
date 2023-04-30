@@ -27,7 +27,7 @@ function VerifyBlog(data) {
 
   if (auth.user == props.username) {
     content = (
-      <div className="">
+      <div className="border-b">
         
         <VerifyTicket props={data} type={"Selective"}></VerifyTicket>
         {orderList.map((item) => {

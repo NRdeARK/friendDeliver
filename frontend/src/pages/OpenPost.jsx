@@ -6,25 +6,36 @@ function OpenPost() {
   const { showModal, isAllow, data, auth, setSubmit, setShowModal } = useAuth();
   return (
     <div>
-      <div className="flex justify-end mr-24 mt-36">
-        <Link to="/createPost">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-16 h-16 bg-white rounded-full p-0 shadow-lg transition ease-in-out delay-150 duration-300
+      <div className=" flex justify-end mr-16 mt-32 lg:mr-24">
+        <div className="z-20 fixed">
+          <Link to="/createPost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-16 h-16 bg-white rounded-full p-0 shadow-lg transition ease-in-out delay-150 duration-300
                     hover:-translate-y-1 hover:scale-110"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        </Link>
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </Link>
+        </div>
+        <img
+          className="z-0 fixed inset-x-0 bottom-[0]  w-50 lg:w-screen    "
+          src="https://cdn.discordapp.com/attachments/1006931952454082590/1102136486234705950/12.png"
+        ></img>
+        <img
+          className="z-0 fixed inset-x-0 lg:top-[-350px]  left-2/4 w-50 lg:w-screen    "
+          src="https://cdn.discordapp.com/attachments/1006931952454082590/1102136486234705950/12.png"
+        ></img>
       </div>
+
       <PostBlog></PostBlog>
       {showModal ? (
         <div>
@@ -80,10 +91,7 @@ function OpenPost() {
             </>
           ) : (
             <>
-              <div
-                className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none 
-                              focus:outline-none"
-              >
+              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-1/4 my-6 mx-auto">
                   {/*content*/}
                   <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
