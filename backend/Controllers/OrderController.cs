@@ -88,8 +88,6 @@ namespace backend.Controllers
                 amount = request.amount,
                 orderStatus = "รอยืนยัน",
                 timeCreated = DateTime.Now,
-                isConfirmed = "-",
-                isReceived = "-"
             };
 
             _context.Orders.Add(newMenuname);
@@ -97,7 +95,7 @@ namespace backend.Controllers
             return Ok("Create Order success");
         }
 
-        [HttpPut("confirmed/{orderId}")]
+        [HttpPut("status/{orderId}")]
         public async Task<ActionResult<Order>> PutUpdateConfirm(long orderId, OrderUpdateLogic request)
         {
             if(orderId != request.orderId){
@@ -116,32 +114,7 @@ namespace backend.Controllers
             {
                 return NotFound();
             }
-            selectOrder.isConfirmed = request.logic;
-            _context.Update(selectOrder);
-            await _context.SaveChangesAsync();
-            return Ok("order Update");
-        }
-
-        [HttpPut("received/{orderId}")]
-        public async Task<ActionResult<Order>> PutUpdateReceived(long orderId, OrderUpdateLogic request)
-        {
-            if(orderId != request.orderId){
-                return BadRequest();
-            }
-            if (_context.Orders == null)
-            {
-                return Problem("Entity set 'PostContext.OrderModels'  is null.");
-            }
-            if (!OrderExists(request.orderId))
-            {
-                return NotFound();
-            }
-            var selectOrder = _context.Orders.Where(e => e.orderId == request.orderId).FirstOrDefault();
-            if (selectOrder == null)
-            {
-                return NotFound();
-            }
-            selectOrder.isReceived = request.logic;
+            selectOrder.orderStatus = request.logic;
             _context.Update(selectOrder);
             await _context.SaveChangesAsync();
             return Ok("order Update");

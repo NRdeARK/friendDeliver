@@ -6,7 +6,7 @@ import useAuth from "../hooks/useAuth";
 import PostSet from "./PostSet";
 
 function PostBlog() {
-  const { auth } = useAuth();
+  const { auth, data} = useAuth();
   const [posts, setPosts] = useState(<></>);
   const [isPosts, setIsPosts] = useState(false);
 
@@ -35,7 +35,7 @@ function PostBlog() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [],[data]);
 
   return (
     <div>
