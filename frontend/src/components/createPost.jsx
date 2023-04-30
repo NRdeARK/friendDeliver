@@ -125,7 +125,7 @@ const CreatePostForm = () => {
             value={amount}
             min={1}
           />
-          <p className="text-2xl ml-2 xl:text-xl">จาน</p>
+          <p className="text-2xl ml-2 xl:text-xl">กล่อง</p>
         </div>
         <br />
         <div className="flex flex-row items-center">

@@ -49,7 +49,7 @@ function OpenPost() {
                       </h1>
                       <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
                         เมนู : {data.storeMenu} <br />
-                        จำนวน : {data.amount} จาน
+                        จำนวน : {data.amount} กล่อง
                         <br />
                       </p>
                     </div>

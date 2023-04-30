@@ -26,7 +26,7 @@ function Blog(props) {
         <div className="pl-6 text-xl">
           <p className="text-3xl py-4">ร้าน : {props.storename} </p>
           <div className="pl-24">
-            <p className="pb-2">จำนวนที่รับ : {props.amount} จาน</p>
+            <p className="pb-2">จำนวนที่รับ : {props.amount} กล่อง</p>
             <p className="pb-2">จุดนัดรับ : {props.location}</p>
             <p className="pb-2">ช่วงเวลานัดรับ : {props.reserved}</p>
             <p>

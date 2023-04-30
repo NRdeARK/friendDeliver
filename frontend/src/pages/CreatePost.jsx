@@ -27,7 +27,7 @@ function CreatePost() {
                       </h1>
                       <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
                         ชื่อร้าน : {data.store} <br />
-                        จำนวน : {data.amount} จาน <br />
+                        จำนวน : {data.amount} กล่อง <br />
                         จุดนัดรับ: {data.location} <br />
                         ช่วงเวลาที่นัดรับ : {data.selectedTime} <br />
                         วันที่ : {data.date.split("-")[2]}/{data.date.split("-")[1]}/
@@ -85,7 +85,7 @@ function CreatePost() {
                       </h1>
                       <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
                         ชื่อร้าน : {data.store} <br />
-                        จำนวน : {data.amount} จาน <br />
+                        จำนวน : {data.amount} กล่อง <br />
                         จุดนัดรับ: {data.location} <br />
                         ช่วงเวลาที่นัดรับ : {data.selectedTime} <br />
                         วันที่ : {data.date.split("-")[2]}/
