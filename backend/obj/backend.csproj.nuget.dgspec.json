@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj": {}
+    "c:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj": {
+    "c:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
+        "projectUniqueName": "c:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
+        "projectPath": "c:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\natta\\.nuget\\packages\\",
-        "outputPath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\obj\\",
+        "outputPath": "c:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\natta\\AppData\\Roaming\\NuGet\\NuGet.Config"

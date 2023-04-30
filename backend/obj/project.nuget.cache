@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "37io3vpq1w6kuz365es8ripSyxSLRhhopFse+sVxCeKkxElCer3MBW+sVxiofBNjfoBOnrE+EnogvjEi1nfa9A==",
+  "dgSpecHash": "frWZBrJs+7TRohQ9y6+q9X2KkMdOaKzvkOo+8VrLBKPjT/cg0+k9oyccTBWUHGwUQ66fDZUhkRKFf7rWduqxfQ==",
   "success": true,
-  "projectFilePath": "C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
+  "projectFilePath": "c:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\natta\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\natta\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -195,12 +195,5 @@
     "C:\\Users\\natta\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\natta\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\2D\\term2\\FileSheet66\\WebApp\\project\\friendDeliver\\backend\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
