@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "../api/axios.js";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../hooks/useAuth.jsx";
 const LOGIN_URL = "/Auth/login";
 
 function LoginForm() {

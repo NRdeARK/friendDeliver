@@ -7,147 +7,95 @@ import axios from "axios";
 import useAuth from "../hooks/useAuth";
 
 function OrderStatus() {
-  let content;
+  const [resOrder, setResOrder] = useState("");
+  const [resPost, setResPost] = useState("");
+  const [combine, setCombine] = useState();
+  const [unique, setUnique] = useState("");
 
-  const [postIdList, setPostIdList] = useState([]);
-
-  const [postsOwner, setPostsOwner] = useState([]);
-  const [postsBuyer, setPostsBuyer] = useState([]);
-  const [listBuyerPostId, setListBuyerPostId] = useState([]);
-  const [listURL, setListURL] = useState([]);
-  const [posts, setPosts] = useState([]);
   const { auth } = useAuth();
 
+  function handleJson() {
+    if (resOrder != "" && resPost != "" && unique != "") {
+      let s = JSON.stringify(unique)
+      const postList = JSON.parse(s);
+      console.log(JSON.parse(postList[0]));
+      if (postList.length == 0) {
+        return <></>;
+      } else if (postList.length == 1) {
+        return <div key={1}><VerifyBlog data={JSON.parse(postList[0])}></VerifyBlog></div>;
+      } else {
+        return postList.map((item, i) => {
+          return <div key={i}><VerifyBlog data={JSON.parse(postList[i])}></VerifyBlog></div>;
+        });
+      }
+    }
+  }
+
   useEffect(() => {
-    Promise.all([axios.get(POST_USER_URL.concat(auth.user))])
+    axios
+      .get(ORDER_USER_URL.concat(auth.user))
       .then((response) => {
-        content = response[0].data.map((item) => {
-          return (
-            <div key={item.timeCreated}>
-              <VerifyBlog data={item}></VerifyBlog>
-            </div>
-          );
-        });
-        setPostsOwner(content);
-
-        setPostIdList(() => {
-          if (Object.keys(response[0].data).lenght == 0) {
-            return [];
-          } else if (Object.keys(response[0].data).lenght == 1) {
-            return [response[0].data[0].postId];
-          } else {
-            return response[0].data.map((item) => {
-              return item.postId;
-            });
-          }
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  useEffect(
-    () => {
-      console.log(ORDER_USER_URL.concat(auth.user));
-      Promise.all([axios.get(ORDER_USER_URL.concat(auth.user))])
-        .then((response) => {
-          console.log("stage 1");
-          console.log(response[0].data[0].postId);
-
-          let buyerPostlist = [];
-          let validateBuyerPostlist = [];
-
-          if (Object.keys(response[0].data).lenght == 0) {
-            buyerPostlist = [];
-          } else if (Object.keys(response[0].data).lenght == 1) {
-            buyerPostlist = [response[0].data[0].postId];
-          } else {
-            buyerPostlist = response[0].data.map((item) => {
-              return item.postId;
-            });
-          }
-
-          let postList = postIdList.map((list) => {
-            if (typeof list != String) {
-              return list.toString();
-            } else {
-              return list;
-            }
-          });
-
-          buyerPostlist = buyerPostlist.map((list) => {
-            if (typeof list != String) {
-              return list.toString();
-            } else {
-              return list;
-            }
-          });
-
-          console.log(postList);
-          console.log(buyerPostlist);
-
-          for (let i in buyerPostlist) {
-            if(!postList.includes(buyerPostlist[i])){
-              postList.push(buyerPostlist[i])
-              validateBuyerPostlist.push(buyerPostlist[i])
-              console.log(buyerPostlist[i])
-            }
-          }
-
-          setListBuyerPostId(validateBuyerPostlist);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    [postsOwner],
-    []
-  );
-
-  useEffect(() => {
-    console.log("is list buyer", listBuyerPostId);
-    if (listBuyerPostId.length != 0) {
-      console.log("stage 2");
-      setListURL(() => {
-        if (listBuyerPostId.length == 0) {
+        console.log(response);
+        if (Object.keys(response.data).length == 0) {
           return [];
-        } else if (listBuyerPostId.lenght == 1) {
-          return [POST_POSTID_URL + postId.toString()];
+        } else if (Object.keys(response.data).length == 1) {
+          return [POST_POSTID_URL.concat(response.data[0].postId)];
         } else {
-          return listBuyerPostId.map((postId) => {
-            return POST_POSTID_URL + postId.toString();
+          return response.data.map((item) => {
+            return POST_POSTID_URL.concat(item.postId);
           });
         }
-      });
-    }
-  }, [listBuyerPostId]);
+      })
+      .then((response) => {
+        axios.all(response.map((link) => axios.get(link))).then((response) => {
+          console.log(response[0].data[0]);
+          let content;
+          if (Object.keys(response).length == 0) {
+            content = [];
+          } else if (Object.keys(response).length == 1) {
+            content = response[0].data;
+          } else {
+            content = response[0].data.map((item) => {
+              return item;
+            });
+          }
+          console.log(content);
+          setResOrder(content);
+        });
+      })
+      .then(() => {
+        axios.get(POST_USER_URL.concat(auth.user)).then((response) => {
+          console.log(response.data);
+          let content;
+          if (Object.keys(response.data).length == 0) {
+            content = [];
+          } else if (Object.keys(response.data).length == 1) {
+            content = response.data;
+          } else {
+            content = response.data.map((item) => {
+              return item;
+            });
+          }
+          console.log(content);
+          setResPost(content);
+        });
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   useEffect(() => {
-    if (listURL.length != 0) {
-      console.log("stage 3");
-      console.log(listURL);
-      axios
-        .all(listURL.map((endpoint) => axios.get(endpoint)))
-        .then((response) => {
-          content = response.map((item) => {
-            console.log(item.data[0]);
-            return (
-              <div key={item.data[0].timeCreated}>
-                <VerifyBlog data={item.data[0]}></VerifyBlog>
-              </div>
-            );
-          });
-          setPostsBuyer(content);
-        });
+    if (resOrder != "" && resPost != "") {
+      let content = resOrder.concat(resPost);
+      let uniqueContent = new Set(content.map(JSON.stringify));
+      console.log(content);
+      setCombine(resOrder.concat(resPost));
+      setUnique(Array.from(uniqueContent));
     }
-  }, [listURL]);
-
+  }, [resOrder, resPost]);
   return (
     <div className="w-screen h-screen">
       <div className="mt-36 flex flex-col gap-y-3">
-        {postsBuyer}
-        {postsOwner}
+        {handleJson()}
       </div>
     </div>
   );
