@@ -33,8 +33,12 @@ function VerifyBlog(data) {
     content = (
       <div>
         <VerifyTicket props={data} type={"Selective"}></VerifyTicket>
-        {orderList.map((data) => {
-            return <OrderConfirmForm props={data}></OrderConfirmForm>;
+        {orderList.map((item) => {
+          if(props.username == item.props.username)
+            return <OrderConfirmForm type={"owner"} props={data}></OrderConfirmForm>;
+          else
+          return <OrderConfirmForm type={"other"} props={data}></OrderConfirmForm>;
+           
           
         })}
       </div>
@@ -42,12 +46,12 @@ function VerifyBlog(data) {
   } else {
     content = (
       <div>
-        <VerifyTicket props={data} type={"Other"}></VerifyTicket>
+        <VerifyTicket props={data} type={"Other"} ></VerifyTicket>
         {orderList.map((data) => {
-          console.log(data)
-          if(data.username == auth.user){
-          return <OrderReceiveForm props={data}></OrderReceiveForm>;
-          }
+          return <OrderConfirmForm type={"other"} props={data}></OrderConfirmForm>;
+          // if(data.username == auth.user){
+          // // return <OrderReceiveForm props={data}></OrderReceiveForm>;
+          // }
         })}
       </div>
     );
