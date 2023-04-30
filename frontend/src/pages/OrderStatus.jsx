@@ -12,7 +12,7 @@ function OrderStatus() {
   const [combine, setCombine] = useState();
   const [unique, setUnique] = useState("");
 
-  const { auth } = useAuth();
+  const { auth, data } = useAuth();
 
   function handleJson() {
     if (resOrder != "" && resPost != "" && unique != "") {
@@ -81,7 +81,7 @@ function OrderStatus() {
         });
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     if (resOrder != "" && resPost != "") {
