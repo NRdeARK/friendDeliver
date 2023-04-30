@@ -14,7 +14,6 @@ namespace backend.Models
         public string? reserved { get; set; }
         public string? date { get; set; }
         public string? status { get; set; }
-        public string? orderList { get; set; }
         public DateTime? timeCreated { get; set; }
     }
 }
