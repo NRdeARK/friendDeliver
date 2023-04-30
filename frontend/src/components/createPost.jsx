@@ -6,16 +6,49 @@ import userLogo from "../assets/user.jpg";
 
 const CreatePostForm = () => {
   // const [user, setUser] = useState("");
+  const {
+    auth,
+    setShowModal,
+    setIsAllow,
+    showModal,
+    setData,
+    setSubmit,
+    submit,
+    data
+  } = useAuth();
   const navigate = useNavigate();
-  const { auth } = useAuth();
+  // const { auth } = useAuth();
   const [store, setStore] = useState("");
   const [amount, setAmt] = useState(1);
   const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("ช่วงเช้า");
   const [errMsg, setErrMsg] = useState("");
-  const [showModal, setShowModal] = React.useState(false);
-  const [isAllow, setIsAllow] = useState(true);
+  // const [showModal, setShowModal] = React.useState(false);
+  // const [isAllow, setIsAllow] = useState(true);
+  const [checkForm, setCheckForm] = useState(false);
+  const [checkSubmit, setCheckSubmit] = useState(false);
+
+  useEffect(() => {
+    setData({ store, amount, location, selectedTime, date });
+    if (checkForm) {
+      if (store == "" || location == "" || date == "" || selectedTime == "") {
+        setIsAllow(false);
+      } else {
+        setIsAllow(true);
+        setCheckSubmit(true);
+      }
+      setCheckForm(false);
+    }
+  }, [showModal]);
+
+  useEffect(() => {
+    if (submit && checkSubmit) {
+      handleSubmit();
+      setSubmit(false);
+    }
+    setCheckSubmit(false);
+  }, [submit]);
 
   const handleSubmit = async (e) => {
     console.log(selectedTime);
@@ -50,19 +83,8 @@ const CreatePostForm = () => {
       })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+      navigate("/openPost");
   };
-
-  useEffect(() => {
-    if (store == "" || location == "" || date == "" || selectedTime == "") {
-      setIsAllow(false);
-    } else {
-      setIsAllow(true);
-    }
-  }, [showModal]);
-
-  useEffect(() => {
-    console.log(date);
-  }, [date]);
 
   return (
     <div
@@ -154,116 +176,13 @@ const CreatePostForm = () => {
         <button
           type="Submit"
           onClick={() => {
+            setCheckForm(true);
             setShowModal(true);
           }}
           className="bg-emerald-500 text-2xl rounded-lg text-white ml-5 p-2 xl:text-xl"
         >
           โพสต์
         </button>
-        {showModal ? (
-          <div>
-            {isAllow ? (
-              <>
-                <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                  <div className="relative w-1/2 my-6 mx-auto">
-                    {/*content*/}
-                    <div className="border-0 rounded-xl shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                      {/*header*/}
-                      <div className="p-5 border-b border-solid border-slate-200 rounded-t flex justify-center">
-                        <h3 className="text-3xl font-semibold">ยืนยัน</h3>
-                      </div>
-                      {/*body*/}
-                      <div className="relative p-5 flex-auto">
-                        <h1 className="text-xl pl-10 xl:p-1">
-                          {auth.nickname} ({auth.realname}) #{auth.user}
-                        </h1>
-                        <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
-                          ชื่อร้าน : {store} <br />
-                          จำนวน : {amount} จาน <br />
-                          จุดนัดรับ: {location} <br />
-                          ช่วงเวลาที่นัดรับ : {selectedTime} <br />
-                          วันที่ : {date.split("-")[2]}/{date.split("-")[1]}/
-                          {date.split("-")[0]}
-                        </p>
-                      </div>
-                      {/*footer*/}
-                      <div className="flex items-center justify-end p-5 border-t border-solid border-slate-200 rounded-b">
-                        <button
-                          className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm rounded shadow 
-                                    hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150
-                                    w-1/2 py-2"
-                          type="button"
-                          onClick={() => {
-                            handleSubmit()
-                            setShowModal(false);
-                          }}
-                        >
-                          ยืนยัน
-                        </button>
-                        <button
-                          className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none 
-                                    focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:text-red-500/75
-                                    w-1/2"
-                          type="button"
-                          onClick={() => setShowModal(false)}
-                        >
-                          ยกเลิก
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-              </>
-            ) : (
-              <>
-                <div
-                  className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none 
-                              focus:outline-none"
-                >
-                  <div className="relative w-1/2 my-6 mx-auto">
-                    {/*content*/}
-                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                      {/*header*/}
-                      <div className="flex justify-center p-5 border-b border-solid border-slate-200 rounded-t">
-                        <h3 className="text-3xl font-semibold">
-                          กรุณากรอกให้ครบ
-                        </h3>
-                      </div>
-                      {/*body*/}
-                      <div className="relative p-5 flex-auto">
-                        <h1 className="text-xl pl-10 xl:p-1">
-                          {auth.nickname} ({auth.realname}) #{auth.user}
-                        </h1>
-                        <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
-                          ชื่อร้าน : {store} <br />
-                          จำนวน : {amount} จาน <br />
-                          จุดนัดรับ: {location} <br />
-                          ช่วงเวลาที่นัดรับ : {selectedTime} <br />
-                          วันที่ : {date.split("-")[2]}/{date.split("-")[1]}/
-                          {date.split("-")[0]}
-                        </p>
-                      </div>
-                      {/*footer*/}
-                      <button
-                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none 
-                        focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:text-red-500/75
-                        border-t border-solid border-slate-200"
-                        type="button"
-                        onClick={() => setShowModal(false)}
-                      >
-                        ยกเลิก
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-              </>
-            )}
-          </div>
-        ) : (
-          <></>
-        )}
       </div>
     </div>
   );
