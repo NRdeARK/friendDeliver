@@ -13,6 +13,7 @@ function CreateOrderForm(props) {
     setSubmit,
     submit,
   } = useAuth();
+  
   const { toggleUpdateOrder, setToggleUpdateOrder } = useAuth();
   const [storeMenu, setMenuname] = useState("");
   const [amount, setAmt] = useState(1);
@@ -135,3 +136,15 @@ function CreateOrderForm(props) {
 }
 
 export default CreateOrderForm;
+
+{/* <select
+            value={selectedStatus}
+            onChange={(e) => setStatus(e.target.value)}
+            className='bg-gray-400 rounded-lg text-white text-lgl'
+            >
+             <option value="closed_reciving">ปิดรับออเดอร์</option> 
+            <option value="reciving">กำลังรับ</option> 
+            <option value="delivering">ถึงจุดนัดแล้ว</option> 
+            <option value="closed">ส่งเรียบร้อย</option>
+            </select>
+            <button onClick={handleSubmit} className="ml-[10px] border-solid border-l-black border-l-[12px] border-y-transparent border-y-[12px]"></button> */}
