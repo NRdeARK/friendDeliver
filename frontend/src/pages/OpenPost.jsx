@@ -24,6 +24,7 @@ function OpenPost() {
                 d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
+            <p className="font-semibold text-lg mt-2">create post</p>
           </Link>
         </div>
         <img
@@ -56,7 +57,7 @@ function OpenPost() {
                       </h1>
                       <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
                         เมนู : {data.storeMenu} <br />
-                        จำนวน : {data.amount} จาน
+                        จำนวน : {data.amount} กล่อง
                         <br />
                       </p>
                     </div>

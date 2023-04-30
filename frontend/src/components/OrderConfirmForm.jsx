@@ -4,19 +4,19 @@ useAuth;
 
 const OrderConfirmForm = (data) => {
   const props = data.props;
-  console.log(data);
+  // console.log(data);
   const { auth } = useAuth();
   const [status, setStatus] = useState(props.orderStatus);
   const [button, setButton] = useState(<></>);
 
   const handleConfirm = async (e) => {
-    console.log();
+    // console.log();
     let data = JSON.stringify({
       orderId: props.orderId,
       logic: "ยืนยันออเดอร์",
     });
 
-    console.log(data);
+    // console.log(data);
 
     var myHeaders = new Headers();
     myHeaders.append("Origin", "localhost:5173");
@@ -39,13 +39,13 @@ const OrderConfirmForm = (data) => {
   };
 
   const handleCancel = async (e) => {
-    console.log();
+    // console.log();
     let data = JSON.stringify({
       orderId: props.orderId,
       logic: "ยกเลิก",
     });
 
-    console.log(data);
+    // console.log(data);
 
     var myHeaders = new Headers();
     myHeaders.append("Origin", "localhost:5173");
@@ -68,13 +68,13 @@ const OrderConfirmForm = (data) => {
   };
 
   const handleRecieved = async (e) => {
-    console.log();
+    // console.log();
     let data = JSON.stringify({
       orderId: props.orderId,
       logic: "ได้รับแล้ว",
     });
 
-    console.log(data);
+    // console.log(data);
 
     var myHeaders = new Headers();
     myHeaders.append("Origin", "localhost:5173");
@@ -99,21 +99,17 @@ const OrderConfirmForm = (data) => {
   useEffect(() => {
     setButton(
       <>
-        {status != "รอยืนยัน" &&
-        status != "ยกเลิก" &&
-        status != "ได้รับแล้ว" ? (
-          auth.user == props.username && props.orderId != "ได้รับแล้ว" ? (
-            <div className="flex flex-row justify-end mr-10">
-              <button className="bg-green-400  rounded-lg p-2" onClick={handleRecieved}>
+        {data.type == "other" || (data.type != "rider" && (status != "รอยืนยัน" && status != "ยกเลิก" && status != "ได้รับแล้ว")) ? (
+          auth.user == props.username && status== "ยืนยันออเดอร์" ? (
+            <div className="flex justify-center">
+              <button className="bg-green-400 rounded" onClick={handleRecieved}>
                 Recieved
               </button>
             </div>
           ) : (
             <></>
           )
-        ) : data.type != "owner" ||
-          status == "ยกเลิก" ||
-          status == "ได้รับแล้ว" ? (
+        ) : ( data.type == "rider" || data.type == "owner" ) && ( status == "ยกเลิก" || status == "ได้รับแล้ว") || status == "ยืนยันออเดอร์"? (
           <></>
         ) : (
           <>

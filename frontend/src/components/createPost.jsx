@@ -51,7 +51,7 @@ const CreatePostForm = () => {
   }, [submit]);
 
   const handleSubmit = async (e) => {
-    console.log(selectedTime);
+    // console.log(selectedTime);
     let data = JSON.stringify({
       postId: 0,
       username: auth.user,
@@ -63,7 +63,7 @@ const CreatePostForm = () => {
       reserved: selectedTime,
       date: date,
     });
-    console.log(data);
+    // console.log(data);
 
     var myHeaders = new Headers();
     myHeaders.append("Origin", "localhost:5173");
@@ -125,7 +125,7 @@ const CreatePostForm = () => {
             value={amount}
             min={1}
           />
-          <p className="text-2xl ml-2 xl:text-xl">จาน</p>
+          <p className="text-2xl ml-2 xl:text-xl">กล่อง</p>
         </div>
         <br />
         <div className="flex flex-row items-center">

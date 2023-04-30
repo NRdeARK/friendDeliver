@@ -112,7 +112,7 @@ function RegisterForm() {
         tel,
         password: pwd,
       });
-      console.log(responce.data);
+      // console.log(responce.data);
       setSuccess(true);
     } catch (err) {
       if (!err?.response) {
