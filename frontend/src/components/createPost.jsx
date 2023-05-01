@@ -51,7 +51,7 @@ const CreatePostForm = () => {
   }, [submit]);
 
   const handleSubmit = async (e) => {
-    console.log(selectedTime);
+    // console.log(selectedTime);
     let data = JSON.stringify({
       postId: 0,
       username: auth.user,
@@ -63,7 +63,7 @@ const CreatePostForm = () => {
       reserved: selectedTime,
       date: date,
     });
-    console.log(data);
+    // console.log(data);
 
     var myHeaders = new Headers();
     myHeaders.append("Origin", "localhost:5173");
@@ -79,17 +79,17 @@ const CreatePostForm = () => {
     fetch("http://localhost:5287/api/Post", requestOptions)
       .then((response) => {
         response.text();
-        navigate("/OpenPost");
       })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+      setData([])
       navigate("/openPost");
   };
 
   return (
     <div
       className="flex flex-col justify-stretch flex-nowrap bg-gray-200 mt-16
-                  accent-gray-300 rounded-3xl drop-shadow-md w-7/12 h-fit p-5"
+                  accent-gray-300 rounded-3xl drop-shadow-md w-7/12 h-fit p-5 bg-slate-700 text-slate-50"
     >
       <div className="pl-4 flex flex-row items-center">
         <img src={userLogo} alt="" className="w-11 rounded-full" />
@@ -125,7 +125,7 @@ const CreatePostForm = () => {
             value={amount}
             min={1}
           />
-          <p className="text-2xl ml-2 xl:text-xl">จาน</p>
+          <p className="text-2xl ml-2 xl:text-xl">กล่อง</p>
         </div>
         <br />
         <div className="flex flex-row items-center">

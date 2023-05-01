@@ -17,8 +17,8 @@ function PostBlog() {
   useEffect(() => {
     Promise.all([axios.get(POST_URL)])
       .then((response) => {
-        console.log(Object.keys(response[0].data).length);
-        console.log(response[0].data);
+        // console.log(Object.keys(response[0].data).length);
+        // console.log(response[0].data);
         if (Object.keys(response[0].data).length <= 0) {
           setPosts(<></>);
           setIsPosts(false);

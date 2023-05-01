@@ -9,7 +9,7 @@ function Logout() {
     <div>
       <button
         onClick={() => {
-            console.log("test")
+            // console.log("test")
           setAuth({});
           navigate("/login");
         }}

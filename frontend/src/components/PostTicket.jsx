@@ -21,7 +21,7 @@ function PostTicket() {
   useEffect(() => {
     Promise.all([axios.get(POST_URL)])
       .then((response) => {
-        console.log(response[0].data);
+        // console.log(response[0].data);
         if (Object.keys(response[0].data).length == 0) {
           setPosts(<></>);
           // console.log(posts);
@@ -45,7 +45,7 @@ function PostTicket() {
           
         </div>
       ) : (
-        <>ไม่มีรายการ</>
+        <div className="rounded-[45px] bg-amber-50 p-10 px-24">ไม่มีรายการ</div>
       )}
     </div>
   );

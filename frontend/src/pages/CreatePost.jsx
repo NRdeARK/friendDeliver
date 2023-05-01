@@ -7,6 +7,10 @@ function CreatePost() {
   const { showModal, isAllow, data, auth, setSubmit, setShowModal } = useAuth();
   return (
     <div className="flex items-center justify-center h-screen bg-amber-400">
+      <img
+            className="z-0 fixed inset-x-0 bottom-[0]  w-50 lg:w-screen    "
+            src="https://media.discordapp.net/attachments/1006931952454082590/1102104390036369448/9.png?width=881&height=496"
+          ></img>
       <CreatePostForm></CreatePostForm>
       {showModal ? (
         <div>
@@ -27,7 +31,7 @@ function CreatePost() {
                       </h1>
                       <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
                         ชื่อร้าน : {data.store} <br />
-                        จำนวน : {data.amount} จาน <br />
+                        จำนวน : {data.amount} กล่อง <br />
                         จุดนัดรับ: {data.location} <br />
                         ช่วงเวลาที่นัดรับ : {data.selectedTime} <br />
                         วันที่ : {data.date.split("-")[2]}/{data.date.split("-")[1]}/
@@ -85,7 +89,7 @@ function CreatePost() {
                       </h1>
                       <p className="pt-5 text-slate-500 text-lg leading-relaxed pl-20 xl:pl-10">
                         ชื่อร้าน : {data.store} <br />
-                        จำนวน : {data.amount} จาน <br />
+                        จำนวน : {data.amount} กล่อง <br />
                         จุดนัดรับ: {data.location} <br />
                         ช่วงเวลาที่นัดรับ : {data.selectedTime} <br />
                         วันที่ : {data.date.split("-")[2]}/

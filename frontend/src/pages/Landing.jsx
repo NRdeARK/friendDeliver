@@ -53,10 +53,10 @@ function Index() {
         <ion-icon name=""></ion-icon>
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </div>
-      <div className="flex items-center justify-center lg:px-52  ">
+      <div className="flex items-center justify-center lg:px-48 px-8  ">
         <PostTicket></PostTicket>
       </div>
-      <div className="mt-32">
+      <div className="mt-32 ">
         <AboutUs></AboutUs>
       </div>
    

@@ -4,7 +4,7 @@ const Order_URL = "/Order/"; //*
 
 // const postId=
 function OrderConfirmTicket(props){
-    console.log(props)
+    // console.log(props)
     const [playload, setplayload] = useState([]);
     const [user, setuser] = useState([]);
     let content;
